@@ -1,0 +1,178 @@
+.project-card h3,
+.project-card p {
+  position: absolute;
+  color: #fff; /* Text color for project title and description */
+  left: 20px; /* Adjust as needed */
+  width: calc(100% - 40px); /* Adjust as needed */
+}
+
+
+.project-card p {
+  top: 50%; /* Vertically center the description */
+  transform: translateY(-50%);
+  font-size: 16px;
+  margin: 0;
+  padding-right: 20px; /* Ensure text doesn't overlap button */
+}
+
+.project-card a {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: transparent;
+  color: #007bff; /* Button text color */
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: color 0.3s; /* Add a transition effect for text color */
+}
+
+/* Adjust hover effect for the card background */
+.project-card:hover {
+  background-color: rgb(73, 88, 16);
+}
+
+/* Adjust hover effect for the button text color */
+.project-card:hover a {
+  color: #fff; /* Button text color when hovering over the card */
+}
+
+
+.project-card {
+  position: relative;
+  width: 250px; /* Adjust the width as needed */
+  height: 250px; /* Equal width and height for square cards */
+  background-size: cover;
+  background-position: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: background-color 0.3s; /* Add a transition effect */
+  display: flex;
+  flex-direction: column;
+}
+
+.project-content {
+  flex-grow: 1;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.project-card h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #fff; /* Text color for project title */
+}
+
+.read-more-btn {
+  background-color: transparent;
+  color: #007bff; /* Button text color */
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: color 0.3s; /* Add a transition effect for text color */
+  align-self: center; /* Align button to the center horizontally */
+  margin-top: auto; /* Align button to the bottom of the card */
+}
+
+/* ... Other styles for popups and hover effect ... */
+
+.project-description-popup {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Black background with some transparency */
+  z-index: 2;
+  text-align: center;
+  padding: 20px;
+  transition: opacity 0.3s ease-in-out; /* Add a transition for opacity */
+}
+
+.popup-content {
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 80%; /* Adjust as needed */
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+
+
+ <section id="projects" class="projects">
+        <div class="container">
+          <div class="section-title">
+            <h2>Projects</h2>
+          </div>
+      
+          <div class="card-container">
+            <div class="project-card" style="background-image: url('project1-image.jpg');">
+              <h3>Project 1</h3>
+              <button class="read-more-btn" data-project="project1">Read More</button>
+            </div>
+            
+            <div class="project-description-popup" id="project1">
+              <p>sdkfmkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkmffkfkffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff</p>
+              <a href="link-to-source-code-for-project-1">Source Code</a>
+              <button class="close-popup-btn">Close</button>
+            </div>
+      
+            <!-- Add more project cards and popups as needed -->
+          </div>
+      
+          <div class="hero-btns">
+            <a href="index.html"><button type="button" class="btn-trans">Go Back Home</button></a>
+          </div>
+        </div>
+      </section>
+      
+      
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const readMoreButtons = document.querySelectorAll(".read-more-btn");
+  const closePopupButtons = document.querySelectorAll(".close-popup-btn");
+
+  readMoreButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const projectID = this.getAttribute("data-project");
+      const projectPopup = document.getElementById(projectID);
+
+      projectPopup.style.display = "block";
+    });
+  });
+
+  closePopupButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const projectPopup = this.closest(".project-description-popup");
+      projectPopup.style.display = "none";
+    });
+  });
+});
+
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
