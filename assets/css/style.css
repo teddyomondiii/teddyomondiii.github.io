@@ -467,7 +467,6 @@ body::after {
 /*--------------------------------------------------------------
  # Sections General
  --------------------------------------------------------------*/
- 
  section {
   overflow: hidden;
   position: absolute;
@@ -477,43 +476,25 @@ body::after {
   opacity: 0;
   transition: ease-in-out 0.4s;
   z-index: 2;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(20, 20, 20, 0.95) 100%);
-  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.7);
-  border-radius: 10px; /* Rounded corners */
-}
-
-section.section-show {
+ }
+ section.section-show {
   top: 100px;
   bottom: auto;
   opacity: 1;
   padding-bottom: 45px;
-  transform: translateY(0); /* Add a slight slide-in effect */
-}
-
-section .container {
+ }
+ section .container {
   background: rgba(0, 0, 0, 0.9);
   padding: 3%;
-  border-radius: 10px; /* Consistent rounded corners */
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.8);
-  color: rgba(255, 255, 255, 0.9); /* Slightly off-white text for better contrast */
-  font-size: 14px; /* Adjust font size for better readability */
-  line-height: 1.6;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
+ }
+ @media (max-width: 768px) {
   section {
-      top: 120px;
+   top: 120px;
   }
-
   section.section-show {
-      top: 80px;
+   top: 80px;
   }
-
-  section .container {
-      padding: 5%; /* Add more padding for smaller screens */
-  }
-}
+ }
 
  /* About Me Section */
  .about-me .content h3 {
@@ -584,7 +565,7 @@ section .container {
   color: #fff;
  }
  
- .section-title h2 {
+ .section-title h2{
   font-size: 28vh; /* Large font size for the background */
   color: #00f; /* Light color for visibility */
   letter-spacing: 5px;
@@ -593,21 +574,28 @@ section .container {
   top: 50%; /* Center vertically */
   left: 50%; /* Center horizontally */
   transform: translate(-50%, -50%); /* Adjust for exact centering */
-  z-index: -5; /* Behind other content */
+  z-index: -1; /* Ensure it's behind content */
   pointer-events: none; /* Allow interaction with elements above */
- }
- /* Media query for smaller devices */
- @media (max-width: 768px) {
+}
+
+/* Ensure parent container doesn't interfere */
+.section-title {
+  position: relative; /* Prevent inheritance issues */
+}
+
+/* Media query for smaller devices */
+@media (max-width: 768px) {
   .section-title h2 {
-   font-size: 80px; /* Adjust the size for tablets */
+      font-size: 80px; /* Adjust the size for tablets */
   }
- }
- 
- @media (max-width: 480px) {
+}
+
+@media (max-width: 480px) {
   .section-title h2 {
-   font-size: 70px; /* Adjust the size for phones */
+      font-size: 70px; /* Adjust the size for phones */
   }
- }
+}
+
  .quote-container {
   position: relative; /* Position relative to its parent container */
   margin-top: 50px; /* Adjust this to control vertical spacing */
