@@ -17,8 +17,8 @@
 }
  
 body {
-  font-family: "Bangers", sans-serif;
   background-color: #040404;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: #ffffff;
   position: relative;
   margin: 0;
@@ -48,18 +48,6 @@ body::before {
   100% {
       background: radial-gradient(circle, rgba(0, 0, 0, 0.6), #1a1a1a 60%);
   }
-}
-
-/* Add Glow Effect to Links */
-a {
-  color: #00f;
-  text-decoration: none;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-a:hover {
-  color: #00f;
-  text-shadow: 0 0 10px rgba(0, 255, 128, 0.8);
 }
 
 /* Add a Fading Border Around the Body */
@@ -123,7 +111,7 @@ body::after {
   line-height: 1;
   margin-bottom: 20px;
   font-size: 5.5vw;
-  letter-spacing: 2.6vw;
+  letter-spacing: 2.8vw;
   text-align: center;
   text-transform: uppercase;
   position: relative;
@@ -132,16 +120,9 @@ body::after {
   align-items: center;
   justify-content: center;
   height: 100%;
-  color: hsla(192, 18%, 49%, 1); /* Base color */
   pointer-events: none;
 
-  /* Multi-layered text shadow for glow effect */
-  text-shadow: 
-      0 0 10px #00f,  /* Blue glow */
-      0 0 20px #00f,  /* Larger blue glow */
-      0 0 30px #00f,  /* Largest blue glow */
-      0 0 40px #00f,  /* Cyan glow */
-      0 0 50px #00f;  /* Outer cyan glow */
+
 
   /* Drop-shadow for additional depth */
   filter: drop-shadow(0px 6px 10px #3d5257);
@@ -709,6 +690,12 @@ section .container {
   color: #222; /* Text color on hover */
 }
 
+.contact a {
+  color: #00f; /* Dark text color */
+  padding: 10px; /* Adjust padding for better touch targets */
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+}
 
  #header.header-top h1 {
   margin-right: auto;
@@ -1503,8 +1490,8 @@ section .container {
   align-self: center;
  }
  
- /* CSS */
- .flip-btn{
+ .flip-btn {
+  position: relative;
   width: 150px;
   align-self: center;
   --b: 3px; /* border thickness */
@@ -1514,12 +1501,12 @@ section .container {
   color: var(--color);
   --_p: var(--s);
   background: conic-gradient(
-    from 90deg at var(--b) var(--b),
-    #0000 90deg,
-    var(--color) 0
-   )
-   var(--_p) var(--_p) / calc(100% - var(--b) - 2 * var(--_p))
-   calc(100% - var(--b) - 2 * var(--_p));
+          from 90deg at var(--b) var(--b),
+          #0000 90deg,
+          var(--color) 0
+      )
+      var(--_p) var(--_p) / calc(100% - var(--b) - 2 * var(--_p))
+      calc(100% - var(--b) - 2 * var(--_p));
   transition: 0.3s linear, color 0s, background-color 0s;
   outline: var(--b) solid #0000;
   outline-offset: 0.6em;
@@ -1529,19 +1516,43 @@ section .container {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
- }
- 
- .flip-btn:hover,
- .flip-btn:focus-visible {
+  overflow: hidden; /* Ensure ::before stays within button bounds */
+}
+
+/* Hover Effect */
+.flip-btn:hover,
+.flip-btn:focus-visible {
   --_p: 0px;
   outline-color: var(--color);
   outline-offset: 0.05em;
- }
- 
- .flip-btn:active {
+  color: #111010; /* Change text color on hover */
+}
+
+.flip-btn:active {
   background: var(--color);
   color: #fff;
- }
+}
+
+/* Gradient Slide Effect */
+.flip-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 100%;
+  background: #fff;
+  transition: width 0.9s ease-in-out, left 0.9s ease-in-out;
+  z-index: -1; /* Place behind button content */
+  transform: skewX(-20deg); /* Add skew for dynamic look */
+}
+
+.flip-btn:hover::before {
+  width: 200%; /* Expand gradient */
+  left: -50%; /* Move gradient leftward for a sweeping effect */
+}
+
+ 
  
  /* Container for Project Cards */
  .project-cards {
@@ -1588,9 +1599,6 @@ section .container {
   color: #fff; /* Change text color on hover */
   transition: color 0.3s ease; /* Smooth transition */
  }
- 
- @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
- @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
  
  * {
   margin: 0;
