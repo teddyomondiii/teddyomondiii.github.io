@@ -1338,7 +1338,7 @@ body::after {
  }
  
  /* Flip Card Styles */
- .flip-crd {
+ .flip-card {
   
   background-color: transparent;
   width: 400px;
