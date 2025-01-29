@@ -1490,10 +1490,11 @@ body::after {
   position: relative;
   width: 150px;
   align-self: center;
+  margin-top: 20px; /* Move button further down */
+  padding: calc(0.6em + var(--s)) calc(1em + var(--s)); /* Slightly increase padding */
   --b: 3px; /* border thickness */
   --s: 0.45em; /* size of the corner */
   --color: #ffffff93;
-  padding: calc(0.5em + var(--s)) calc(0.9em + var(--s));
   color: var(--color);
   --_p: var(--s);
   background: conic-gradient(
@@ -1512,8 +1513,9 @@ body::after {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  overflow: hidden; /* Ensure ::before stays within button bounds */
+  clip-path: inset(0 0 0 0);
 }
+
 
 /* Hover Effect */
 .flip-btn:hover,
