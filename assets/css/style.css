@@ -1,1774 +1,1696 @@
-#backgroundCanvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -2; /* Ensure the canvas is behind all other content */
-  background: linear-gradient(135deg, #0f0f0f, #1c1c1c, #040404); /* Gradient background */
-  animation: gradientShift 10s infinite alternate; /* Subtle gradient animation */
-  overflow: hidden;
-}
+/* #backgroundCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2; /* Ensure the canvas is behind all other content */
+    /* background: linear-gradient(135deg, #0f0f0f, #1c1c1c, #040404); Gradient background 
+    animation: gradientShift 10s infinite alternate;  Subtle gradient animation 
+    overflow: hidden;
+  } */ 
 
 /* Gradient Animation */
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
+/* @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
 }
- 
+    */
 body {
-  background-color: black;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  color: #ffffff;
-  position: relative;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* Prevent horizontal scroll */
-  background: transparent;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Subtle text shadow for readability */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 100%;
+    height: 100%;
+    background-color: #111111;
+    background-image: linear-gradient(
+      32deg,
+      rgb(8, 8, 8) 30px,
+      transparent
+    );
+    background-size: 60px 60px;
+    background-position: -5px -5px;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background: radial-gradient(circle, rgba(0, 0, 0, 0.8), #040404 60%); /* Radial gradient overlay */
-  mix-blend-mode: overlay; /* Blend the gradient with the background canvas */
-  animation: gradientFade 15s infinite alternate; /* Animate gradient for a soft glow */
-}
-
-@keyframes gradientFade {
-  0% {
-      background: radial-gradient(circle, rgba(0, 0, 0, 0.8), #040404 60%);
-  }
-  100% {
-      background: radial-gradient(circle, rgba(0, 0, 0, 0.6), #1a1a1a 60%);
-  }
-}
 
 /* Add a Fading Border Around the Body */
 body::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  border-radius: 15px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-  pointer-events: none; /* Ensure this doesn't interfere with interaction */
-  animation: borderGlow 5s infinite alternate;
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    pointer-events: none; /* Ensure this doesn't interfere with interaction */
+    animation: borderGlow 5s infinite alternate;
 }
 
 @keyframes borderGlow {
-  0% {
-      border-color: rgba(255, 255, 255, 0.2);
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-  }
-  100% {
-      border-color: rgba(255, 255, 255, 0.4);
-      box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
-  }
+    0% {
+        border-color: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    }
+    100% {
+        border-color: rgba(255, 255, 255, 0.4);
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+    }
 }
 
- ul li {
-  margin-bottom: 20px;
- }
- /* Add padding to the left of the #age element */
- 
- #age {
-  padding-left: 10px;
-  /* Adjust this value as needed */
- }
+   ul li {
+    margin-bottom: 20px;
+   }
+   /* Add padding to the left of the #age element */
+   
+   #age {
+    padding-left: 10px;
+    /* Adjust this value as needed */
+   }
 
-
- 
- /*--------------------------------------------------------------
- # Header
- --------------------------------------------------------------*/
- 
- #header {
-  transition: ease-in-out 0.3s;
-  position: relative;
-  height: 90vh;
-  display: flex;
-  align-items: center;
-  z-index: 997;
-  overflow-y: auto;
- }
- #header * {
-  transition: ease-in-out 1.3s;
- }
- 
- #header h1 {
-  margin: 0;
-  padding: 0;
-  line-height: 1;
-  margin-bottom: 20px;
-  font-size: 5.5vw;
-  letter-spacing: 2.8vw;
-  text-align: center;
-  text-transform: uppercase;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  pointer-events: none;
+   /*--------------------------------------------------------------
+   # Header
+   --------------------------------------------------------------*/
+   
+   #header {
+    transition: ease-in-out 0.3s;
+    position: relative;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    z-index: 997;
+    overflow-y: auto;
+   }
+   #header * {
+    transition: ease-in-out 1.3s;
+   }
+   
+   #header h1 {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    margin-bottom: 20px;
+    font-size: 5.5vw;
+    letter-spacing: 2.8vw;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    pointer-events: none;
 
 
 
-  /* Drop-shadow for additional depth */
-  filter: drop-shadow(0px 6px 10px #3d5257);
-  opacity: 1;
-  text-indent: 2.6vw;
+    /* Drop-shadow for additional depth */
+    filter: drop-shadow(0px 6px 10px #3d5257);
+    opacity: 1;
+    text-indent: 2.6vw;
 
-  /* Subtle animation for dynamic effect */
-  animation: glowPulse 4s infinite ease-in-out;
+    /* Subtle animation for dynamic effect */
+    animation: glowPulse 4s infinite ease-in-out;
 }
 
 /* Glow pulsation animation */
 @keyframes glowPulse {
-  0% {
-      text-shadow: 
-          0 0 10px #00f,
-          0 0 20px #00f,
-          0 0 30px #00f,
-          0 0 40px #00f,
-          0 0 50px #00f;
-  }
-  50% {
-      text-shadow: 
-          0 0 20px #00f,
-          0 0 40px #00f,
-          0 0 60px #00f,
-          0 0 80px #0ff,
-          0 0 100px #0ff;
-  }
-  100% {
-      text-shadow: 
-          0 0 10px #00f,
-          0 0 20px #00f,
-          0 0 30px #00f,
-          0 0 40px #0ff,
-          0 0 50px #0ff;
-  }
+    0% {
+        text-shadow: 
+            0 0 10px #00f,
+            0 0 20px #00f,
+            0 0 30px #00f,
+            0 0 40px #00f,
+            0 0 50px #00f;
+    }
+    50% {
+        text-shadow: 
+            0 0 20px #00f,
+            0 0 40px #00f,
+            0 0 60px #00f,
+            0 0 80px #0ff,
+            0 0 100px #0ff;
+    }
+    100% {
+        text-shadow: 
+            0 0 10px #00f,
+            0 0 20px #00f,
+            0 0 30px #00f,
+            0 0 40px #0ff,
+            0 0 50px #0ff;
+    }
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  #header h1 {
-      font-size: 7vw; /* Adjust font size for smaller screens */
-      letter-spacing: 5.5vw; /* Adjust spacing */
-  }
+
+
+   
+   #header h1 a,
+   #header h1 a:hover {
+    color: #fff;
+    font-weight: 100;
+    transform: translateY(-10px); /* Slight lift on hover */
+   }
+   #header h2 {
+    margin-top: 10px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.8);
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: row; /* Ensure items stay in a single row */
+    justify-content: center; /* Center align the items */
+    align-items: center;
+    text-align: center;
+    pointer-events: none;
+    letter-spacing: 1.55vw; /* Default spacing for larger screens */
+    white-space: nowrap; /* Prevent text wrapping */
+    padding: 0;
+    margin: 0;
+    font-size: 1vw;
+    text-indent: 1.8vw;
+    position: relative;
+    top: 0;
+    left: auto;
+    transform: none;
+    position: relative;
+   }
+
+ @media only screen and (max-width: 801px) {
+    #header h1 {
+        font-size: 8vw;
+    }
+}
+#header h1 {
+    text-transform: uppercase;
+    text-align: center;
+    pointer-events: none;
+    font-size: 5vw;
+    letter-spacing: 2.6vw;
+    color: #3d5257;
+    color: hsla(192, 18%, 49%, 1);
+    /* text-shadow: 0px 6px 10px #3d5257; */
+    filter: drop-shadow(0px 6px 10px #3d5257);
+    text-indent: 2.6vw;
+    opacity: 1;
+    font-weight: 100;
+    position: relative;
+    top: 0;
+    left: auto;
+    transform: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+@media only screen and (max-width: 801px) {
+    #header h1  {
+        font-size: 10vh;
+    }
 }
 
-@media (max-width: 480px) {
-  #header h1 {
-      font-size: 10vw; /* Larger font size for small screens */
-      letter-spacing: vw; /* Closer spacing */
-  }
-}
 
- 
- #header h1 a,
- #header h1 a:hover {
-  color: #fff;
-  font-weight: 100;
-  transform: translateY(-10px); /* Slight lift on hover */
- }
- #header h2 {
-  margin-top: 10px;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.8);
-  display: flex; /* Use flexbox for alignment */
-  flex-direction: row; /* Ensure items stay in a single row */
-  justify-content: center; /* Center align the items */
-  align-items: center;
-  text-align: center;
-  pointer-events: none;
-  letter-spacing: 1.55vw; /* Default spacing for larger screens */
-  white-space: nowrap; /* Prevent text wrapping */
-  padding: 0;
-  margin: 0;
-  font-size: 1vw;
-  text-indent: 1.8vw;
-  position: relative;
-  top: 0;
-  left: auto;
-  transform: none;
-  position: relative;
- }
-
- /* Medium screens (tablets and smaller laptops, max-width: 992px) */
- @media (max-width: 992px) {
-  #header h1 {
-   font-size: 25px; /* Smaller H1 */
-   margin-bottom: 15px; /* Adjust space below H1 */
-   letter-spacing: 2.6vw;
-  }
- 
-  #header h2 {
-   font-size: 16px; /* Smaller H2 */
-   line-height: 30px; /* Adjusted line height */
-   letter-spacing: 1ch; /* Maintain spacing */
-  }
- 
-  #header .social-links {
-   margin-top: 15px; /* Adjusted margin */
-  }
- 
-  #header .container {
-   flex-direction: column; /* Stack items vertically */
-   align-items: center;
-  }
- }
- 
- /* Small screens (mobile phones, max-width: 768px) */
- @media (max-width: 768px) {
-  #header h1 {
-   font-size: 20px; /* Even smaller H1 */
-   margin-bottom: 10px; /* Reduced space below H1 */
-   letter-spacing: 233ch;
-  }
- 
-  #header h2 {
-   font-size: 14px; /* Smaller H2 */
-   line-height: 24px; /* Adjusted line height for small screens */
-   letter-spacing: 0.8ch; /* Tighter letter spacing */
-  }
- 
-  #header .social-links {
-   margin-top: 10px; /* Reduced margin */
-  }
- 
-  #header .container {
-   flex-direction: column; /* Keep vertical stacking */
-   align-items: center;
-  }
- }
- 
- /* Extra-small screens (very small mobile phones, max-width: 480px) */
- @media (max-width: 480px) {
-  #header h1 {
-   margin-bottom: 10px; /* Reduced space below H1 */
-   font-size: 20px; /* Smallest H1 size */
-   letter-spacing: 1ch;
-  }
- 
-  #header h2 {
-   font-size: 6px; /* Smallest H2 size */
-   line-height: 20px; /* Tighter line height */
-   letter-spacing: 2.1ch; /* Tighter letter spacing */
-  }
- 
-  #header .social-links {
-   margin-top: 5px; /* Minimal margin */
-  }
- 
-  #header .container {
-   flex-direction: column; /* Maintain vertical stacking */
-   align-items: center;
-  }
- }
- 
- /*--------------------------------------------------------------
- # Navigation Menu
- --------------------------------------------------------------*/
- 
- /* Desktop Navigation */
- 
- /*--------------------------------------------------------------
- # Navigation Menu (Reduced Size)
- --------------------------------------------------------------*/
- .nav-menu {
-  margin-top: -350px; /* Adjust top margin as necessary */
-  display: flex;
-  justify-content: flex-end; /* Align items to the right */
-  align-items: center;
-  width: 94%; /* Ensure the nav menu spans the entire width */
+   /*--------------------------------------------------------------
+   # Navigation Menu
+   --------------------------------------------------------------*/
+   
+   /* Desktop Navigation */
+   
+   /*--------------------------------------------------------------
+   # Navigation Menu (Reduced Size)
+   --------------------------------------------------------------*/
+   .nav-menu {
+    margin-top: -350px; /* Adjust top margin as necessary */
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    align-items: center;
+    width: 94%; /* Ensure the nav menu spans the entire width */
 }
 
 .nav-menu ul {
-  display: flex;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  justify-content: flex-end; /* Align menu items to the right */
-  width: auto;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    justify-content: flex-end; /* Align menu items to the right */
+    width: auto;
 }
 
 .nav-menu li {
-  margin-left: 30px; /* Space between menu items */
+    margin-left: 30px; /* Space between menu items */
 }
 
 .nav-menu a {
-  display: block;
-  position: relative;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 12px;
-  font-weight: 300;
-  text-align: right; /* Align text to the right */
-  text-transform: uppercase;
-  padding: 8px 12px;
-  transition: color 0.3s ease, transform 0.3s ease;
+    display: block;
+    position: relative;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    font-weight: 300;
+    text-align: right; /* Align text to the right */
+    text-transform: uppercase;
+    padding: 8px 12px;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .nav-menu a:before {
-  content: "";
-  position: absolute;
-  width: 20px; /* Smaller underline width */
-  height: 2px;
-  bottom: -4px;
-  left: 0;
-  background-color: #00f;
-  visibility: hidden;
-  transition: all 0.3s ease-in-out;
+    content: "";
+    position: absolute;
+    width: 20px; /* Smaller underline width */
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #00f;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
 }
 
 /* Hover effects */
 .nav-menu a:hover:before,
 .nav-menu li:hover > a:before,
 .nav-menu .active > a:before {
-  visibility: visible;
-  width: 20px; /* Smaller width on hover */
+    visibility: visible;
+    width: 20px; /* Smaller width on hover */
 }
 
 .nav-menu a:hover,
 .nav-menu .active > a,
 .nav-menu li:hover > a {
-  color: #00f;
-  text-decoration: none;
-  transform: scale(1.05);
+    color: #00f;
+    text-decoration: none;
+    transform: scale(1.05);
 }
 
 /* Mobile Navigation */
 .mobile-nav-toggle {
-  position: fixed;
-  right: 15px;
-  top: 15px;
-  z-index: 9998;
-  border: 0;
-  background: none;
-  font-size: 20px; /* Smaller mobile icon */
-  transition: all 0.4s ease;
-  outline: none !important;
-  cursor: pointer;
-  text-align: right;
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    z-index: 9998;
+    border: 0;
+    background: none;
+    font-size: 20px; /* Smaller mobile icon */
+    transition: all 0.4s ease;
+    outline: none !important;
+    cursor: pointer;
+    text-align: right;
 }
 
 .mobile-nav-toggle i {
-  color: #fff;
+    color: #fff;
 }
 
 .mobile-nav {
-  position: fixed;
-  top: 55px;
-  right: 15px;
-  bottom: 15px;
-  left: 15px;
-  z-index: 9999;
-  overflow-y: auto;
-  background: rgba(0, 0, 0, 0.7);
-  transition: ease-in-out 0.2s;
-  opacity: 0;
-  visibility: hidden;
-  border-radius: 10px;
-  padding: 8px 0; /* Reduced padding */
-  border: 2px solid rgba(255, 255, 255, 0.12);
+    position: fixed;
+    top: 55px;
+    right: 15px;
+    bottom: 15px;
+    left: 15px;
+    z-index: 9999;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.7);
+    transition: ease-in-out 0.2s;
+    opacity: 0;
+    visibility: hidden;
+    border-radius: 10px;
+    padding: 8px 0; /* Reduced padding */
+    border: 2px solid rgba(255, 255, 255, 0.12);
 }
 
 .mobile-nav * {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 .mobile-nav a {
-  display: block;
-  position: relative;
-  color: #fff;
-  padding: 8px 15px; /* Smaller padding */
-  font-weight: 500;
-  outline: none;
-  transition: color 0.3s ease;
+    display: block;
+    position: relative;
+    color: #fff;
+    padding: 8px 15px; /* Smaller padding */
+    font-weight: 500;
+    outline: none;
+    transition: color 0.3s ease;
 }
 
 .mobile-nav a:hover,
 .mobile-nav .active > a,
 .mobile-nav li:hover > a {
-  color: #00f;
-  text-decoration: none;
+    color: #00f;
+    text-decoration: none;
 }
 
 .mobile-nav-overly {
-  width: 100%;
-  height: 100%;
-  z-index: 9997;
-  top: 0;
-  left: 0;
-  position: fixed;
-  background: rgba(9, 9, 9, 0.6);
-  overflow: hidden;
-  display: none;
-  transition: ease-in-out 0.2s;
+    width: 100%;
+    height: 100%;
+    z-index: 9997;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: rgba(9, 9, 9, 0.6);
+    overflow: hidden;
+    display: none;
+    transition: ease-in-out 0.2s;
 }
 
 .mobile-nav-active {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 .mobile-nav-active .mobile-nav {
-  opacity: 1;
-  visibility: visible;
+    opacity: 1;
+    visibility: visible;
 }
 
 .mobile-nav-active .mobile-nav-toggle i {
-  color: #fff;
+    color: #fff;
 }
 
 /* Additional mobile menu tweaks */
 @media (max-width: 768px) {
-  .nav-menu {
-      display: none; /* Hide desktop navigation on mobile */
-  }
+    .nav-menu {
+        display: none; /* Hide desktop navigation on mobile */
+    }
 
-  .mobile-nav-toggle {
-      display: block; /* Show mobile toggle button */
-  }
+    .mobile-nav-toggle {
+        display: block; /* Show mobile toggle button */
+    }
 
-  .mobile-nav {
-      display: block; /* Show mobile nav when active */
-  }
+    .mobile-nav {
+        display: block; /* Show mobile nav when active */
+    }
 
-  .mobile-nav a {
-      padding: 10px 15px; /* Adjust padding for better touch targets */
-  }
+    .mobile-nav a {
+        padding: 10px 15px; /* Adjust padding for better touch targets */
+    }
 }
 
- /* Header Top */
- 
- #header.header-top {
-  height: 80px;
-  position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.9);
- }
- #header.header-top .social-links,
- #header.header-top h2,
- #header.header-top h1 {
-  display: none;
- }
+   /* Header Top */
+   
+   #header.header-top {
+    height: 80px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+   }
+   #header.header-top .social-links,
+   #header.header-top h2,
+   #header.header-top h1 {
+    display: none;
+   }
 
-/*--------------------------------------------------------------
- # Sections General
- --------------------------------------------------------------*/
- section {
-  overflow: hidden;
-  position: absolute;
-  width: 100%;
-  top: 140px;
-  bottom: 100%;
-  opacity: 0;
-  transition: ease-in-out 0.4s;
-  z-index: 2;
- }
- section.section-show {
-  top: 100px;
-  bottom: auto;
-  opacity: 1;
-  padding-bottom: 45px;
- }
- section .container {
-  background: rgba(0, 0, 0, 0.9);
-  padding: 3%;
- }
- @media (max-width: 768px) {
-  section {
-   top: 120px;
-  }
-  section.section-show {
-   top: 80px;
-  }
- }
+  /*--------------------------------------------------------------
+   # Sections General
+   --------------------------------------------------------------*/
+   section {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    top: 140px;
+    bottom: 100%;
+    opacity: 0;
+    transition: ease-in-out 0.4s;
+    z-index: 2;
+   }
+   section.section-show {
+    top: 100px;
+    bottom: auto;
+    opacity: 1;
+    padding-bottom: 45px;
+   }
+   section .container {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 3%;
+   }
+   @media (max-width: 768px) {
+    section {
+     top: 120px;
+    }
+    section.section-show {
+     top: 80px;
+    }
+   }
 
- /* About Me Section */
- .about-me .content h3 {
-  font-weight: 700;
-  font-size: 30px;
-  color: #00f; /* Bright blue for titles */
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  text-align: left;
-  margin-bottom: 20px;
- }
- 
- .about-me .content ul {
-  list-style: none;
-  padding: 0;
- }
- 
- .about-me .content ul li {
-  padding-bottom: 15px;
-  font-size: 16px;
-  color: #f8f9fa; /* Subtle off-white for text */
- }
- 
- .about-me .content ul i {
-  font-size: 18px;
-  padding-right: 10px;
-  color: #00f; /* Bright blue for icons */
- }
- 
- .about-me .content {
-  background: rgba(204, 204, 204, 0.1);
-  padding: 20px;
-  box-shadow: 0 4px 20px rgba(4, 0, 247, 0.774); /* Adds shadow */
-  border-radius: 10px;
-  transition: transform 0.3s ease-in-out;
- }
- 
- .about-me .content:hover {
-  transform: scale(1.03); /* Hover effect */
- }
- 
- .profile-photo {
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  width: 100%; /* Ensures the image takes the full width of its column */
-  height: auto; /* Maintain aspect ratio */
-  max-height: none; /* Allow natural height */
-  object-fit: cover; /* Ensures image fills the container and avoids distortion */
-  margin-bottom: 20px; /* Adds spacing below the image */
- }
- 
- @media (max-width: 768px) {
-  .profile-photo {
-   width: 100%; /* Full width for smaller screens */
-   height: auto; /* Maintain aspect ratio */
-  }
- }
- 
- /* About Section Title */
- .section-title p {
-  margin: 0;
-  margin: -15px 0 15px 0;
-  font-size: 36px;
-  font-weight: 700;
-  text-transform: uppercase;
-  line-height: 40px;
- 
-  color: #fff;
- }
- 
- .section-title h2 {
-  font-size: 28vh; /* Large font size for the background */
-  background: linear-gradient(135deg, #00f, #007bff); /* Smooth gradient effect */
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent; /* Apply gradient to text */
-  letter-spacing: 8px; /* Increased spacing for elegance */
-  text-transform: uppercase;
-  position: fixed; /* Keep it fixed in the viewport */
-  top: 50%; /* Center vertically */
-  left: 50%; /* Center horizontally */
-  transform: translate(-50%, -50%); /* Adjust for exact centering */
-  z-index: -1; /* Ensure it's behind content */
-  pointer-events: none; /* Allow interaction with elements above */
-  text-shadow: 4px 4px 15px rgba(0, 0, 255, 0.4); /* Soft glowing effect */
-  filter: blur(1px); /* Subtle blur for a futuristic effect */
-  opacity: 0.8; /* Light transparency for a soft background effect */
-  animation: fadeIn 1.2s ease-in-out; /* Smooth fade-in on load */
+   /* About Me Section */
+   .about-me .content h3 {
+    font-weight: 700;
+    font-size: 30px;
+    color: #00f; /* Bright blue for titles */
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-align: left;
+    margin-bottom: 20px;
+   }
+   
+   .about-me .content ul {
+    list-style: none;
+    padding: 0;
+   }
+   
+   .about-me .content ul li {
+    padding-bottom: 15px;
+    font-size: 16px;
+    color: #f8f9fa; /* Subtle off-white for text */
+   }
+   
+   .about-me .content ul i {
+    font-size: 18px;
+    padding-right: 10px;
+    color: #00f; /* Bright blue for icons */
+   }
+   
+   .about-me .content {
+    background: rgba(204, 204, 204, 0.1);
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(4, 0, 247, 0.774); /* Adds shadow */
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+   }
+   
+   .about-me .content:hover {
+    transform: scale(1.03); /* Hover effect */
+   }
+   
+   .profile-photo {
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 100%; /* Ensures the image takes the full width of its column */
+    height: auto; /* Maintain aspect ratio */
+    max-height: none; /* Allow natural height */
+    object-fit: cover; /* Ensures image fills the container and avoids distortion */
+    margin-bottom: 20px; /* Adds spacing below the image */
+   }
+   
+   @media (max-width: 768px) {
+    .profile-photo {
+     width: 100%; /* Full width for smaller screens */
+     height: auto; /* Maintain aspect ratio */
+    }
+   }
+   
+   /* About Section Title */
+   .section-title p {
+    margin: 0;
+    margin: -15px 0 15px 0;
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 40px;
+   
+    color: #fff;
+   }
+   
+   .section-title h2 {
+    font-size: 28vh; /* Large font size for the background */
+    background: linear-gradient(135deg, #00f, #007bff); /* Smooth gradient effect */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent; /* Apply gradient to text */
+    letter-spacing: 8px; /* Increased spacing for elegance */
+    text-transform: uppercase;
+    position: fixed; /* Keep it fixed in the viewport */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for exact centering */
+    z-index: -1; /* Ensure it's behind content */
+    pointer-events: none; /* Allow interaction with elements above */
+    text-shadow: 4px 4px 15px rgba(0, 0, 255, 0.4); /* Soft glowing effect */
+    filter: blur(1px); /* Subtle blur for a futuristic effect */
+    opacity: 0.8; /* Light transparency for a soft background effect */
+    animation: fadeIn 1.2s ease-in-out; /* Smooth fade-in on load */
 }
 
 /* Fade-in animation */
 @keyframes fadeIn {
-  from {
-      opacity: 0;
-      transform: translate(-50%, -55%);
-  }
-  to {
-      opacity: 0.8;
-      transform: translate(-50%, -50%);
-  }
+    from {
+        opacity: 0;
+        transform: translate(-50%, -55%);
+    }
+    to {
+        opacity: 0.8;
+        transform: translate(-50%, -50%);
+    }
 }
 
 /* Media query for smaller screens */
 @media (max-width: 768px) {
-  .section-title h2 {
-      font-size: 15vh; /* Adjust the size for tablets */
-      letter-spacing: 5px;
-  }
+    .section-title h2 {
+        font-size: 15vh; /* Adjust the size for tablets */
+        letter-spacing: 5px;
+    }
 }
 
 @media (max-width: 480px) {
-  .section-title h2 {
-      font-size: 10vh; /* Adjust the size for phones */
-      letter-spacing: 3px;
-  }
+    .section-title h2 {
+        font-size: 10vh; /* Adjust the size for phones */
+        letter-spacing: 3px;
+    }
 }
 
 /* Ensure parent container doesn't interfere */
 .section-title {
-  position: relative; /* Prevent inheritance issues */
+    position: relative; /* Prevent inheritance issues */
 }
 
 
- .quote-container {
-  position: relative; /* Position relative to its parent container */
-  margin-top: 50px; /* Adjust this to control vertical spacing */
- }
- 
- blockquote p {
-  bottom: -200px; /* Adjust this to move it lower */
-  font-style: italic;
-  color: #fff;
- }
- 
- /*--------------------------------------------------------------
- # Skills
- --------------------------------------------------------------*/
- 
- .skills .progress {
-  height: 50px;
-  display: block;
-  background: none;
- }
- .skills .section-title h1 {
-  text-transform: uppercase;
- }
- .skills .progress .skill {
-  padding: 14px 0;
-  margin: 0 0 6px 0;
-  text-transform: uppercase;
-  display: block;
-  font-weight: 600;
-  color: #fff;
- }
- .skills .progress .skill .val {
-  float: right;
-  font-style: normal;
- }
- .skills .progress-bar-wrap {
-  background: rgba(204, 204, 204, 0.1);
-  box-shadow: 0 4px 20px #00f; /* Adds shadow */
- }
- .skills .progress-bar {
-  width: 1px;
-  height: 10px;
-  transition: 0.9s;
-  background-color: #00f;
- }
-    
+   .quote-container {
+    position: relative; /* Position relative to its parent container */
+    margin-top: 50px; /* Adjust this to control vertical spacing */
+   }
+   
+   blockquote p {
+    bottom: -200px; /* Adjust this to move it lower */
+    font-style: italic;
+    color: #fff;
+   }
+   
+   /*--------------------------------------------------------------
+   # Skills
+   --------------------------------------------------------------*/
+   
+   .skills .progress {
+    height: 50px;
+    display: block;
+    background: none;
+   }
+   .skills .section-title h1 {
+    text-transform: uppercase;
+   }
+   .skills .progress .skill {
+    padding: 14px 0;
+    margin: 0 0 6px 0;
+    text-transform: uppercase;
+    display: block;
+    font-weight: 600;
+    color: #fff;
+   }
+   .skills .progress .skill .val {
+    float: right;
+    font-style: normal;
+   }
+   .skills .progress-bar-wrap {
+    background: rgba(204, 204, 204, 0.1);
+    box-shadow: 0 4px 20px #00f; /* Adds shadow */
+   }
+   .skills .progress-bar {
+    width: 1px;
+    height: 10px;
+    transition: 0.9s;
+    background-color: #00f;
+   }
+      
 .contact .social-links {
-  display: flex;
-  justify-content: center;
-  gap: 15px; /* Consistent spacing between links */
-  margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Consistent spacing between links */
+    margin-top: 20px;
 }
 
 .contact .social-links a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50px; /* Equal size for all icons */
-  height: 50px;
-  background-color: #222;
-  color: #00f;
-  border-radius: 50%; /* Make circular buttons */
-  text-decoration: none;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  font-size: 24px; /* Set uniform icon size */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px; /* Equal size for all icons */
+    height: 50px;
+    background-color: #222;
+    color: #00f;
+    border-radius: 50%; /* Make circular buttons */
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 24px; /* Set uniform icon size */
 }
 
 .contact .social-links a i {
-  display: inline-block; /* Ensure proper alignment */
-  font-size: inherit; /* Use parent font size */
-  line-height: 1; /* Reset line height for consistency */
-  vertical-align: middle; /* Align icons vertically */
+    display: inline-block; /* Ensure proper alignment */
+    font-size: inherit; /* Use parent font size */
+    line-height: 1; /* Reset line height for consistency */
+    vertical-align: middle; /* Align icons vertically */
 }
 
 .contact .social-links a:hover {
-  transform: scale(1.1); /* Hover effect */
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
-  background-color: #00f; /* Background on hover */
-  color: #222; /* Text color on hover */
+    transform: scale(1.1); /* Hover effect */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+    background-color: #00f; /* Background on hover */
+    color: #222; /* Text color on hover */
 }
 
 .contact a {
-  color: #00f; /* Dark text color */
-  padding: 10px; /* Adjust padding for better touch targets */
-  transition: background-color 0.3s ease, color 0.3s ease;
+    color: #00f; /* Dark text color */
+    padding: 10px; /* Adjust padding for better touch targets */
+    transition: background-color 0.3s ease, color 0.3s ease;
 
 }
 
- #header.header-top h1 {
-  margin-right: auto;
-  font-size: 36px;
- }
- #header.header-top .container {
-  display: flex;
-  align-items: center;
- }
- #header.header-top .nav-menu {
-  margin: 0;
- }
- @media (max-width: 768px) {
-  #header.header-top {
-   height: 60px;
-  }
-  #header.header-top h1 {
-   font-size: 26px;
-  }
- }
-
- .services {
-  padding: 70px 0;
- }
- .services .icon-box {
-  text-align: center;
-  background: rgba(204, 204, 204, 0.1);
-  padding: 40px 20px;
-  border-radius: 10px;
-  transition: all ease-in-out 0.3s;
-  margin-bottom: 30px;
-  perspective: 1000px; /* Add perspective for the bending effect */
-  box-shadow: 0 4px 20px rgba(4, 0, 247, 0.774); /* Adds shadow */
- }
+   #header.header-top h1 {
+    margin-right: auto;
+    font-size: 36px;
+   }
+   #header.header-top .container {
+    display: flex;
+    align-items: center;
+   }
+   #header.header-top .nav-menu {
+    margin: 0;
+   }
+   @media (max-width: 768px) {
+    #header.header-top {
+     height: 60px;
+    }
+    #header.header-top h1 {
+     font-size: 26px;
+    }
+   }
  
- .services .icon-box:hover {
-  transform: rotateY(5deg) scale(1.05); /* Slight rotation and scaling */
-  color: #fff;
- }
- 
- .services .icon-box:hover h4 a,
- .services .icon-box:hover p {
-  color: #fff;
- }
- 
- .services .icon-box .icon {
-  margin: 0 auto;
-  width: 64px;
-  height: 64px;
-  background: #00f;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-  transition: all 0.3s ease-out;
- }
- 
- .services .icon-box .icon i {
-  color: #fff;
-  font-size: 28px;
- }
- 
- .services .icon-box h4 {
-  font-weight: 700;
-  margin-bottom: 15px;
-  font-size: 20px;
- }
- 
- .services .icon-box h4 a {
-  color: #00f;
-  text-decoration: none;
- }
- 
- .services .icon-box p {
-  line-height: 22px;
-  font-size: 14px;
-  color: #ffffff;
- }
- 
- .services .icon-box:hover .icon {
-  background: #00f;
- }
- 
- .services .icon-box:hover .icon i {
-  color: rgba(92, 92, 92, 0.37) 7;
- }
- 
- .services .icon-box:hover h4 a {
-  color: #fff;
- }
- 
- .services .icon-box:hover p {
-  color: #00f;
- }
- 
- .contact .info-box {
-  color: #444444;
-  padding: 20px;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  margin-bottom: 20px; /* Adds space between info boxes */
-
-
-  align-self: center;
-  --b: 3px; /* border thickness */
-  --s: 0.45em; /* size of the corner */
-  --color: #ffffff93;
-  padding: calc(0.5em + var(--s)) calc(0.9em + var(--s));
-  color: var(--color);
-  --_p: var(--s);
-  background: conic-gradient(
-    from 90deg at var(--b) var(--b),
-    #0000 90deg,
-    var(--color) 0
-   )
-   var(--_p) var(--_p) / calc(100% - var(--b) - 2 * var(--_p))
-   calc(100% - var(--b) - 2 * var(--_p));
-  transition: 0.3s linear, color 0s, background-color 0s;
-  outline: var(--b) solid #0000;
-  outline-offset: 0.6em;
-  font-size: 15px;
-  border: 0;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
- }
+   .services {
+    padding: 70px 0;
+   }
+   .services .icon-box {
+    text-align: center;
+    background: rgba(204, 204, 204, 0.1);
+    padding: 40px 20px;
+    border-radius: 10px;
+    transition: all ease-in-out 0.3s;
+    margin-bottom: 30px;
+    perspective: 1000px; /* Add perspective for the bending effect */
+    box-shadow: 0 4px 20px rgba(4, 0, 247, 0.774); /* Adds shadow */
+   }
+   
+   .services .icon-box:hover {
+    transform: rotateY(5deg) scale(1.05); /* Slight rotation and scaling */
+    color: #fff;
+   }
+   
+   .services .icon-box:hover h4 a,
+   .services .icon-box:hover p {
+    color: #fff;
+   }
+   
+   .services .icon-box .icon {
+    margin: 0 auto;
+    width: 64px;
+    height: 64px;
+    background: #00f;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: all 0.3s ease-out;
+   }
+   
+   .services .icon-box .icon i {
+    color: #fff;
+    font-size: 28px;
+   }
+   
+   .services .icon-box h4 {
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 20px;
+   }
+   
+   .services .icon-box h4 a {
+    color: #00f;
+    text-decoration: none;
+   }
+   
+   .services .icon-box p {
+    line-height: 22px;
+    font-size: 14px;
+    color: #ffffff;
+   }
+   
+   .services .icon-box:hover .icon {
+    background: #00f;
+   }
+   
+   .services .icon-box:hover .icon i {
+    color: rgba(92, 92, 92, 0.37) 7;
+   }
+   
+   .services .icon-box:hover h4 a {
+    color: #fff;
+   }
+   
+   .services .icon-box:hover p {
+    color: #00f;
+   }
+   
+   .contact .info-box {
+    color: #444444;
+    padding: 20px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    margin-bottom: 20px; /* Adds space between info boxes */
 
 
- .contact .info-box:hover,
- .contact .info-box:focus-visible {
-  --_p: 0px;
-  outline-color: var(--color);
-  outline-offset: 0.05em;
- }
- 
- .contact .info-box:active {
-  background: var(--color);
-  color: #fff;
- }
- 
- 
- .main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5em;
- }
- 
- .share-btn {
-  position: absolute;
-  display: flex;
-  cursor: pointer;
-  align-items: center;
-  background-color: #fff;
-  border: 1px solid rgba(128, 128, 128, 0.705);
-  border-radius: 50%;
-  transition: 0.2s ease-in-out;
-  scale: 0.8;
-  padding: 10px;
-  width: 30px;
-  height: 30px;
-  z-index: 10;
- }
- 
- .share-btn:hover {
-  background: #f1f1f1;
-  scale: 0.9;
- }
- 
- .up {
-  display: flex;
-  flex-direction: row;
-  gap: 0.5em;
- }
- 
- .down {
-  display: flex;
-  flex-direction: row;
-  gap: 0.5em;
- }
- 
- .card1 {
-  width: 90px;
-  height: 90px;
-  outline: none;
-  border: none;
-  background: rgb(16, 16, 17); /* New blue background color */
-  border-radius: 90px 5px 5px 5px;
-  box-shadow: 0 4px 20px rgba(4, 0, 247, 0.774); /* Keeps the shadow */
-  transition: 300ms cubic-bezier(0.73, -0.18, 0.02, 1.46);
- }
- 
- .card1[data-toggle1="true"] {
-  transform: translateY(50px) translateX(60px) scale(0);
- }
- 
- .card2[data-toggle2="true"] {
-  transform: translateY(50px) translateX(-60px) scale(0);
- }
- 
- .card3[data-toggle3="true"] {
-  transform: translateY(-50px) translateX(60px) scale(0);
- }
- 
- .card4[data-toggle4="true"] {
-  transform: translateY(-50px) translateX(-60px) scale(0);
- }
- 
- .card2 {
-  width: 90px;
-  height: 90px;
-  outline: none;
-  border: none;
-  background: rgb(16, 16, 17); /* New blue background color */
-  border-radius: 5px 90px 5px 5px;
-  box-shadow: 0 4px 20px rgba(4, 0, 247, 0.774); /* Adds shadow */
-  transition: 300ms cubic-bezier(0.76, -0.19, 0.15, 1.17);
- }
- 
- .twitter {
-  margin-top: 1.5em;
-  margin-left: -0.9em;
-  fill: #03a9f4;
- }
- 
- .card3 {
-  width: 90px;
-  height: 90px;
-  outline: none;
-  border: none;
-  background: rgb(16, 16, 17); /* New blue background color */
-  border-radius: 5px 5px 5px 90px;
-  box-shadow: 0 4px 20px rgba(4, 0, 247, 0.774); /* Adds shadow */
-  transition: 300ms cubic-bezier(0.72, -0.26, 0.02, 1.46);
- }
+    align-self: center;
+    --b: 3px; /* border thickness */
+    --s: 0.45em; /* size of the corner */
+    --color: #ffffff93;
+    padding: calc(0.5em + var(--s)) calc(0.9em + var(--s));
+    color: var(--color);
+    --_p: var(--s);
+    background: conic-gradient(
+      from 90deg at var(--b) var(--b),
+      #0000 90deg,
+      var(--color) 0
+     )
+     var(--_p) var(--_p) / calc(100% - var(--b) - 2 * var(--_p))
+     calc(100% - var(--b) - 2 * var(--_p));
+    transition: 0.3s linear, color 0s, background-color 0s;
+    outline: var(--b) solid #0000;
+    outline-offset: 0.6em;
+    font-size: 15px;
+    border: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+   }
 
- 
- .card4 {
-  width: 90px;
-  height: 90px;
-  outline: none;
-  border: none;
-  background: rgb(16, 16, 17); /* New blue background color */
-  border-radius: 5px 5px 90px 5px;
-  box-shadow: 0 4px 20px rgba(4, 0, 247, 0.774); /* Adds shadow */
-  transition: 300ms cubic-bezier(1, -0.31, 0.02, 1.46);
- }
- 
- .discord {
-  margin-top: -0.9em;
-  margin-left: -1.2em;
-  fill: #8c9eff;
- }
- 
- .card1:hover {
-  cursor: pointer;
-  scale: 1.1;
-  background-color: #cc39a4;
- }
- 
- .card1:hover .instagram {
-  fill: white;
- }
- 
- .card2:hover {
-  cursor: pointer;
-  scale: 1.1;
-  background-color: #03a9f4;
- }
- 
- .card2:hover .twitter {
-  fill: white;
- }
- 
- .card3:hover {
-  cursor: pointer;
-  scale: 1.1;
-  background-color: rgb(39, 39, 39);
- }
- 
- .card3:hover .github {
-  fill: white;
- }
- 
- .card4:hover {
-  cursor: pointer;
-  scale: 1.1;
-  background-color: #8c9eff;
- }
- 
- .card4:hover .discord {
-  fill: white;
- }
- 
- /* -- External Social Link CSS Styles -- */
- 
- #source-link {
-  top: 120px;
- }
- 
- #source-link > i {
-  color: rgb(94, 106, 210);
- }
- 
- #yt-link {
-  top: 65px;
- }
- 
- #yt-link > i {
-  color: rgb(219, 31, 106);
- }
- 
- #Fund-link {
-  top: 10px;
- }
- 
- #Fund-link > i {
-  color: rgb(255, 251, 0);
- }
- 
- .meta-link {
-  align-items: center;
-  backdrop-filter: blur(3px);
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 6px;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  display: inline-flex;
-  gap: 5px;
-  left: 10px;
-  padding: 10px 20px;
-  position: fixed;
-  text-decoration: none;
-  transition: background-color 600ms, border-color 600ms;
-  z-index: 10000;
- }
- 
- .meta-link:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
- }
- 
- 
- 
 
+   .contact .info-box:hover,
+   .contact .info-box:focus-visible {
+    --_p: 0px;
+    outline-color: var(--color);
+    outline-offset: 0.05em;
+   }
+   
+   .contact .info-box:active {
+    background: var(--color);
+    color: #fff;
+   }
+   
+   
+   .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+   }
+   
+   .share-btn {
+    position: absolute;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid rgba(128, 128, 128, 0.705);
+    border-radius: 50%;
+    transition: 0.2s ease-in-out;
+    scale: 0.8;
+    padding: 10px;
+    width: 30px;
+    height: 30px;
+    z-index: 10;
+   }
+   
+   .share-btn:hover {
+    background: #f1f1f1;
+    scale: 0.9;
+   }
+   
+   .up {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+   }
+   
+   .down {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+   }
+   
+   .card1 {
+    width: 90px;
+    height: 90px;
+    outline: none;
+    border: none;
+    background: rgb(16, 16, 17); /* New blue background color */
+    border-radius: 90px 5px 5px 5px;
+    box-shadow: 0 4px 20px rgba(4, 0, 247, 0.774); /* Keeps the shadow */
+    transition: 300ms cubic-bezier(0.73, -0.18, 0.02, 1.46);
+   }
+   
+   .card1[data-toggle1="true"] {
+    transform: translateY(50px) translateX(60px) scale(0);
+   }
+   
+   .card2[data-toggle2="true"] {
+    transform: translateY(50px) translateX(-60px) scale(0);
+   }
+   
+   .card3[data-toggle3="true"] {
+    transform: translateY(-50px) translateX(60px) scale(0);
+   }
+   
+   .card4[data-toggle4="true"] {
+    transform: translateY(-50px) translateX(-60px) scale(0);
+   }
+   
+   .card2 {
+    width: 90px;
+    height: 90px;
+    outline: none;
+    border: none;
+    background: rgb(16, 16, 17); /* New blue background color */
+    border-radius: 5px 90px 5px 5px;
+    box-shadow: 0 4px 20px rgba(4, 0, 247, 0.774); /* Adds shadow */
+    transition: 300ms cubic-bezier(0.76, -0.19, 0.15, 1.17);
+   }
+   
+   .twitter {
+    margin-top: 1.5em;
+    margin-left: -0.9em;
+    fill: #03a9f4;
+   }
+   
+   .card3 {
+    width: 90px;
+    height: 90px;
+    outline: none;
+    border: none;
+    background: rgb(16, 16, 17); /* New blue background color */
+    border-radius: 5px 5px 5px 90px;
+    box-shadow: 0 4px 20px rgba(4, 0, 247, 0.774); /* Adds shadow */
+    transition: 300ms cubic-bezier(0.72, -0.26, 0.02, 1.46);
+   }
  
- .contact .info-box i.bx {
-  font-size: 24px;
-  color: #00f;
-  border-radius: 50%;
-  padding: 14px;
-  background: rgba(204, 204, 204, 0.1);
-  margin-right: 15px; /* Spacing between icon and text */
- }
- 
- .contact .info-box h3 {
-  font-size: 20px;
-  color: rgba(255, 255, 255, 0.8);
-  font-weight: 700;
- }
- 
- .contact .info-box p {
-  padding: 0;
-  color: #00f;
-  line-height: 24px;
-  font-size: 20px;
- }
- 
- .contact .php-email-form {
-  padding: 30px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  margin-top: 30px; /* Space between info boxes and form */
- }
- 
- .contact .php-email-form input,
- .contact .php-email-form textarea {
-  border-radius: 4px;
-  box-shadow: none;
-  font-size: 14px;
-  background: rgba(204, 204, 204, 0.1);
-  border: 0;
-  transition: 0.3s;
-  color: #fff;
- }
- 
- .contact .php-email-form input:focus,
- .contact .php-email-form textarea:focus {
-  background: rgba(204, 204, 204, 0.1);
- }
- 
- .contact .php-email-form button[type="submit"] {
-  background: #00f;
-  border: 0;
-  padding: 10px 30px;
-  color: #fff;
-  transition: 0.4s;
-  border-radius: 4px;
-  margin-top: 10px; /* Space above button */
- }
- 
- .contact .php-email-form button[type="submit"]:hover {
-  background: #0056b3; /* Darker blue on hover */
- }
- 
- /*--------------------------------------------------------------
- # Portfolio Details
- --------------------------------------------------------------*/
- 
- .portfolio-details {
-  padding-top: 40px;
-  background: rgba(0, 0, 0, 0.8);
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  overflow-y: auto;
- }
- .portfolio-details .container {
-  padding-top: 20px;
-  padding-bottom: 40px;
- }
- .portfolio-details .portfolio-title {
-  font-size: 26px;
-  font-weight: 700;
-  margin-bottom: 20px;
- }
- .portfolio-details .portfolio-details-carousel .owl-nav,
- .portfolio-details .portfolio-details-carousel .owl-dots {
-  margin-top: 5px;
-  text-align: center;
- }
- .portfolio-details .portfolio-details-carousel .owl-dot {
-  display: inline-block;
-  margin: 0 5px;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(204, 204, 204, 0.1);
- }
- .portfolio-details .portfolio-details-carousel .owl-dot.active {
-  background-color: #00f !important;
- }
- .portfolio-details .portfolio-info {
-  padding-top: 45px;
- }
- .portfolio-details .portfolio-info h3 {
-  font-size: 22px;
-  font-weight: 400;
-  margin-bottom: 20px;
- }
- .portfolio-details .portfolio-info ul {
-  list-style: none;
-  padding: 0;
-  font-size: 15px;
- }
- .portfolio-details .portfolio-info ul li + li {
-  margin-top: 10px;
- }
- .portfolio-details .portfolio-info p {
-  font-size: 15px;
-  padding: 15px 0 0 0;
- }
- @media (max-width: 992px) {
-  .portfolio-details .portfolio-info {
-   padding-top: 20px;
-  }
- }
- /*--------------------------------------------------------------
- # Credits
- --------------------------------------------------------------*/
- 
- .credits {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  padding: 15px;
-  text-align: right;
-  font-size: 13px;
-  color: #fff;
-  z-index: 999999;
- }
- .blog h1 {
-  text-transform: none;
-  text-align: center;
- }
- .blog p {
-  text-transform: none;
-  margin: 0.6rem 0;
-  opacity: 0.8;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  text-align: center;
- }
- .blog button {
-  cursor: pointer;
-  background: transparent;
- }
- .hero-btns {
-  margin-top: 9.8rem;
-  text-align: center;
- }
- .hero-btns button {
-  border: 3.5px solid #fff;
-  border-radius: 2rem;
-  padding: 0.8rem 2rem;
-  text-transform: uppercase;
-  position: inherit;
- }
- .btn-trans {
-  color: #fff;
- }
- .btn-trans:hover {
-  background: var(--mount-meadow);
-  border-color: var(--mount-meadow);
-  color: #00f;
- }
- .btn-white {
-  background: #fff;
-  color: var(--night-rider);
-  transition: var(--transition);
- }
- .btn-white:hover {
-  background: transparent;
-  color: #00f;
- }
- @media (max-width: 992px) {
-  .credits {
-   text-align: center;
-   padding: 10px;
-   background: rgba(0, 0, 0, 0.8);
-  }
- }
- .credits a {
-  color: #00f;
-  transition: 0.3s;
- }
- .credits a:hover {
-  color: #fff;
- }
- * {
-  position: relative;
- }
- #current-time-container {
-  position: fixed;
-  left: 0;
-  /* Change right to left */
-  bottom: 0;
-  padding: 15px;
-  text-align: left;
-  font-size: 13px;
-  color: #fff;
-  z-index: 999999;
- }
- .current {
-  font-weight: bold;
-  color: #fff;
-  display: inline;
- }
- .time {
-  font-weight: bold;
-  color: #00f;
-  display: inline;
- }
- /* Style the scrollbar */
- 
- ::-webkit-scrollbar {
-  width: 5px;
-  /* Set the width of the scrollbar */
- }
- /* Style the scrollbar track (background) */
- 
- ::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  /* Set the background color of the track */
- }
- /* Style the scrollbar thumb (the draggable part) */
- 
- ::-webkit-scrollbar-thumb {
-  background: #00f;
-  /* Set the color of the thumb */
- }
- /* Style the scrollbar thumb on hover */
- 
- ::-webkit-scrollbar-thumb:hover {
-  background: #00f;
-  /* Set the color of the thumb on hover */
- }
- /* The Modal (background) */
- 
- .resume-item h4 {
-  color: #00f;
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  text-align: left;
+   
+   .card4 {
+    width: 90px;
+    height: 90px;
+    outline: none;
+    border: none;
+    background: rgb(16, 16, 17); /* New blue background color */
+    border-radius: 5px 5px 90px 5px;
+    box-shadow: 0 4px 20px rgba(4, 0, 247, 0.774); /* Adds shadow */
+    transition: 300ms cubic-bezier(1, -0.31, 0.02, 1.46);
+   }
+   
+   .discord {
+    margin-top: -0.9em;
+    margin-left: -1.2em;
+    fill: #8c9eff;
+   }
+   
+   .card1:hover {
+    cursor: pointer;
+    scale: 1.1;
+    background-color: #cc39a4;
+   }
+   
+   .card1:hover .instagram {
+    fill: white;
+   }
+   
+   .card2:hover {
+    cursor: pointer;
+    scale: 1.1;
+    background-color: #03a9f4;
+   }
+   
+   .card2:hover .twitter {
+    fill: white;
+   }
+   
+   .card3:hover {
+    cursor: pointer;
+    scale: 1.1;
+    background-color: rgb(39, 39, 39);
+   }
+   
+   .card3:hover .github {
+    fill: white;
+   }
+   
+   .card4:hover {
+    cursor: pointer;
+    scale: 1.1;
+    background-color: #8c9eff;
+   }
+   
+   .card4:hover .discord {
+    fill: white;
+   }
+   
+   /* -- External Social Link CSS Styles -- */
+   
+   #source-link {
+    top: 120px;
+   }
+   
+   #source-link > i {
+    color: rgb(94, 106, 210);
+   }
+   
+   #yt-link {
+    top: 65px;
+   }
+   
+   #yt-link > i {
+    color: rgb(219, 31, 106);
+   }
+   
+   #Fund-link {
+    top: 10px;
+   }
+   
+   #Fund-link > i {
+    color: rgb(255, 251, 0);
+   }
+   
+   .meta-link {
+    align-items: center;
+    backdrop-filter: blur(3px);
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    display: inline-flex;
+    gap: 5px;
+    left: 10px;
+    padding: 10px 20px;
+    position: fixed;
+    text-decoration: none;
+    transition: background-color 600ms, border-color 600ms;
+    z-index: 10000;
+   }
+   
+   .meta-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+   }
+   
+   
+   
   
- }
+   
+   .contact .info-box i.bx {
+    font-size: 24px;
+    color: #00f;
+    border-radius: 50%;
+    padding: 14px;
+    background: rgba(204, 204, 204, 0.1);
+    margin-right: 15px; /* Spacing between icon and text */
+   }
+   
+   .contact .info-box h3 {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 700;
+   }
+   
+   .contact .info-box p {
+    padding: 0;
+    color: #00f;
+    line-height: 24px;
+    font-size: 20px;
+   }
+   
+   .contact .php-email-form {
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    margin-top: 30px; /* Space between info boxes and form */
+   }
+   
+   .contact .php-email-form input,
+   .contact .php-email-form textarea {
+    border-radius: 4px;
+    box-shadow: none;
+    font-size: 14px;
+    background: rgba(204, 204, 204, 0.1);
+    border: 0;
+    transition: 0.3s;
+    color: #fff;
+   }
+   
+   .contact .php-email-form input:focus,
+   .contact .php-email-form textarea:focus {
+    background: rgba(204, 204, 204, 0.1);
+   }
+   
+   .contact .php-email-form button[type="submit"] {
+    background: #00f;
+    border: 0;
+    padding: 10px 30px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 4px;
+    margin-top: 10px; /* Space above button */
+   }
+   
+   .contact .php-email-form button[type="submit"]:hover {
+    background: #0056b3; /* Darker blue on hover */
+   }
+   
+   /*--------------------------------------------------------------
+   # Portfolio Details
+   --------------------------------------------------------------*/
+   
+   .portfolio-details {
+    padding-top: 40px;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow-y: auto;
+   }
+   .portfolio-details .container {
+    padding-top: 20px;
+    padding-bottom: 40px;
+   }
+   .portfolio-details .portfolio-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 20px;
+   }
+   .portfolio-details .portfolio-details-carousel .owl-nav,
+   .portfolio-details .portfolio-details-carousel .owl-dots {
+    margin-top: 5px;
+    text-align: center;
+   }
+   .portfolio-details .portfolio-details-carousel .owl-dot {
+    display: inline-block;
+    margin: 0 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(204, 204, 204, 0.1);
+   }
+   .portfolio-details .portfolio-details-carousel .owl-dot.active {
+    background-color: #00f !important;
+   }
+   .portfolio-details .portfolio-info {
+    padding-top: 45px;
+   }
+   .portfolio-details .portfolio-info h3 {
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 20px;
+   }
+   .portfolio-details .portfolio-info ul {
+    list-style: none;
+    padding: 0;
+    font-size: 15px;
+   }
+   .portfolio-details .portfolio-info ul li + li {
+    margin-top: 10px;
+   }
+   .portfolio-details .portfolio-info p {
+    font-size: 15px;
+    padding: 15px 0 0 0;
+   }
+   @media (max-width: 992px) {
+    .portfolio-details .portfolio-info {
+     padding-top: 20px;
+    }
+   }
+   /*--------------------------------------------------------------
+   # Credits
+   --------------------------------------------------------------*/
+   
+   .credits {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    padding: 15px;
+    text-align: right;
+    font-size: 13px;
+    color: #fff;
+    z-index: 999999;
+   }
+   .blog h1 {
+    text-transform: none;
+    text-align: center;
+   }
+   .blog p {
+    text-transform: none;
+    margin: 0.6rem 0;
+    opacity: 0.8;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    text-align: center;
+   }
+   .blog button {
+    cursor: pointer;
+    background: transparent;
+   }
+   .hero-btns {
+    margin-top: 9.8rem;
+    text-align: center;
+   }
+   .hero-btns button {
+    border: 3.5px solid #fff;
+    border-radius: 2rem;
+    padding: 0.8rem 2rem;
+    text-transform: uppercase;
+    position: inherit;
+   }
+   .btn-trans {
+    color: #fff;
+   }
+   .btn-trans:hover {
+    background: var(--mount-meadow);
+    border-color: var(--mount-meadow);
+    color: #00f;
+   }
+   .btn-white {
+    background: #fff;
+    color: var(--night-rider);
+    transition: var(--transition);
+   }
+   .btn-white:hover {
+    background: transparent;
+    color: #00f;
+   }
+   @media (max-width: 992px) {
+    .credits {
+     text-align: center;
+     padding: 10px;
+     background: rgba(0, 0, 0, 0.8);
+    }
+   }
+   .credits a {
+    color: #00f;
+    transition: 0.3s;
+   }
+   .credits a:hover {
+    color: #fff;
+   }
+   * {
+    position: relative;
+   }
+   #current-time-container {
+    position: fixed;
+    left: 0;
+    /* Change right to left */
+    bottom: 0;
+    padding: 15px;
+    text-align: left;
+    font-size: 13px;
+    color: #fff;
+    z-index: 999999;
+   }
+   .current {
+    font-weight: bold;
+    color: #fff;
+    display: inline;
+   }
+   .time {
+    font-weight: bold;
+    color: #00f;
+    display: inline;
+   }
+   /* Style the scrollbar */
+   
+   ::-webkit-scrollbar {
+    width: 5px;
+    /* Set the width of the scrollbar */
+   }
+   /* Style the scrollbar track (background) */
+   
+   ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    /* Set the background color of the track */
+   }
+   /* Style the scrollbar thumb (the draggable part) */
+   
+   ::-webkit-scrollbar-thumb {
+    background: #00f;
+    /* Set the color of the thumb */
+   }
+   /* Style the scrollbar thumb on hover */
+   
+   ::-webkit-scrollbar-thumb:hover {
+    background: #00f;
+    /* Set the color of the thumb on hover */
+   }
+   /* The Modal (background) */
+   
+   .resume-item h4 {
+    color: #00f;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-align: left;
+    
+   }
+   
+   .resume p {
+    color: #fff;
+    font-size: 16px;
+    line-height: 40px;
+   }
+   
+   .resume-title {
+    color: #00f;
+    margin-bottom: 20px;
+    font-weight: bold;
+   }
+   
+   .resume-item {
+    background: rgba(204, 204, 204, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(4, 0, 247, 0.774); /* Adds shadow */
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+   }
+   
+   .resume-item:hover {
+    transform: translateY(-5px);
+   }
+   
  
- .resume {
-  padding: 70px 0;
-  background: #31313186;
- }
- 
- .resume p {
-  color: #fff;
-  font-size: 16px;
-  line-height: 40px;
- }
- 
- .resume-title {
-  color: #00f;
-  margin-bottom: 20px;
-  font-weight: bold;
- }
- 
- .resume-item {
-  background: rgba(204, 204, 204, 0.1);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(4, 0, 247, 0.774); /* Adds shadow */
-  margin-bottom: 20px;
-  transition: transform 0.3s;
- }
- 
- .resume-item:hover {
-  transform: translateY(-5px);
- }
- 
+   
+   .resume-item ul {
+    list-style: none;
+    padding: 0;
+   }
+   
+   .resume-item ul li {
+    padding: 5px 0;
+   }
+   
+   .resume-item a {
+    color: #00f;
+    text-decoration: none;
+   }
+   
+   .resume-item a:hover {
+    text-decoration: underline;
+   }
+   
+   /* Flip Card Styles */
+   .flip-card {
 
- 
- .resume-item ul {
-  list-style: none;
-  padding: 0;
- }
- 
- .resume-item ul li {
-  padding: 5px 0;
- }
- 
- .resume-item a {
-  color: #00f;
-  text-decoration: none;
- }
- 
- .resume-item a:hover {
-  text-decoration: underline;
- }
- 
- /* Flip Card Styles */
- .flip-card {
-
-  background-color: transparent;
-  width: 400px;
-  height: 400px; /* Ensure enough space for all content */
-  perspective: 1000px; /* 3D effect */
-  margin: 20px;
-  flex-shrink: 0;
-  position: relative;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(4, 0, 247, 0.774); /* Adds shadow */
-  transition: transform 0.6s; /* Smooth flip animation */
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  overflow: hidden; /* Hide any content that overflows */
-  display: flex;
-  flex-direction: column; /* Stack front and back content */
-  justify-content: center; /* Center content vertically */
-  align-items: center; /* Center content horizontally */
-  scroll-snap-align: start; /* Snap to the start of the container */
-  scroll-snap-stop: always; /* Ensure card snaps when scrolling */
- }
- 
- .flip-card h3 {
-  font-size: 20px; /* Slightly larger font size */
-  font-weight: bold; /* Make it bold */
-  color: #00f; /* Adjust color to a softer blue */
-  text-align: center; /* Ensure the heading is centered */
-  margin: 10px 0; /* Add space above and below */
-  text-transform: uppercase; /* Make text uppercase for emphasis */
-  letter-spacing: 1.5px; /* Add some spacing between letters */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-  font-family: "Noto Serif", serif; /* Elegant font, can replace with another if needed */
- }
- 
- .flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transform-style: preserve-3d;
-  transition: transform 0.8s ease-in-out;
- }
- 
- .flip-card-front,
- .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px #00f;
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  align-items: left;
-  padding: 0; /* Remove padding from the card container */
-  margin: 0; /* Remove margin if present */
- }
- 
- .flip-card-front {
-  z-index: 2;
-  transform: rotateY(0deg);
-  background-color: rgba(0, 0, 0, 0.2);
- }
- 
- .flip-card-back h3 {
-  font-size: 20px; /* Slightly larger font size */
-  font-weight: bold; /* Make it bold */
-  color: #ffffff93; /* Adjust color to a softer blue */
-  text-align: left; /* Ensure the heading is centered */
-  margin: 10px 0; /* Add space above and below */
-  text-transform: uppercase; /* Make text uppercase for emphasis */
-  letter-spacing: 1.5px; /* Add some spacing between letters */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-  font-family: "Noto Serif", serif; /* Elegant font, can replace with another if needed */
- }
- 
- .flip-card-back {
-  background-color: rgba(204, 204, 204, 0.1);
-  transform: rotateY(180deg);
-  color: #333;
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto; /* Make content scrollable */
-  max-height: 100%; /* Ensure it doesn’t overflow out of the card */
-  justify-content: space-between; /* Distribute space: title at the top, button at the bottom */
-  padding: 20px;
- }
- /* Scrollbar Styles */
- .flip-card-back::-webkit-scrollbar {
-  width: 8px; /* Width of the vertical scrollbar */
-  height: 8px; /* Height of the horizontal scrollbar */
- }
- 
- .flip-card-back::-webkit-scrollbar-thumb {
-  background-color: #007bff; /* Color of the scrollbar thumb */
-  border-radius: 10px; /* Rounded corners for the thumb */
-  border: 2px solid #fff; /* Optional: Add border to the thumb for a clean look */
- }
- 
- .flip-card-back::-webkit-scrollbar-thumb:hover {
-  background-color: #0056b3; /* Color when hovering over the scrollbar thumb */
- }
- 
- .flip-card-back::-webkit-scrollbar-track {
-  background: #f1f1f1; /* Track color */
-  border-radius: 10px; /* Optional: Rounded corners for the track */
- }
- 
- .flip-card-back::-webkit-scrollbar-track:hover {
-  background-color: #e1e1e1; /* Color when hovering over the track */
- }
- 
- .flip-card.flipped .flip-card-inner {
-  transform: rotateY(180deg);
- }
- .flip-card-back p {
-  font-size: 14px;
-  margin-top: 10px; /* Ensure description starts below the title */
-  margin-bottom: 20px; /* Provide space before button */
-  line-height: 40px;
- 
-  flex-grow: 1; /* Allow paragraph to take remaining space */
- }
- 
- .flip-card-back ul {
-  list-style: disc;
-  color: #00f;
-  padding-left: 20px;
-  margin: 10px 0;
-  text-align: left;
- }
- 
- .project-image {
-  width: 400px; /* Set a smaller fixed width */
-  margin-top: 0%;
-  height: 250px; /* Set a smaller fixed height to match the width */
-  object-fit: cover; /* Ensure the image covers the square area without distortion */
-  aspect-ratio: 1; /* Maintain a 1:1 aspect ratio, ensuring it's always square */
-  align-self: center;
- }
- 
- .flip-btn {
-  position: relative;
-  width: 150px;
-  align-self: center;
-  margin-top: 20px; /* Move button further down */
-  padding: calc(0.6em + var(--s)) calc(1em + var(--s)); /* Slightly increase padding */
-  --b: 3px; /* border thickness */
-  --s: 0.45em; /* size of the corner */
-  --color: #ffffff93;
-  color: var(--color);
-  --_p: var(--s);
-  background: conic-gradient(
-          from 90deg at var(--b) var(--b),
-          #0000 90deg,
-          var(--color) 0
-      )
-      var(--_p) var(--_p) / calc(100% - var(--b) - 2 * var(--_p))
-      calc(100% - var(--b) - 2 * var(--_p));
-  transition: 0.3s linear, color 0s, background-color 0s;
-  outline: var(--b) solid #0000;
-  outline-offset: 0.6em;
-  font-size: 15px;
-  text-transform: uppercase;
-  border: 0;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  clip-path: inset(0 0 0 0);
+    background-color: transparent;
+    width: 400px;
+    height: 400px; /* Ensure enough space for all content */
+    perspective: 1000px; /* 3D effect */
+    margin: 20px;
+    flex-shrink: 0;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(4, 0, 247, 0.774); /* Adds shadow */
+    transition: transform 0.6s; /* Smooth flip animation */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden; /* Hide any content that overflows */
+    display: flex;
+    flex-direction: column; /* Stack front and back content */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    scroll-snap-align: start; /* Snap to the start of the container */
+    scroll-snap-stop: always; /* Ensure card snaps when scrolling */
+   }
+   
+   .flip-card h3 {
+    font-size: 20px; /* Slightly larger font size */
+    font-weight: bold; /* Make it bold */
+    color: #00f; /* Adjust color to a softer blue */
+    text-align: center; /* Ensure the heading is centered */
+    margin: 10px 0; /* Add space above and below */
+    text-transform: uppercase; /* Make text uppercase for emphasis */
+    letter-spacing: 1.5px; /* Add some spacing between letters */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    font-family: "Noto Serif", serif; /* Elegant font, can replace with another if needed */
+   }
+   
+   .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease-in-out;
+   }
+   
+   .flip-card-front,
+   .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px #00f;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    padding: 0; /* Remove padding from the card container */
+    margin: 0; /* Remove margin if present */
+   }
+   
+   .flip-card-front {
+    z-index: 2;
+    transform: rotateY(0deg);
+    background-color: rgba(0, 0, 0, 0.2);
+   }
+   
+   .flip-card-back h3 {
+    font-size: 20px; /* Slightly larger font size */
+    font-weight: bold; /* Make it bold */
+    color: #ffffff93; /* Adjust color to a softer blue */
+    text-align: left; /* Ensure the heading is centered */
+    margin: 10px 0; /* Add space above and below */
+    text-transform: uppercase; /* Make text uppercase for emphasis */
+    letter-spacing: 1.5px; /* Add some spacing between letters */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    font-family: "Noto Serif", serif; /* Elegant font, can replace with another if needed */
+   }
+   
+   .flip-card-back {
+    background-color: rgba(204, 204, 204, 0.1);
+    transform: rotateY(180deg);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Make content scrollable */
+    max-height: 100%; /* Ensure it doesn’t overflow out of the card */
+    justify-content: space-between; /* Distribute space: title at the top, button at the bottom */
+    padding: 20px;
+   }
+   /* Scrollbar Styles */
+   .flip-card-back::-webkit-scrollbar {
+    width: 8px; /* Width of the vertical scrollbar */
+    height: 8px; /* Height of the horizontal scrollbar */
+   }
+   
+   .flip-card-back::-webkit-scrollbar-thumb {
+    background-color: #007bff; /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Rounded corners for the thumb */
+    border: 2px solid #fff; /* Optional: Add border to the thumb for a clean look */
+   }
+   
+   .flip-card-back::-webkit-scrollbar-thumb:hover {
+    background-color: #0056b3; /* Color when hovering over the scrollbar thumb */
+   }
+   
+   .flip-card-back::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Track color */
+    border-radius: 10px; /* Optional: Rounded corners for the track */
+   }
+   
+   .flip-card-back::-webkit-scrollbar-track:hover {
+    background-color: #e1e1e1; /* Color when hovering over the track */
+   }
+   
+   .flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+   }
+   .flip-card-back p {
+    font-size: 14px;
+    margin-top: 10px; /* Ensure description starts below the title */
+    margin-bottom: 20px; /* Provide space before button */
+    line-height: 40px;
+   
+    flex-grow: 1; /* Allow paragraph to take remaining space */
+   }
+   
+   .flip-card-back ul {
+    list-style: disc;
+    color: #00f;
+    padding-left: 20px;
+    margin: 10px 0;
+    text-align: left;
+   }
+   
+   .project-image {
+    width: 400px; /* Set a smaller fixed width */
+    margin-top: 0%;
+    height: 250px; /* Set a smaller fixed height to match the width */
+    object-fit: cover; /* Ensure the image covers the square area without distortion */
+    aspect-ratio: 1; /* Maintain a 1:1 aspect ratio, ensuring it's always square */
+    align-self: center;
+   }
+   
+   .flip-btn {
+    position: relative;
+    width: 150px;
+    align-self: center;
+    margin-top: 20px; /* Move button further down */
+    padding: calc(0.6em + var(--s)) calc(1em + var(--s)); /* Slightly increase padding */
+    --b: 3px; /* border thickness */
+    --s: 0.45em; /* size of the corner */
+    --color: #ffffff93;
+    color: var(--color);
+    --_p: var(--s);
+    background: conic-gradient(
+            from 90deg at var(--b) var(--b),
+            #0000 90deg,
+            var(--color) 0
+        )
+        var(--_p) var(--_p) / calc(100% - var(--b) - 2 * var(--_p))
+        calc(100% - var(--b) - 2 * var(--_p));
+    transition: 0.3s linear, color 0s, background-color 0s;
+    outline: var(--b) solid #0000;
+    outline-offset: 0.6em;
+    font-size: 15px;
+    text-transform: uppercase;
+    border: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    clip-path: inset(0 0 0 0);
 }
 
 
 /* Hover Effect */
 .flip-btn:hover,
 .flip-btn:focus-visible {
-  --_p: 0px;
-  outline-color: var(--color);
-  outline-offset: 0.05em;
-  color: #111010; /* Change text color on hover */
+    --_p: 0px;
+    outline-color: var(--color);
+    outline-offset: 0.05em;
+    color: #111010; /* Change text color on hover */
 }
 
 .flip-btn:active {
-  background: var(--color);
-  color: #fff;
+    background: var(--color);
+    color: #fff;
 }
 
 /* Gradient Slide Effect */
 .flip-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 0;
-  height: 100%;
-  background: #fff;
-  transition: width 0.9s ease-in-out, left 0.9s ease-in-out;
-  z-index: -1; /* Place behind button content */
-  transform: skewX(-20deg); /* Add skew for dynamic look */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 100%;
+    background: #fff;
+    transition: width 0.9s ease-in-out, left 0.9s ease-in-out;
+    z-index: -1; /* Place behind button content */
+    transform: skewX(-20deg); /* Add skew for dynamic look */
 }
 
 .flip-btn:hover::before {
-  width: 200%; /* Expand gradient */
-  left: -50%; /* Move gradient leftward for a sweeping effect */
+    width: 200%; /* Expand gradient */
+    left: -50%; /* Move gradient leftward for a sweeping effect */
 }
 
- 
- 
- /* Container for Project Cards */
- .project-cards {
-  display: flex; /* Align cards horizontally */
-  gap: 20px; /* Space between the cards */
-  overflow-x: auto; /* Enable horizontal scrolling */
-  padding: 20px; /* Space around the scrolling area */
-  scroll-snap-type: x mandatory; /* Smooth snap behavior */
-  scrollbar-width: thin; /* Thin scrollbar for Firefox */
-  scrollbar-color: #00f transparent; /* Blue thumb, transparent track */
- }
- 
- /* For WebKit browsers like Chrome, Safari */
- .project-cards::-webkit-scrollbar {
-  height: 10px; /* Horizontal scrollbar height */
- }
- 
- .project-cards::-webkit-scrollbar-thumb {
-  background-color: #00f; /* Custom color for the scroll thumb */
-  border-radius: 5px;
- }
- 
- .project-cards::-webkit-scrollbar-track {
-  background: #f4f4f4; /* Custom color for the scrollbar track */
- }
- 
- /* Scrollbar hover effect */
- .project-cards::-webkit-scrollbar-thumb:hover {
-  background-color: #008cff; /* Lighter blue on hover */
- }
- 
- /* Specific styles for <p> tags in the Projects section */
- #projects p {
-  font-size: 16px; /* Adjust font size */
-  color: #ffffff93; /* Text color */
-  margin-bottom: 15px; /* Space below each paragraph */
-  line-height: 40px;
-  text-align: justify; /* Justify text alignment */
-  text-justify: inter-word; /* Ensure words are spaced evenly */
- }
- 
- /* Add hover effect if needed */
- #projects p:hover {
-  color: #fff; /* Change text color on hover */
-  transition: color 0.3s ease; /* Smooth transition */
- }
- 
- * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
- }
- 
- .containers {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
-  line-height: 1.5em;
- }
- 
- .item {
-  --color: #051eff;
-  width: 400px;
-  background-color: var(--color);
-  border-radius: 20px;
-  padding: 10px 5px;
-  box-shadow: var(--color) 0px 0px 10px;
-  position: relative;
-  cursor: pointer;
-  transition: 0.5s;
- }
- 
- .item::after {
-  content: "";
-  position: absolute;
-  top: 8px;
-  left: 0;
-  height: 80%;
-  box-sizing: border-box;
-  border-style: solid;
-  border-color: transparent transparent transparent var(--color);
-  border-width: 40px 40px 40px 40px;
-  filter: drop-shadow(5px 0px 4px #00000012);
-  transition: filter 0.5s;
- }
- .row > div:nth-child(1) .item {
-  --color: #051eff; /* Default blue for the first card */
- }
- 
- .row > div:nth-child(2) .item {
-  --color: #ff0000; /* Red */
- }
- 
- .row > div:nth-child(3) .item {
-  --color: #000f00; /* Green */
- }
- 
- .row > div:nth-child(4) .item {
-  --color: #ffff00; /* Yellow */
- }
- 
- .row > div:nth-child(5) .item {
-  --color: #a7212a; /* Magenta */
- }
- 
- .row > div:nth-child(6) .item {
-  --color: #0000ff; /* Cyan */
- }
- 
- .item span {
-  margin-top: 10px;
-  width: 40px;
-  height: 40px;
-  background-color: #fff;
-  color: var(--color);
-  border-radius: 50%;
-  display: grid;
-  place-content: center;
-  box-shadow: 0px 1px 2px #00000012, 0px 2px 4px #00000012, 0px 4px 8px #00000012,
-   0px 8px 16px #00000012, 0px 16px 32px #00000012, 0px 32px 64px #00000012;
-  font-size: 14px;
-  position: absolute;
-  right: 5px;
-  bottom: 5px;
-  cursor: pointer;
-  transition: 0.5s;
- }
- 
- .item span:hover {
-  background-color: var(--color);
-  color: #fff;
- }
- 
- .item:hover .layer {
-  left: 0;
- }
- p {
-  color: #333;
-  font-size: 16px;
-  text-align: left;
-  margin-top: 10px;
- }
- 
- .item:hover::after {
-  filter: drop-shadow(5px 0px 4px #00000000);
- }
- 
- .item:hover .layer {
-  left: 50px;
- }
- .item:hover span {
-  background-color: var(--color);
-  color: #fff;
- }
- 
- .layer {
-  background-color: #f2f2f2;
-  border: 1px solid #ccc;
-  border-radius: inherit;
-  padding: 20px;
-  box-shadow: 0px 1px 2px #00000012, 0px 2px 4px #00000012, 0px 4px 8px #00000012,
-   0px 8px 16px #00000012, 0px 16px 32px #00000012, 0px 32px 64px #00000012;
-  position: relative;
-  left: 10px;
-  transition: left 1s;
- 
-  width: 96%; /* Make all layers the same width */
-  min-height: 200px; /* Set a base minimum height for consistency */
-  box-sizing: border-box; /* Ensure padding and border are included in dimensions */
- }
- 
- .layer p {
-  margin-bottom: 10px; /* Adjust spacing between paragraphs */
-  line-height: 40px;
- }
- 
- .services h3 {
-  color: var(--color);
-  font-weight: 700;
-  text-align: center;
-  font-size: 24px;
-  margin-bottom: 10px;
- }
- 
- h4 {
-  color: #fff;
-  font-weight: 400;
-  text-align: center;
-  font-size: 18px;
-  padding-top: 10px;
-  margin-bottom: 10px;
- }
- 
+   
+   
+   /* Container for Project Cards */
+   .project-cards {
+    display: flex; /* Align cards horizontally */
+    gap: 20px; /* Space between the cards */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding: 20px; /* Space around the scrolling area */
+    scroll-snap-type: x mandatory; /* Smooth snap behavior */
+    scrollbar-width: thin; /* Thin scrollbar for Firefox */
+    scrollbar-color: #00f transparent; /* Blue thumb, transparent track */
+   }
+   
+   /* For WebKit browsers like Chrome, Safari */
+   .project-cards::-webkit-scrollbar {
+    height: 10px; /* Horizontal scrollbar height */
+   }
+   
+   .project-cards::-webkit-scrollbar-thumb {
+    background-color: #00f; /* Custom color for the scroll thumb */
+    border-radius: 5px;
+   }
+   
+   .project-cards::-webkit-scrollbar-track {
+    background: #f4f4f4; /* Custom color for the scrollbar track */
+   }
+   
+   /* Scrollbar hover effect */
+   .project-cards::-webkit-scrollbar-thumb:hover {
+    background-color: #008cff; /* Lighter blue on hover */
+   }
+   
+   /* Specific styles for <p> tags in the Projects section */
+   #projects p {
+    font-size: 16px; /* Adjust font size */
+    color: #ffffff93; /* Text color */
+    margin-bottom: 15px; /* Space below each paragraph */
+    line-height: 40px;
+    text-align: justify; /* Justify text alignment */
+    text-justify: inter-word; /* Ensure words are spaced evenly */
+   }
+   
+   /* Add hover effect if needed */
+   #projects p:hover {
+    color: #fff; /* Change text color on hover */
+    transition: color 0.3s ease; /* Smooth transition */
+   }
+   
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   }
+   
+   .containers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.5em;
+   }
+   
+   .item {
+    --color: #051eff;
+    width: 400px;
+    background-color: var(--color);
+    border-radius: 20px;
+    padding: 10px 5px;
+    box-shadow: var(--color) 0px 0px 10px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.5s;
+   }
+   
+   .item::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 0;
+    height: 80%;
+    box-sizing: border-box;
+    border-style: solid;
+    border-color: transparent transparent transparent var(--color);
+    border-width: 40px 40px 40px 40px;
+    filter: drop-shadow(5px 0px 4px #00000012);
+    transition: filter 0.5s;
+   }
+   .row > div:nth-child(1) .item {
+    --color: #051eff; /* Default blue for the first card */
+   }
+   
+   .row > div:nth-child(2) .item {
+    --color: #ff0000; /* Red */
+   }
+   
+   .row > div:nth-child(3) .item {
+    --color: #000f00; /* Green */
+   }
+   
+   .row > div:nth-child(4) .item {
+    --color: #ffff00; /* Yellow */
+   }
+   
+   .row > div:nth-child(5) .item {
+    --color: #a7212a; /* Magenta */
+   }
+   
+   .row > div:nth-child(6) .item {
+    --color: #0000ff; /* Cyan */
+   }
+   
+   .item span {
+    margin-top: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    color: var(--color);
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    box-shadow: 0px 1px 2px #00000012, 0px 2px 4px #00000012, 0px 4px 8px #00000012,
+     0px 8px 16px #00000012, 0px 16px 32px #00000012, 0px 32px 64px #00000012;
+    font-size: 14px;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+   }
+   
+   .item span:hover {
+    background-color: var(--color);
+    color: #fff;
+   }
+   
+   .item:hover .layer {
+    left: 0;
+   }
+   p {
+    color: #333;
+    font-size: 16px;
+    text-align: left;
+    margin-top: 10px;
+   }
+   
+   .item:hover::after {
+    filter: drop-shadow(5px 0px 4px #00000000);
+   }
+   
+   .item:hover .layer {
+    left: 50px;
+   }
+   .item:hover span {
+    background-color: var(--color);
+    color: #fff;
+   }
+   
+   .layer {
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: inherit;
+    padding: 20px;
+    box-shadow: 0px 1px 2px #00000012, 0px 2px 4px #00000012, 0px 4px 8px #00000012,
+     0px 8px 16px #00000012, 0px 16px 32px #00000012, 0px 32px 64px #00000012;
+    position: relative;
+    left: 10px;
+    transition: left 1s;
+   
+    width: 96%; /* Make all layers the same width */
+    min-height: 200px; /* Set a base minimum height for consistency */
+    box-sizing: border-box; /* Ensure padding and border are included in dimensions */
+   }
+   
+   .layer p {
+    margin-bottom: 10px; /* Adjust spacing between paragraphs */
+    line-height: 40px;
+   }
+   
+   .services h3 {
+    color: var(--color);
+    font-weight: 700;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+   }
+   
+   h4 {
+    color: #fff;
+    font-weight: 400;
+    text-align: center;
+    font-size: 18px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+   }
+   
