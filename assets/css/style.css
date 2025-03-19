@@ -21,6 +21,7 @@
     width: 100%;
     height: 100%;
     background-color: #111111;
+    
 }
 
 body::before {
@@ -1227,7 +1228,7 @@ body::before {
     .resume-item:hover {
     transform: translateY(-5px);
     }
-   
+
    
    
     .resume-item ul {
@@ -1596,12 +1597,7 @@ body::before {
     .item:hover .layer {
     left: 0;
     }
-    p {
-    color: #333;
-    font-size: 16px;
-    text-align:left;
-    margin-top: 10px;
-    }
+  
    
     .item:hover::after {
     filter: drop-shadow(5px 0px 4px #00000000);
@@ -1651,5 +1647,41 @@ body::before {
     font-size: 18px;
     padding-top: 10px;
     margin-bottom: 10px;
+    }
+    
+    .resume {
+        text-align: center; /* Ensures inline elements are centered */
+    }
+    
+    .resume button {
+        display: inline-block; /* Allows text-align: center to work */
+        margin-top: 20px; /* Adjust spacing from content */
+        
+        height: 50px;
+        width: 150px; /* Slightly wider for better visibility */
+        background: rgba(204, 204, 204, 0.1);
+        cursor: pointer;
+        border: solid #404c5d 1px;
+        font-size: 16px;
+        color: rgb(161, 161, 161);
+        transition: 500ms;
+        border-radius: 5px;
+        background: linear-gradient(145deg, #2e2d2d, #212121);
+        box-shadow: 0 4px 20px rgba(4, 0, 247, 0.774); /* Keeps the shadow */
+
+    }
+    
+    .resume button:hover {
+        box-shadow: 0 4px 20px rgba(4, 0, 247, 0.774); /* Keeps the shadow */
+
+        color: #d6d6d6;
+        transition: 500ms;
+    }
+    
+    .resume button:active {
+        box-shadow: 0 4px 20px rgba(4, 0, 247, 0.774); /* Keeps the shadow */
+
+        color: #d6d6d6;
+        transition: 100ms;
     }
     
