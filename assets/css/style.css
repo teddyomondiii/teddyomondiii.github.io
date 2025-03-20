@@ -1649,18 +1649,18 @@ body::before {
     margin-bottom: 10px;
     }
     
-    .resume {
-        text-align: center; /* Ensures inline elements are centered */
-    }
+ 
     
     .resume button {
-        display: inline-block; /* Allows text-align: center to work */
         margin-top: 20px; /* Adjust spacing from content */
-        
+        text-align: center;
         height: 50px;
         width: 150px; /* Slightly wider for better visibility */
         background: rgba(204, 204, 204, 0.1);
         cursor: pointer;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        
         border: solid #404c5d 1px;
         font-size: 16px;
         color: rgb(161, 161, 161);
