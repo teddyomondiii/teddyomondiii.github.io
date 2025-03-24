@@ -5,7 +5,7 @@
  width: 100%;
  height: 100%;
  z-index: -2; /* Ensure the canvas is behind all other content */
- /* background: linear-gradient(135deg, #0f0f0f, #1c1c1c, #040404); Gradient background
+ /* background: linear-gradient(135deg, #00ff0f, #1c1c1c, #040404); Gradient background
  animation: gradientShift 10s infinite alternate; Subtle gradient animation
  overflow: hidden;
  } */
@@ -17,10 +17,164 @@
 }
  */
  body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    width: 100%;
-    height: 100%;
-    background-color: #111111;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  background-image: radial-gradient(4px 100px at 0px 235px, #00f, #0000),
+    radial-gradient(4px 100px at 300px 235px, #00f, #0000),
+    radial-gradient(1.5px 1.5px at 150px 117.5px, #00f 100%, #0000 150%),
+    radial-gradient(4px 100px at 0px 252px, #00f, #0000),
+    radial-gradient(4px 100px at 300px 252px, #00f, #0000),
+    radial-gradient(1.5px 1.5px at 150px 126px, #00f 100%, #0000 150%),
+    radial-gradient(4px 100px at 0px 150px, #00f, #0000),
+    radial-gradient(4px 100px at 300px 150px, #00f, #0000),
+    radial-gradient(1.5px 1.5px at 150px 75px, #00f 100%, #0000 150%),
+    radial-gradient(4px 100px at 0px 253px, #00f, #0000),
+    radial-gradient(4px 100px at 300px 253px, #00f, #0000),
+    radial-gradient(1.5px 1.5px at 150px 126.5px, #00f 100%, #0000 150%),
+    radial-gradient(4px 100px at 0px 204px, #00f, #0000),
+    radial-gradient(4px 100px at 300px 204px, #00f, #0000),
+    radial-gradient(1.5px 1.5px at 150px 102px, #00f 100%, #0000 150%),
+    radial-gradient(4px 100px at 0px 134px, #00f, #0000),
+    radial-gradient(4px 100px at 300px 134px, #00f, #0000),
+    radial-gradient(1.5px 1.5px at 150px 67px, #00f 100%, #0000 150%),
+    radial-gradient(4px 100px at 0px 179px, #00f, #0000),
+    radial-gradient(4px 100px at 300px 179px, #00f, #0000),
+    radial-gradient(1.5px 1.5px at 150px 89.5px, #00f 100%, #0000 150%),
+    radial-gradient(4px 100px at 0px 299px, #00f, #0000),
+    radial-gradient(4px 100px at 300px 299px, #00f, #0000),
+    radial-gradient(1.5px 1.5px at 150px 149.5px, #00f 100%, #0000 150%),
+    radial-gradient(4px 100px at 0px 215px, #00f, #0000),
+    radial-gradient(4px 100px at 300px 215px, #00f, #0000),
+    radial-gradient(1.5px 1.5px at 150px 107.5px, #00f 100%, #0000 150%),
+    radial-gradient(4px 100px at 0px 281px, #00f, #0000),
+    radial-gradient(4px 100px at 300px 281px, #00f, #0000),
+    radial-gradient(1.5px 1.5px at 150px 140.5px, #00f 100%, #0000 150%),
+    radial-gradient(4px 100px at 0px 158px, #00f, #0000),
+    radial-gradient(4px 100px at 300px 158px, #00f, #0000),
+    radial-gradient(1.5px 1.5px at 150px 79px, #00f 100%, #0000 150%),
+    radial-gradient(4px 100px at 0px 210px, #00f, #0000),
+    radial-gradient(4px 100px at 300px 210px, #00f, #0000),
+    radial-gradient(1.5px 1.5px at 150px 105px, #00f 100%, #0000 150%);
+  background-size:
+    300px 235px,
+    300px 235px,
+    300px 235px,
+    300px 252px,
+    300px 252px,
+    300px 252px,
+    300px 150px,
+    300px 150px,
+    300px 150px,
+    300px 253px,
+    300px 253px,
+    300px 253px,
+    300px 204px,
+    300px 204px,
+    300px 204px,
+    300px 134px,
+    300px 134px,
+    300px 134px,
+    300px 179px,
+    300px 179px,
+    300px 179px,
+    300px 299px,
+    300px 299px,
+    300px 299px,
+    300px 215px,
+    300px 215px,
+    300px 215px,
+    300px 281px,
+    300px 281px,
+    300px 281px,
+    300px 158px,
+    300px 158px,
+    300px 158px,
+    300px 210px,
+    300px 210px,
+    300px 210px;
+  animation: hi 150s linear infinite;
+}
+
+@keyframes hi {
+  0% {
+    background-position:
+      0px 220px,
+      3px 220px,
+      151.5px 337.5px,
+      25px 24px,
+      28px 24px,
+      176.5px 150px,
+      50px 16px,
+      53px 16px,
+      201.5px 91px,
+      75px 224px,
+      78px 224px,
+      226.5px 350.5px,
+      100px 19px,
+      103px 19px,
+      251.5px 121px,
+      125px 120px,
+      128px 120px,
+      276.5px 187px,
+      150px 31px,
+      153px 31px,
+      301.5px 120.5px,
+      175px 235px,
+      178px 235px,
+      326.5px 384.5px,
+      200px 121px,
+      203px 121px,
+      351.5px 228.5px,
+      225px 224px,
+      228px 224px,
+      376.5px 364.5px,
+      250px 26px,
+      253px 26px,
+      401.5px 105px,
+      275px 75px,
+      278px 75px,
+      426.5px 180px;
+  }
+  to {
+    background-position:
+      0px 6800px,
+      3px 6800px,
+      151.5px 6917.5px,
+      25px 13632px,
+      28px 13632px,
+      176.5px 13758px,
+      50px 5416px,
+      53px 5416px,
+      201.5px 5491px,
+      75px 17175px,
+      78px 17175px,
+      226.5px 17301.5px,
+      100px 5119px,
+      103px 5119px,
+      251.5px 5221px,
+      125px 8428px,
+      128px 8428px,
+      276.5px 8495px,
+      150px 9876px,
+      153px 9876px,
+      301.5px 9965.5px,
+      175px 13391px,
+      178px 13391px,
+      326.5px 13540.5px,
+      200px 14741px,
+      203px 14741px,
+      351.5px 14848.5px,
+      225px 18770px,
+      228px 18770px,
+      376.5px 18910.5px,
+      250px 5082px,
+      253px 5082px,
+      401.5px 5161px,
+      275px 6375px,
+      278px 6375px,
+      426.5px 6480px;
+  }
 }
 
 body::before {
@@ -404,7 +558,37 @@ body::before {
     font-size: 16px;
     color: #f8f9fa; /* Subtle off-white for text */
     }
-   
+     /* Background Styling */
+ 
+
+  /* Playlist Wrapper */
+  .playlist-wrapper {
+    background: rgba(204, 204, 204, 0.1);
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(4, 0, 247, 0.774); /* Adds shadow */
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  /* Adjusting iframe */
+  #spotify-iframe {
+    width: 50%; 
+    height: 352px; 
+    border-radius: 12px;
+  }
+
+  /* Style for sliders */
+  .playlist-controls input[type="range"] {
+    width: 150px;
+    margin: 10px;
+    cursor: pointer;
+    accent-color: #1DB954; /* Spotify Green */
+  }
+
+  /* Labels */
+  .playlist-controls label {
+    font-weight: bold;
+  }
     .about-me .content ul i {
     font-size: 18px;
     padding-right: 10px;
@@ -430,6 +614,14 @@ body::before {
             color: #0000ff;
             
     }
+
+    .spotify-playlist .container {
+      background: rgba(204, 204, 204, 0.1);
+      padding: 20px;
+      box-shadow: 0 4px 20px rgba(4, 0, 247, 0.774); /* Adds shadow */
+      border-radius: 10px;
+      transition: transform 0.3s ease-in-out;
+      }
    
     .profile-photo {
     border-radius: 10px;
@@ -532,7 +724,7 @@ body::before {
     display: block;
     background: none;
     }
-    .skills .section-title h1 {
+    .section-title h1 {
     text-transform: uppercase;
     color: #fff;
     }
@@ -1256,257 +1448,68 @@ body::before {
     /* Flip Card Styles */
    
    
-    .flip-card {
-   
+    /* From Uiverse.io by joe-watson-sbf */ 
+.flip-card {
     background-color: transparent;
-    width: 400px;
-    height: 400px; /* Ensure enough space for all content */
-    perspective: 1000px; /* 3D effect */
-    margin: 20px;
-    flex-shrink: 0;
-    position: relative;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(4, 0, 247, 0.774); /* Adds shadow */
-    transition: transform 0.6s; /* Smooth flip animation */
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    overflow: hidden; /* Hide any content that overflows */
-    display: flex;
-    flex-direction: column; /* Stack front and back content */
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-    scroll-snap-align: start; /* Snap to the start of the container */
-    scroll-snap-stop: always; /* Ensure card snaps when scrolling */
-    }
-   
-    .flip-card h3 {
-    font-size: 20px; /* Slightly larger font size */
-    font-weight: 700; /* Make it bold */
-    color: #00f; /* Adjust color to a softer blue */
-    text-align: center; /* Ensure the heading is centered */
-    margin: 10px 0; /* Add space above and below */
-    text-transform: uppercase; /* Make text uppercase for emphasis */
-    letter-spacing: 1.5px; /* Add some spacing between letters */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-    }
-   
-    .flip-card-inner {
+    width: 190px;
+    height: 254px;
+    perspective: 1000px;
+    font-family: sans-serif;
+  }
+  
+  .title {
+    font-size: 1.5em;
+    font-weight: 900;
+    text-align: center;
+    margin: 0;
+  }
+  
+  .flip-card-inner {
     position: relative;
     width: 100%;
     height: 100%;
     text-align: center;
+    transition: transform 0.8s;
     transform-style: preserve-3d;
-    transition: transform 0.8s ease-in-out;
-    }
-   
-    .flip-card-front,
-    .flip-card-back {
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
     height: 100%;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px #00f;
-    display: flex;
-    flex-direction: column;
-    justify-content:left;
-    align-items:left;
-    padding: 0; /* Remove padding from the card container */
-    margin: 0; /* Remove margin if present */
-    }
-   
-    .flip-card-front {
-    z-index: 2;
-    transform: rotateY(0deg);
-    background-color: rgba(0, 0, 0, 0.2);
-    }
-   
-    .flip-card-back h3 {
-    font-size: 20px; /* Slightly larger font size */
-    font-weight: 700; /* Make it bold */
-    color: #ffffff93; /* Adjust color to a softer blue */
-    text-align:left; /* Ensure the heading is centered */
-    margin: 10px 0; /* Add space above and below */
-    text-transform: uppercase; /* Make text uppercase for emphasis */
-    letter-spacing: 1.5px; /* Add some spacing between letters */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-    }
-   
-    .flip-card-back {
-    background-color: rgba(204, 204, 204, 0.1);
-    transform: rotateY(180deg);
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto; /* Make content scrollable */
-    max-height: 100%; /* Ensure it doesn’t overflow out of the card */
-    justify-content: space-between; /* Distribute space: title at the top, button at the bottom */
-    padding: 20px;
-    }
-    /* Scrollbar Styles */
-    .flip-card-back::-webkit-scrollbar {
-    width: 8px; /* Width of the vertical scrollbar */
-    height: 8px; /* Height of the horizontal scrollbar */
-    }
-   
-    .flip-card-back::-webkit-scrollbar-thumb {
-    background-color: #007bff; /* Color of the scrollbar thumb */
-    border-radius: 10px; /* Rounded corners for the thumb */
-    border: 2px solid #fff; /* Optional: Add border to the thumb for a clean look */
-    }
-   
-    .flip-card-back::-webkit-scrollbar-thumb:hover {
-    background-color: #0056b3; /* Color when hovering over the scrollbar thumb */
-    }
-   
-    .flip-card-back::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Track color */
-    border-radius: 10px; /* Optional: Rounded corners for the track */
-    }
-   
-    .flip-card-back::-webkit-scrollbar-track:hover {
-    background-color: #e1e1e1; /* Color when hovering over the track */
-    }
-   
-    .flip-card.flipped .flip-card-inner {
-    transform: rotateY(180deg);
-    }
-    .flip-card-back p {
-    font-size: 14px;
-    margin-top: 10px; /* Ensure description starts below the title */
-    margin-bottom: 20px; /* Provide space before button */
-    line-height: 40px;
-   
-    flex-grow: 1; /* Allow paragraph to take remaining space */
-    }
-   
-    .flip-card-back ul {
-    list-style: disc;
-    color: #00f;
-    padding-left: 20px;
-    margin: 10px 0;
-    text-align:left;
-    }
-   
-    .project-image {
-    width: 400px; /* Set a smaller fixed width */
-    margin-top: 0%;
-    height: 250px; /* Set a smaller fixed height to match the width */
-    object-fit: cover; /* Ensure the image covers the square area without distortion */
-    aspect-ratio: 1; /* Maintain a 1: 1 aspect ratio, ensuring it's always square */
-    align-self: center;
-    }
-   
-    .flip-btn {
-    position: relative;
-    width: 150px;
-    align-self: center;
-    margin-top: 20px; /* Move button further down */
-    padding: calc(0.6em + var(--s)) calc(1em + var(--s)); /* Slightly increase padding */
-    --b: 3px; /* border thickness */
-    --s: 0.45em; /* size of the corner */
-    --color: #ffffff93;
-    color: var(--color);
-    --_p: var(--s);
-    background: conic-gradient(
-    from 90deg at var(--b) var(--b),
-    #0000 90deg,
-    var(--color) 0
-    )
-    var(--_p) var(--_p) / calc(100% - var(--b) - 2 * var(--_p))
-    calc(100% - var(--b) - 2 * var(--_p));
-    transition: 0.3s linear, color 0s, background-color 0s;
-    outline: var(--b) solid #0000;
-    outline-offset: 0.6em;
-    font-size: 15px;
-    text-transform: uppercase;
-    border: 0;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    clip-path: inset(0 0 0 0);
-   }
-   
-   
-   /* Hover Effect */
-   .flip-btn:hover,
-   .flip-btn:focus-visible {
-    --_p: 0px;
-    outline-color: var(--color);
-    outline-offset: 0.05em;
-    color: #111010; /* Change text color on hover */
-   }
-   
-   .flip-btn:active {
-    background: var(--color);
+    border: 1px solid coral;
+    border-radius: 1rem;
+  }
+  
+  .flip-card-front {
+    background: linear-gradient(120deg, #fff 60%, #fff 88%,
+       #fff, #00f 48%);
     color: #fff;
-   }
+  }
+  
+  .flip-card-back {
+    background: linear-gradient(120deg, #00f 88%,
+       bisque 40%, rgb(255, 185, 160) 78%);
+    color: white;
+    transform: rotateY(180deg);
+  }
    
-   /* Gradient Slide Effect */
-   .flip-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 0;
-    height: 100%;
-    background: #fff;
-    transition: width 0.9s ease-in-out, left 0.9s ease-in-out;
-    z-index: -1; /* Place behind button content */
-    transform: skewX(-20deg); /* Add skew for dynamic look */
-   }
-   
-   .flip-btn:hover::before {
-    width: 200%; /* Expand gradient */
-    left: -50%; /* Move gradient leftward for a sweeping effect */
-   }
-   
-   
-   
-    /* Container for Project Cards */
-    .project-cards {
-    display: flex; /* Align cards horizontally */
-    gap: 20px; /* Space between the cards */
-    overflow-x: auto; /* Enable horizontal scrolling */
-    padding: 20px; /* Space around the scrolling area */
-    scroll-snap-type: x mandatory; /* Smooth snap behavior */
-    scrollbar-width: thin; /* Thin scrollbar for Firefox */
-    scrollbar-color: #00f transparent; /* Blue thumb, transparent track */
-    }
-   
-    /* For WebKit browsers like Chrome, Safari */
-    .project-cards::-webkit-scrollbar {
-    height: 10px; /* Horizontal scrollbar height */
-    }
-   
-    .project-cards::-webkit-scrollbar-thumb {
-    background-color: #00f; /* Custom color for the scroll thumb */
-    border-radius: 5px;
-    }
-   
-    .project-cards::-webkit-scrollbar-track {
-    background: #f4f4f4; /* Custom color for the scrollbar track */
-    }
-   
-    /* Scrollbar hover effect */
-    .project-cards::-webkit-scrollbar-thumb:hover {
-    background-color: #008cff; /* Lighter blue on hover */
-    }
-   
+ 
     /* Specific styles for <p> tags in the Projects section */
-    #projects p {
-    font-size: 16px; /* Adjust font size */
-    color: #ffffff93; /* Text color */
-    margin-bottom: 15px; /* Space below each paragraph */
-    line-height: 40px;
-    text-align: justify; /* Justify text alignment */
-    text-justify: inter-word; /* Ensure words are spaced evenly */
-    }
+   
    
     /* Add hover effect if needed */
-    #projects p:hover {
-    color: #fff; /* Change text color on hover */
-    transition: color 0.3s ease; /* Smooth transition */
-    }
+  
    
     * {
     margin: 0;
@@ -1688,4 +1691,50 @@ body::before {
         color: #d6d6d6;
         transition: 100ms;
     }
-    
+    /* From Uiverse.io by ilkhoeri */ 
+    .wrapper {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+  
+      .inner {
+        --w: 100px;
+        --h: 150px;
+        --translateZ: 250px; /* Adjust this value for better spacing */
+        --rotateX: -15deg;
+        --perspective: 1000px;
+        position: relative;
+        width: var(--w);
+        height: var(--h);
+        transform-style: preserve-3d;
+        animation: rotating 10s linear infinite;
+      }
+  
+      @keyframes rotating {
+        from {
+          transform: perspective(var(--perspective)) rotateX(var(--rotateX)) rotateY(0deg);
+        }
+        to {
+          transform: perspective(var(--perspective)) rotateX(var(--rotateX)) rotateY(360deg);
+        }
+      }
+  
+      .card {
+        position: absolute;
+        width: var(--w);
+        height: var(--h);
+        border-radius: 12px;
+        border: 2px solid rgba(var(--color-card), 1);
+        background: rgba(var(--color-card), 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        color: white;
+        font-weight: bold;
+        transform: rotateY(calc((360deg / var(--quantity)) * var(--index))) translateZ(var(--translateZ));
+      }
