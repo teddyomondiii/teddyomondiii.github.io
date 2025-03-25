@@ -615,13 +615,21 @@ body::before {
             
     }
 
-    .spotify-playlist .container {
-      background: rgba(204, 204, 204, 0.1);
-      padding: 20px;
+    .spotify-playlist iframe {
+      width: 50%; /* Default: Half of the screen */
+      height: 352px; /* Default height */
+      border-radius: 12px; /* Rounded corners */
       box-shadow: 0 4px 20px rgba(4, 0, 247, 0.774); /* Adds shadow */
-      border-radius: 10px;
-      transition: transform 0.3s ease-in-out;
+      transition: transform 0.3s ease-in-out; /* Smooth scaling effect */
+      
+    }
+    
+    @media (max-width: 768px) {
+      .spotify-playlist iframe {
+        width: 100%; /* Full width on smaller screens */
       }
+    }
+    
    
     .profile-photo {
     border-radius: 10px;
