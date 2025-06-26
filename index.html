@@ -17,6 +17,8 @@
 
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+      <script src="https://cdn.tailwindcss.com"></script>
+
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
@@ -33,7 +35,7 @@
         <!-- <a href="index.html" class="mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
         <h2> Visionary | Specialist | Innovator </h2>
         <!-- <div class="social-links"><a class="facebook" href="https://www.facebook.com/teddy.omonditunya" target="_blank"><i class="fa-brands fa-facebook"></i></a><a class="github" href="https://github.com/TeddyO323" target="_blank"><i class="fa-brands fa-github"></i></a><a href="https://x.com/TeddyOmond87011?t=yVmQXtsHKM2e-rPp9I-jvw&s=09" target="_blank"><i class="fa-brands fa-x-twitter fa-2xs"></i></a><a class="linkedin" href="https://www.linkedin.com/in/teddy-omondi-35551376/" target="_blank"><i class="icofont-linkedin"></i></a></div> -->
-        <nav class="nav-menu d-none d-lg-block">
+<nav class="nav-menu ">
           <ul>
             <li class="active">
               <a href="#header">Home</a>
@@ -53,7 +55,7 @@
             <!-- <li><a href="#portfolio">Portfolio</a></li> -->
             <!-- <li><a href="#blog">Blog</a></li> -->
             <li>
-              <a href="https://github.com/TeddyO323?tab=repositories" target="_blank">Projects</a>
+              <a href="#projects">Projects</a>
             </li>
           </ul>
         </nav>
@@ -467,99 +469,222 @@
     </section>
     <!-- End Contact Section -->
     <!-- <section class="blog" id="blog"><div class="container"><div class="blog"><div class="section-title"><h2>Blog</h2><h1>This page is still under Construction</h1><p class="animate__animated animate__fadeInUp animate__slow">Sooner or later, just chill</p><div class="hero-btns animate__animated animate__fadeInUp animate__slow"><a href="index.html"><button class="btn-trans" type="button">Go Back Home</button></a></div></div></div></div></section> -->
-    <section class="projects" id="projects">
-      <div class="container">
-        <div class="section-title">
-          <h2>Projects</h2>
+        <section class="projects" id="projects">
+
+        <div class="container mx-auto">
+            <div class="section-title">
+                <h2>Projects</h2>
+            </div>
+            
+            <!-- Project Filters -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="web">Web Development</button>
+                <button class="filter-btn" data-filter="python">Python</button>
+                <button class="filter-btn" data-filter="javascript">JavaScript</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+            </div>
+            
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card" data-category="web javascript">
+                    <div class="overflow-hidden">
+                        <img src="assets/img/progresssss.jpg" alt="Year Progress Bar" class="project-image">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Year Progress Bar</h3>
+                        <p class="text-gray-400 mb-4">A visual representation of the year's progress with interactive features and user feedback.</p>
+                        
+                        <div class="mb-4">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        
+                        <div class="flex space-x-3">
+                            <a href="https://github.com/TeddyO323/Progress-bar_of_the_year" target="_blank" class="btn-primary">
+                                <i class="fab fa-github mr-2"></i> View Code
+                            </a>
+                            <a href="https://teddyo323.github.io/Progress-bar_of_the_year/" target="_blank" class="btn-outline">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card" data-category="web javascript">
+                    <div class="overflow-hidden">
+                        <img src="assets/img/world-clock.png" alt="World Clock" class="project-image">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">World Clock</h3>
+                        <p class="text-gray-400 mb-4">An interactive world clock with customizable time zones and visual themes.</p>
+                        
+                        <div class="mb-4">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">API</span>
+                        </div>
+                        
+                        <div class="flex space-x-3">
+                            <a href="https://github.com/TeddyO323/Analog_clock.git" target="_blank" class="btn-primary">
+                                <i class="fab fa-github mr-2"></i> View Code
+                            </a>
+                            <a href="https://teddyo323.github.io/Analog_clock/" target="_blank" btn-outline">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card" data-category="python">
+                    <div class="overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Python World Clock" class="project-image">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Python World Clock</h3>
+                        <p class="text-gray-400 mb-4">A Python-based analog clock with real-time updates and date display.</p>
+                        
+                        <div class="mb-4">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Tkinter</span>
+                            <span class="tech-tag">GUI</span>
+                        </div>
+                        
+                        <div class="flex space-x-3">
+                            <a href="#" class="btn-primary">
+                                <i class="fab fa-github mr-2"></i> View Code
+                            </a>
+                            <a href="#" class="btn-outline">Download</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card" data-category="web javascript">
+                    <div class="overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1587145820266-a5951ee6f620?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Scientific Calculator" class="project-image">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Scientific Calculator</h3>
+                        <p class="text-gray-400 mb-4">A web-based calculator with advanced mathematical functions and responsive design.</p>
+                        
+                        <div class="mb-4">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        
+                        <div class="flex space-x-3">
+                            <a href="https://github.com/TeddyO323/Calculator" target="_blank" class="btn-primary">
+                                <i class="fab fa-github mr-2"></i> View Code
+                            </a>
+                            <a href="#" class="btn-outline">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="project-card" data-category="web javascript">
+                    <div class="overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="To-Do List App" class="project-image">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">To-Do List App</h3>
+                        <p class="text-gray-400 mb-4">A task management application with local storage and priority tagging.</p>
+                        
+                        <div class="mb-4">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Local Storage</span>
+                        </div>
+<div class="flex space-x-3">
+    <a href="#" class="btn-primary" style="opacity: 0.6; cursor: not-allowed;">
+        <i class="fas fa-code mr-2"></i> Coming Soon
+    </a>
+    <a href="#" class="btn-outline" style="opacity: 0.6; cursor: not-allowed;">
+        <i class="fas fa-clock mr-2"></i> In Development
+    </a>
+</div>
+                     
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="project-card" data-category="design">
+                    <div class="overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1541462608143-67571c6738dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Portfolio Design" class="project-image">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Portfolio Design</h3>
+                        <p class="text-gray-400 mb-4">A modern portfolio design with responsive layout and interactive elements.</p>
+                        
+                        <div class="mb-4">
+                            <span class="tech-tag">Figma</span>
+                            <span class="tech-tag">UI/UX</span>
+                            <span class="tech-tag">Prototyping</span>
+                        </div>
+                        
+                     <div class="flex space-x-3">
+    <a href="#" class="btn-primary" style="opacity: 0.6; cursor: not-allowed;">
+        <i class="fas fa-code mr-2"></i> Coming Soon
+    </a>
+    <a href="#" class="btn-outline" style="opacity: 0.6; cursor: not-allowed;">
+        <i class="fas fa-clock mr-2"></i> In Development
+    </a>
+</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- View More Button -->
+            <div class="text-center mt-12">
+                <a href="https://github.com/TeddyO323?tab=repositories" target="_blank" class="btn-primary inline-block px-8 py-3 text-lg">
+                    <i class="fab fa-github mr-2"></i> View All Projects on GitHub
+                </a>
+            </div>
         </div>
-        <div class="project-cards">
-          <!-- Project Card 1 -->
-          <div class="flip-card" id="card1">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="assets/img/project1.jpg" alt="Year Progress Bar" class="project-image">
-                <h3>Year Progress Bar</h3>
-                <button class="flip-btn" onclick="flipCard('card1')">See More</button>
-              </div>
-              <div class="flip-card-back">
-                <h3>Year Progress Bar</h3>
-                <p> The Year Progress Bar visually tracks the year’s progress and allows user feedback. <a href="https://github.com/TeddyO323/Progress-bar_of_the_year" target="_blank">View source code</a>
-                </p>
-                <p>Technologies used:</p>
-                <ul>
-                  <li>HTML</li>
-                  <li>CSS</li>
-                  <li>JavaScript</li>
-                </ul>
-                <button class="flip-btn" onclick="flipCardBack('card1')">Back</button>
-              </div>
-            </div>
-          </div>
-          <!-- Project Card 2 -->
-          <div class="flip-card" id="card2">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="assets/img/world-clock.png" alt="World Clock" class="project-image">
-                <h3>World Clock</h3>
-                <button class="flip-btn" onclick="flipCard('card2')">See More</button>
-              </div>
-              <div class="flip-card-back">
-                <h3>World Clock</h3>
-                <p> An interactive clock offering customizable time zones and visual designs for different user preferences. </p>
-                <button class="flip-btn" onclick="flipCardBack('card2')">Back</button>
-              </div>
-              <!-- HTML !-->
-            </div>
-          </div>
-          <!-- Project Card 3 -->
-          <div class="flip-card" id="card3">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="assets/img/clockk.png" alt="Python World Clock" class="project-image">
-                <h3>Python World Clock</h3>
-                <button class="flip-btn" onclick="flipCard('card3')">See More</button>
-              </div>
-              <div class="flip-card-back">
-                <h3>Python World Clock</h3>
-                <p> This Python-based analog clock showcases real-time updates, including day, date, and second markings. </p>
-                <button class="flip-btn" onclick="flipCardBack('card3')">Back</button>
-              </div>
-            </div>
-          </div>
-          <!-- Project Card 4 -->
-          <div class="flip-card" id="card4">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="assets/img/calculator.png" alt="Scientific Calculator" class="project-image">
-                <h3>Scientific Calculator</h3>
-                <button class="flip-btn" onclick="flipCard('card4')">See More</button>
-              </div>
-              <div class="flip-card-back">
-                <h3>Scientific Calculator</h3>
-                <p> This web-based calculator performs basic arithmetic and advanced mathematical functions. <a href="https://github.com/TeddyO323/Calculator/archive/refs/heads/main.zip" target="_blank">Source code</a>
-                </p>
-                <p>Technologies used:</p>
-                <ul>
-                  <li>HTML</li>
-                  <li>CSS</li>
-                  <li>JavaScript</li>
-                </ul>
-                <button class="flip-btn" onclick="flipCardBack('card4')">Back</button>
-              </div>
-            </div>
-          </div>
-          <!-- Add more projects similarly -->
-          <!-- Project Card 5 -->
-          <!-- <div class="flip-card" id="card5"><div class="flip-card-inner"><div class="flip-card-front"><img src="assets/img/todo.png" alt="To-Do List App" class="project-image"><h3>To-Do List App</h3><button class="flip-btn" onclick="flipCard('card5')">See More</button></div><div class="flip-card-back"><h3>To-Do List App</h3><p>
-								A simple and interactive To-Do List app that lets you manage tasks effectively.
-							</p><ul><li>HTML</li><li>CSS</li><li>JavaScript</li></ul><button class="flip-btn" onclick="flipCardBack('card5')">Back</button></div></div></div> -->
-          <!-- Project Card 6 -->
-          <!-- <div class="flip-card" id="card6"><div class="flip-card-inner"><div class="flip-card-front"><img src="assets/img/weather.png" alt="Weather App" class="project-image"><h3>Weather App</h3><button class="flip-btn" onclick="flipCard('card6')">See More</button></div><div class="flip-card-back"><h3>Weather App</h3><p>
-								A weather forecasting app with dynamic visuals and real-time data.
-							</p><ul><li>HTML</li><li>CSS</li><li>JavaScript</li></ul><button class="flip-btn" onclick="flipCardBack('card6')">Back</button></div></div></div> -->
-        </div>
-      </div>
     </section>
+      <script>
+        // Project filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    const filterValue = button.getAttribute('data-filter');
+                    
+                    projectCards.forEach(card => {
+                        if (filterValue === 'all' || card.getAttribute('data-category').includes(filterValue)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Add hover effect to project cards
+            projectCards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    const img = card.querySelector('.project-image');
+                    img.style.transform = 'scale(1.05)';
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    const img = card.querySelector('.project-image');
+                    img.style.transform = 'scale(1)';
+                });
+            });
+        });
+    </script>
     <!-- -Portfolio section-->
     <!-- <section class="portfolio" id="portfolio"><div class="container"><div class="blog"><div class="section-title"><h2>Portfolio</h2><h1>This page is still under Construction</h1><p class="animate__animated animate__fadeInUp animate__slow">Sooner or later, just chill</p><div class="hero-btns animate__animated animate__fadeInUp animate__slow"><a href="index.html"><button class="btn-trans" type="button">Go Back Home</button></a></div></div></div></div></section> -->
     <!--- end of portfolio section -->
