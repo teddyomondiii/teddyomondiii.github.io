@@ -28,8 +28,63 @@
     <!-- ======= Header ======= -->
     <header class="" id="header">
       <div class="container">
-        <h1> Teddy Omondi</h1>
-        
+    <h1 id="lokiTitle" class="glitch-name" data-text="Teddy Omondi">Teddy Omondi</h1>
+<script>
+window.addEventListener("DOMContentLoaded", () => {
+  const title = document.querySelector(".glitch-name");
+  if (!title) return;
+
+  const text = title.textContent.trim();
+  title.innerHTML = "";
+
+  [...text].forEach(char => {
+  const span = document.createElement("span");
+  span.innerHTML = char === " " ? "&nbsp;" : char;
+  title.appendChild(span);
+});
+
+
+  const fonts = [
+    'serif', 'sans-serif', 'monospace', 'cursive', 'fantasy',
+    '"Times New Roman"', '"Courier New"', '"Lucida Console"',
+    '"Comic Sans MS"', '"Georgia"'
+  ];
+
+  const spans = title.querySelectorAll("span");
+
+  function randomFont() {
+    return fonts[Math.floor(Math.random() * fonts.length)];
+  }
+
+  let flickerInterval = null;
+
+  function startFlicker(speed) {
+    if (flickerInterval) clearInterval(flickerInterval);
+    flickerInterval = setInterval(() => {
+      spans.forEach(span => {
+        span.style.fontFamily = randomFont();
+      });
+    }, speed);
+  }
+
+  // 🔁 Start fast (100ms) — like the Loki intro
+  startFlicker(100);
+
+  // ⏳ After 2 seconds, switch to slower flicker (500ms)
+  setTimeout(() => {
+    startFlicker(500);
+  }, 2000);
+});
+</script>
+
+        <div class="d-flex align-items-center">
+          <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+        </div>
+        <script>
+          document.querySelector('.mobile-nav-toggle').addEventListener('click', function() {
+            document.querySelector('#header').classList.toggle('mobile-nav-active');
+          });
+</script>
 
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html" class="mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
@@ -327,86 +382,176 @@
           <h2>Services</h2>
           <p>My Services</p>
         </div>
-        <div class="row">
-          <!-- Web Designing -->
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="item">
-              <div class="layer">
-                <h3>Web Designing</h3>
-                <p>Creating stunning eCommerce, business, blogs, portfolios, and more.</p>
-                <span>
-                  <i class="fa-solid fa-code"></i>
-                </span>
-                <!--  for Web Designing -->
-              </div>
+       
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
+                    <div class="p-8">
+                        <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                            <i class="fas fa-code text-indigo-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Web Development</h3>
+                        <p class="text-gray-600 mb-6">Custom websites built with modern technologies to ensure fast, secure, and scalable solutions for your business.</p>
+                        <ul class="space-y-2 text-gray-600 mb-6">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-indigo-500 mr-2"></i>
+                                Responsive Design
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-indigo-500 mr-2"></i>
+                                CMS Integration
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-indigo-500 mr-2"></i>
+                                E-commerce Solutions
+                            </li>
+                        </ul>
+                        <a href="#" class="text-indigo-600 font-semibold hover:text-indigo-800 flex items-center">
+                            Learn more <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
+                    <div class="p-8">
+                        <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                            <i class="fas fa-mobile-alt text-purple-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Mobile App Development</h3>
+                        <p class="text-gray-600 mb-6">Native and cross-platform mobile applications designed to engage users and deliver exceptional experiences.</p>
+                        <ul class="space-y-2 text-gray-600 mb-6">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-purple-500 mr-2"></i>
+                                iOS & Android
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-purple-500 mr-2"></i>
+                                React Native
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-purple-500 mr-2"></i>
+                                API Integration
+                            </li>
+                        </ul>
+                        <a href="#" class="text-purple-600 font-semibold hover:text-purple-800 flex items-center">
+                            Learn more <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
+                    <div class="p-8">
+                        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                            <i class="fas fa-paint-brush text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">UI/UX Design</h3>
+                        <p class="text-gray-600 mb-6">Beautiful, intuitive interfaces that enhance user experience and drive conversions for your digital products.</p>
+                        <ul class="space-y-2 text-gray-600 mb-6">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-blue-500 mr-2"></i>
+                                User Research
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-blue-500 mr-2"></i>
+                                Wireframing
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-blue-500 mr-2"></i>
+                                Prototyping
+                            </li>
+                        </ul>
+                        <a href="#" class="text-blue-600 font-semibold hover:text-blue-800 flex items-center">
+                            Learn more <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
+                    <div class="p-8">
+                        <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                            <i class="fas fa-search-dollar text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Virtual Assistant</h3>
+                        <p class="text-gray-600 mb-6">Providing technical support, data entry, project management, and more to help streamline your business operations.</p>
+                        <ul class="space-y-2 text-gray-600 mb-6">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Keyword Research
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                On-Page Optimization
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Technical SEO
+                            </li>
+                        </ul>
+                        <a href="#" class="text-green-600 font-semibold hover:text-green-800 flex items-center">
+                            Learn more <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
+                    <div class="p-8">
+                        <div class="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                            <i class="fas fa-bullhorn text-yellow-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Digital Marketing</h3>
+                        <p class="text-gray-600 mb-6">Targeted marketing campaigns across multiple channels to grow your audience and increase conversions.</p>
+                        <ul class="space-y-2 text-gray-600 mb-6">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-yellow-500 mr-2"></i>
+                                Social Media
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-yellow-500 mr-2"></i>
+                                Email Campaigns
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-yellow-500 mr-2"></i>
+                                Content Strategy
+                            </li>
+                        </ul>
+                        <a href="#" class="text-yellow-600 font-semibold hover:text-yellow-800 flex items-center">
+                            Learn more <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service Card 6 -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
+                    <div class="p-8">
+                        <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                            <i class="fas fa-server text-red-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Hosting & Maintenance</h3>
+                        <p class="text-gray-600 mb-6">Reliable hosting solutions and ongoing maintenance to keep your website secure and performing at its best.</p>
+                        <ul class="space-y-2 text-gray-600 mb-6">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-red-500 mr-2"></i>
+                                Cloud Hosting
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-red-500 mr-2"></i>
+                                Security Updates
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-red-500 mr-2"></i>
+                                Performance Optimization
+                            </li>
+                        </ul>
+                        <a href="#" class="text-red-600 font-semibold hover:text-red-800 flex items-center">
+                            Learn more <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
-          </div>
-          <!-- Virtual Assistant -->
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-            <div class="item">
-              <div class="layer">
-                <h3>Virtual Assistant</h3>
-                <p>Providing technical support, data entry, project management, and more.</p>
-                <span>
-                  <i class="fa-solid fa-user-tie"></i>
-                </span>
-                <!-- Icon for Virtual Assistant -->
-              </div>
-            </div>
-          </div>
-          <!-- Transcriptionist -->
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
-            <div class="item">
-              <div class="layer">
-                <h3>Transcriptionist</h3>
-                <p>Expert in various transcription services including legal, medical, and more.</p>
-                <span>
-                  <i class="fa-solid fa-keyboard"></i>
-                </span>
-                <!-- Icon for Transcriptionist -->
-              </div>
-            </div>
-          </div>
-          <!-- Graphic Designing -->
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-            <div class="item">
-              <div class="layer">
-                <h3>Graphic Designing</h3>
-                <p>Offering branding, UI/UX design, infographics, and more.</p>
-                <span>
-                  <i class="fa-solid fa-paint-brush"></i>
-                </span>
-                <!-- Icon for Graphic Designing -->
-              </div>
-            </div>
-          </div>
-          <!-- CyberSecurity -->
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-            <div class="item">
-              <div class="layer">
-                <h3>CyberSecurity</h3>
-                <p>Conducting risk assessments and monitoring computer systems.</p>
-                <span>
-                  <i class="fa-solid fa-shield-halved"></i>
-                </span>
-                <!-- Icon for CyberSecurity -->
-              </div>
-            </div>
-          </div>
-          <!-- Academic Writing -->
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-            <div class="item">
-              <div class="layer">
-                <h3>Academic Writing</h3>
-                <p>Expert writing services in various fields including science and literature.</p>
-                <span>
-                  <i class="fa-solid fa-book"></i>
-                </span>
-                <!-- Icon for Academic Writing -->
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
     <!-- ======= Contact Section ======= -->
