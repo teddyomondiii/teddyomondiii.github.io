@@ -29,7 +29,8 @@
     <header class="" id="header">
       <div class="container">
     <h1 id="lokiTitle" class="glitch-name" data-text="Teddy Omondi">Teddy Omondi</h1>
-<script>
+    
+    <script>
 window.addEventListener("DOMContentLoaded", () => {
   const title = document.querySelector(".glitch-name");
   if (!title) return;
@@ -37,17 +38,32 @@ window.addEventListener("DOMContentLoaded", () => {
   const text = title.textContent.trim();
   title.innerHTML = "";
 
-  [...text].forEach(char => {
-  const span = document.createElement("span");
-  span.innerHTML = char === " " ? "&nbsp;" : char;
-  title.appendChild(span);
-});
-
+  [...text].forEach((char, index) => {
+    const span = document.createElement("span");
+    span.innerHTML = char === " " ? "&nbsp;" : char;
+    span.style.animationDelay = `${0.1 * index}s`; // fade-in timing
+    title.appendChild(span);
+  });
 
   const fonts = [
     'serif', 'sans-serif', 'monospace', 'cursive', 'fantasy',
     '"Times New Roman"', '"Courier New"', '"Lucida Console"',
-    '"Comic Sans MS"', '"Georgia"'
+    '"Comic Sans MS"', '"Georgia", "Arial"', '"Verdana"', '"Impact"',
+    '"Trebuchet MS"', '"Palatino Linotype"', '"Arial Black"',
+    '"Tahoma"', '"Helvetica Neue"', '"Segoe UI"', '"Roboto"',
+    '"Open Sans"', '"Lato"', '"Montserrat"', '"Raleway"',
+    '"Poppins"', '"Ubuntu"', '"Source Sans Pro"', '"Noto Sans"',
+    '"Merriweather"', '"Playfair Display"', '"Oswald"', '"PT Sans"',
+    '"Fira Sans"', '"Exo 2"', '"Quicksand"', '"Nunito"',
+    '"Droid Sans"', '"Cabin"', '"Work Sans"', '"Rubik"',
+    '"Bebas Neue"', '"Anton"', '"Archivo"', '"Barlow"',
+    '"DM Sans"', '"Inter"', '"Lexend"', '"Space Grotesk"',
+    '"Varela Round"', '"Ubuntu Mono"', '"Inconsolata"',
+    '"PT Mono"', '"Source Code Pro"', '"Courier Prime"',
+    '"Space Mono"', '"Roboto Mono"', '"Fira Code"',
+    '"JetBrains Mono"', '"Hack"', '"Cascadia Code"',
+    '"IBM Plex Mono"', '"Noto Sans Mono"', '"Oxygen Mono"',
+    '"Ubuntu Mono"', '"PT Mono"', '"Source Code Pro"',
   ];
 
   const spans = title.querySelectorAll("span");
@@ -55,6 +71,9 @@ window.addEventListener("DOMContentLoaded", () => {
   function randomFont() {
     return fonts[Math.floor(Math.random() * fonts.length)];
   }
+  spans.forEach(span => {
+    span.style.fontFamily = randomFont();
+  });
 
   let flickerInterval = null;
 
@@ -62,20 +81,23 @@ window.addEventListener("DOMContentLoaded", () => {
     if (flickerInterval) clearInterval(flickerInterval);
     flickerInterval = setInterval(() => {
       spans.forEach(span => {
-        span.style.fontFamily = randomFont();
+        if (span.textContent.trim() !== "") {
+          span.style.fontFamily = randomFont();
+        }
       });
     }, speed);
   }
 
-  // 🔁 Start fast (100ms) — like the Loki intro
+  // Start fast like Loki
   startFlicker(100);
 
-  // ⏳ After 2 seconds, switch to slower flicker (500ms)
+  // Slow it down after 2s
   setTimeout(() => {
     startFlicker(500);
   }, 2000);
 });
 </script>
+
 
         <div class="d-flex align-items-center">
           <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
@@ -781,6 +803,33 @@ window.addEventListener("DOMContentLoaded", () => {
 </div>
                     </div>
                 </div>
+<!--project 7-->
+                <div class="project-card" data-category="design">
+                    <div class="overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Doctor Strange Portal" class="project-image">
+                    <div class="overflow-hidden">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Doctor Strange Portal</h3>
+                        <p class="text-gray-400 mb-4">A creative design inspired by Doctor Strange's portal, showcasing advanced CSS animations and effects.</p>
+                    </div>
+                        <div class="mb-4">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">Animation</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="#" class="btn-primary" style="opacity: 0.6; cursor: not-allowed;">
+                                <i class="fas fa-code mr-2"></i> Coming Soon
+                            </a>
+                            <a href="#" class="btn-outline" style="opacity: 0.6; cursor: not-allowed;">
+                                <i class="fas fa-clock mr-2"></i> In Development
+                            </a>
+                        </div>
+                    
+                    </div>
+                    </div>      
+                       
             </div>
             
             <!-- View More Button -->
