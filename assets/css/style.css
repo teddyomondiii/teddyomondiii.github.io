@@ -3503,6 +3503,7 @@ h4 {
 }
 
 /* Global Background Lights */
+/* Global Background Lights */
 #christmas-lights-background {
   position: fixed;
   top: 0;
@@ -3512,6 +3513,14 @@ h4 {
   z-index: -1;
   pointer-events: none;
   overflow: hidden;
+  opacity: 0;
+  /* Hidden by default */
+  transition: opacity 1s ease;
+}
+
+body.christmas-mode #christmas-lights-background {
+  opacity: 1;
+  /* Connected to toggle */
 }
 
 .light {
