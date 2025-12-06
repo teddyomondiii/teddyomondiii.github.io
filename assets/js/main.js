@@ -366,7 +366,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
     const snowCanvas = document.getElementById('snow-canvas');
     const greeting = document.querySelector('.holiday-greeting');
-    const lightsContainer = document.querySelector('.christmas-lights-container');
+
+    // State for balloons
+    let balloonInterval;
 
     if (!toggleBtn) {
         console.warn("Christmas toggle button not found");
@@ -397,12 +399,12 @@ document.addEventListener('DOMContentLoaded', () => {
             body.classList.add('christmas-mode');
             try { localStorage.setItem('christmasMode', 'true'); } catch (e) { }
             toggleBtn.innerHTML = "❌ Exit Christmas Mode";
-            // Force text update case
             toggleBtn.textContent = "❌ Exit Christmas Mode";
 
             initSnow();
             showGreeting();
             initLights();
+            initBalloons();
         } catch (e) {
             console.error("Error enabling Christmas mode:", e);
         }
@@ -416,7 +418,8 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleBtn.innerHTML = "🎄 Christmas Mode";
             toggleBtn.textContent = "🎄 Christmas Mode";
 
-            // Optional: Force cleanup lights if needed, but CSS handles opacity
+            stopBalloons();
+            // Lights are handled by CSS opacity, no need to remove DOM elements constantly
         } catch (e) {
             console.error("Error disabling Christmas mode:", e);
         }
@@ -427,31 +430,91 @@ document.addEventListener('DOMContentLoaded', () => {
             greeting.classList.add('visible');
             setTimeout(() => {
                 greeting.classList.remove('visible');
-            }, 5000); // Hide after 5 seconds
+            }, 5000);
         }
     }
 
     function initLights() {
-        if (!lightsContainer) {
-            console.warn("Lights container not found");
-            return;
+        // Create or Get Fixed Container
+        let background = document.getElementById('christmas-lights-background');
+
+        if (!background) {
+            background = document.createElement('div');
+            background.id = 'christmas-lights-background';
+            document.body.appendChild(background);
+        } else {
+            // Clear existing if any
+            background.innerHTML = '';
         }
-        // Force display just in case
-        lightsContainer.style.display = 'flex';
 
-        if (lightsContainer.children.length > 0) return; // already init
+        console.log("Initializing Global Background Lights");
 
-        console.log("Initializing Lights");
-        const totalLights = 50;
+        const totalLights = 100; // "All over the page" density
+        const colors = ['red', 'green', 'blue', 'yellow', 'purple', 'orange', 'cyan'];
+        const groups = ['group-1', 'group-2', 'group-3'];
+
         for (let i = 0; i < totalLights; i++) {
             const light = document.createElement('div');
             light.classList.add('light');
-            // Randomize color
-            const colors = ['#f00', '#0f0', '#ff0', '#00f', '#fff'];
-            light.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-            light.style.animationDelay = `${Math.random()}s`;
-            lightsContainer.appendChild(light);
+
+            // Random Color
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            light.classList.add(randomColor);
+
+            // Random Animation Group
+            const randomGroup = groups[Math.floor(Math.random() * groups.length)];
+            light.classList.add(randomGroup);
+
+            // Random Position (Fixed Viewport)
+            light.style.left = Math.random() * 100 + 'vw';
+            light.style.top = Math.random() * 100 + 'vh';
+
+            // Randomize size slightly
+            const size = Math.random() * 4 + 4; // 4px to 8px
+            light.style.width = size + 'px';
+            light.style.height = size + 'px';
+
+            background.appendChild(light);
         }
+    }
+
+    function initBalloons() {
+        if (balloonInterval) clearInterval(balloonInterval);
+
+        // Spawn a balloon every 2 seconds
+        balloonInterval = setInterval(createBalloon, 2000);
+
+        // Create a few immediately
+        for (let i = 0; i < 3; i++) setTimeout(createBalloon, i * 500);
+    }
+
+    function stopBalloons() {
+        if (balloonInterval) clearInterval(balloonInterval);
+        document.querySelectorAll('.balloon').forEach(b => b.remove());
+    }
+
+    function createBalloon() {
+        if (!body.classList.contains('christmas-mode')) return;
+
+        const balloon = document.createElement('div');
+        balloon.classList.add('balloon');
+
+        // Randomize Position
+        balloon.style.left = Math.random() * 90 + 5 + '%'; // 5% to 95%
+
+        // Randomize Color
+        const colors = ['#e63946', '#2a9d8f', '#e9c46a', '#fff'];
+        balloon.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+
+        // Randomize sway duration
+        balloon.style.animationDuration = `10s, ${Math.random() * 2 + 2}s`;
+
+        document.body.appendChild(balloon);
+
+        // Cleanup after animation
+        setTimeout(() => {
+            balloon.remove();
+        }, 10000); // Matches floatUp duration
     }
 
     // Snow Effect
