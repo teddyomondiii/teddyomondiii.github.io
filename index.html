@@ -1,373 +1,448 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Teddy's Website</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
-    <!-- Favicons -->
-    <link href="assets/img/411d19fd-2b48-4fa7-befe-810bf7e44b70.webp" rel="icon">
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
 
-	<!-- Font Awesome -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-      <script src="https://cdn.tailwindcss.com"></script>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Teddy's Website</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <!-- Favicons -->
+  <link href="assets/img/411d19fd-2b48-4fa7-befe-810bf7e44b70.webp" rel="icon">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
 
-
-    <!-- Template Main CSS File -->
-    <link href="assets/css/style.css" rel="stylesheet">
-  </head>
-  <body>
-	
-    <!-- ======= Header ======= -->
-    <header class="" id="header">
-      <div class="container">
-    <h1 id="lokiTitle" class="glitch-name" data-text="Teddy Omondi">Teddy Omondi</h1>
-    
-    <script>
-window.addEventListener("DOMContentLoaded", () => {
-  const title = document.querySelector(".glitch-name");
-  if (!title) return;
-
-  const text = title.textContent.trim();
-  title.innerHTML = "";
-
-  [...text].forEach((char, index) => {
-    const span = document.createElement("span");
-    span.innerHTML = char === " " ? "&nbsp;" : char;
-    span.style.animationDelay = `${0.1 * index}s`; // fade-in timing
-    title.appendChild(span);
-  });
-
-  const fonts = [
-    'serif', 'sans-serif', 'monospace', 'cursive', 'fantasy',
-    '"Times New Roman"', '"Courier New"', '"Lucida Console"',
-    '"Comic Sans MS"', '"Georgia", "Arial"', '"Verdana"', '"Impact"',
-    '"Trebuchet MS"', '"Palatino Linotype"', '"Arial Black"',
-    '"Tahoma"', '"Helvetica Neue"', '"Segoe UI"', '"Roboto"',
-    '"Open Sans"', '"Lato"', '"Montserrat"', '"Raleway"',
-    '"Poppins"', '"Ubuntu"', '"Source Sans Pro"', '"Noto Sans"',
-    '"Merriweather"', '"Playfair Display"', '"Oswald"', '"PT Sans"',
-    '"Fira Sans"', '"Exo 2"', '"Quicksand"', '"Nunito"',
-    '"Droid Sans"', '"Cabin"', '"Work Sans"', '"Rubik"',
-    '"Bebas Neue"', '"Anton"', '"Archivo"', '"Barlow"',
-    '"DM Sans"', '"Inter"', '"Lexend"', '"Space Grotesk"',
-    '"Varela Round"', '"Ubuntu Mono"', '"Inconsolata"',
-    '"PT Mono"', '"Source Code Pro"', '"Courier Prime"',
-    '"Space Mono"', '"Roboto Mono"', '"Fira Code"',
-    '"JetBrains Mono"', '"Hack"', '"Cascadia Code"',
-    '"IBM Plex Mono"', '"Noto Sans Mono"', '"Oxygen Mono"',
-    '"Ubuntu Mono"', '"PT Mono"', '"Source Code Pro"',
-  ];
-
-  const spans = title.querySelectorAll("span");
-
-  function randomFont() {
-    return fonts[Math.floor(Math.random() * fonts.length)];
-  }
-  spans.forEach(span => {
-    span.style.fontFamily = randomFont();
-  });
-
-  let flickerInterval = null;
-
-  function startFlicker(speed) {
-    if (flickerInterval) clearInterval(flickerInterval);
-    flickerInterval = setInterval(() => {
-      spans.forEach(span => {
-        if (span.textContent.trim() !== "") {
-          span.style.fontFamily = randomFont();
-        }
-      });
-    }, speed);
-  }
-
-  // Start fast like Loki
-  startFlicker(100);
-
-  // Slow it down after 2s
-  setTimeout(() => {
-    startFlicker(500);
-  }, 2000);
-});
-</script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
 
 
-        <div class="d-flex align-items-center">
-          <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
-        </div>
-        <script>
-          document.querySelector('.mobile-nav-toggle').addEventListener('click', function() {
-            document.querySelector('#header').classList.toggle('mobile-nav-active');
-          });
-</script>
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
 
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html" class="mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
-        <h2> Visionary | Specialist | Innovator </h2>
-        <!-- <div class="social-links"><a class="facebook" href="https://www.facebook.com/teddy.omonditunya" target="_blank"><i class="fa-brands fa-facebook"></i></a><a class="github" href="https://github.com/TeddyO323" target="_blank"><i class="fa-brands fa-github"></i></a><a href="https://x.com/TeddyOmond87011?t=yVmQXtsHKM2e-rPp9I-jvw&s=09" target="_blank"><i class="fa-brands fa-x-twitter fa-2xs"></i></a><a class="linkedin" href="https://www.linkedin.com/in/teddy-omondi-35551376/" target="_blank"><i class="icofont-linkedin"></i></a></div> -->
-<nav class="nav-menu ">
-          <ul>
-            <li class="active">
-              <a href="#header">Home</a>
-            </li>
-            <li>
-              <a href="#about">About</a>
-            </li>
-            <li>
-              <a href="#resume">Resume</a>
-            </li>
-            <li>
-              <a href="#contact">Contact</a>
-            </li>
-            <li>
-              <a href="#services">Services</a>
-            </li>
-            <!-- <li><a href="#portfolio">Portfolio</a></li> -->
-            <!-- <li><a href="#blog">Blog</a></li> -->
-            <li>
-              <a href="#projects">Projects</a>
-            </li>
-          </ul>
-        </nav>
-        <!-- .nav-menu -->
+<body>
+
+  <!-- Christmas Elements -->
+  <div class="christmas-lights-container"></div>
+  <div class="christmas-badge">🎄 2025 Edition</div>
+  <div class="holiday-greeting" id="holiday-greeting">✨ Happy Holidays from Teddy ✨<br>Wishing you a joyful festive
+    season.</div>
+
+  <button id="christmas-toggle" class="christmas-toggle">
+    🎄 Christmas Mode
+  </button>
+
+  <canvas id="snow-canvas"></canvas>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header-tops">
+    <div class="container">
+      <h1 id="lokiTitle" class="glitch-name" data-text="Teddy Omondi">Teddy Omondi</h1>
+
+
+      <div class="d-flex align-items-center">
+        <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
       </div>
-    </header>
-    <!-- End Header -->
-    <!-- ======= About Section ======= -->
-    <section class="about" id="about">
-      <!-- ======= About Me ======= -->
-      <div class="about-me container">
-        <div class="section-title">
-          <h2>About</h2>
-          <p>Learn more about me</p>
-        </div>
-        <div class="row">
-          <!-- Move the image inside the content container -->
-          <div class="col-lg-12 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <div class="row">
-              <div class="col-lg-4" data-aos="fade-right">
+      <script>
+        document.querySelector('.mobile-nav-toggle').addEventListener('click', function () {
+          document.querySelector('#header').classList.toggle('mobile-nav-active');
+        });
+      </script>
+
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
+      <h2> Visionary | Specialist | Innovator </h2>
+      <!-- <div class="social-links"><a class="facebook" href="https://www.facebook.com/teddy.omonditunya" target="_blank"><i class="fa-brands fa-facebook"></i></a><a class="github" href="https://github.com/TeddyO323" target="_blank"><i class="fa-brands fa-github"></i></a><a href="https://x.com/TeddyOmond87011?t=yVmQXtsHKM2e-rPp9I-jvw&s=09" target="_blank"><i class="fa-brands fa-x-twitter fa-2xs"></i></a><a class="linkedin" href="https://www.linkedin.com/in/teddy-omondi-35551376/" target="_blank"><i class="icofont-linkedin"></i></a></div> -->
+      <nav class="nav-menu ">
+        <ul>
+          <li class="active">
+            <a href="#header">Home</a>
+          </li>
+          <li>
+            <a href="#about">About</a>
+          </li>
+          <li>
+            <a href="#MyOrbit">My Orbit</a>
+          </li>
+          <li>
+            <a href="#resume">Resume</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+          <li>
+            <a href="#services">Services</a>
+          </li>
+          <!-- <li><a href="#MyOrbit">MyOrbit</a></li> -->
+          <!-- <li><a href="#blog">Blog</a></li> -->
+          <li>
+            <a href="#projects">Projects</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- .nav-menu -->
+    </div>
+  </header>
+  <script>
+    window.addEventListener("load", () => {
+      // Check if there's a hash (e.g. #about)
+      if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+        if (target) {
+          // Delay slightly to allow layout/animations to load
+          setTimeout(() => {
+            target.scrollIntoView({ behavior: "instant", block: "start" });
+          }, 100);
+        }
+      }
+    });
+  </script>
+
+  <!-- End Header -->
+  <!-- ======= About Section ======= -->
+  <section class="about" id="about">
+    <!-- ======= About Me ======= -->
+    <div class="about-me container">
+      <div class="section-title">
+        <h2>About</h2>
+        <p>Learn more about me</p>
+      </div>
+      <div class="row">
+        <!-- Move the image inside the content container -->
+        <div class="col-lg-12 pt-4 pt-lg-0 content" data-aos="fade-left">
+          <div class="row">
+            <div class="col-lg-4" data-aos="fade-right">
+              <div class="santa-hat-wrapper">
                 <img alt="Your Photo" class="img-fluid profile-photo" src="assets/img/arcane-poster (1) (1).jpg">
               </div>
-              <div class="col-lg-8">
-                <h3>Software Engineer</h3>
-                <div class="row">
-                  <div class="col-lg-6">
-                    <ul>
-                      <li>
-                        <i class="fas fa-birthday-cake"></i>
-                        <strong>Birthday:</strong> <p>7 August 1997</p>
-                      </li>
-                      <li>
-                        <i class="fas fa-phone"></i>
-                        <strong>Phone:</strong> <p>+2547 18 125 831</p>
-                      </li>
-                      <li>
-                        <i class="fas fa-city"></i>
-                        <strong>City:</strong> <p>Nairobi, Kenya</p>
-                      </li>
-                      <li>
-                        <i class="fas fa-heart"></i>
-                        <strong>Hobbies:</strong> <p>Movies, Gaming, Coding</p>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="col-lg-6">
-                    <ul>
-                      <li>
-                        <i class="fas fa-hourglass-half"></i>
-                        <strong>Age:</strong> <p class="time" id="age"></p>
-                      </li>
-                      <li>
-                        <i class="fas fa-microchip"></i>
-                        <strong>Favorite Tech: </strong><p>AI and Blockchain</p> 
-                      </li>
-                      <li>
-                        <i class="fas fa-book"></i>
-                        <strong>Books:</strong> <p>"Clean Code" by Robert C. Martin</p>
-                      </li>
-                      <li>
-                        <i class="fas fa-envelope"></i>
-                        <strong>Email:</strong> <p>omosh60@gmail.com</p>
-                      </li>
-                    </ul>
-                  </div>
+            </div>
+            <div class="col-lg-8">
+              <h3>Software Engineer</h3>
 
-                  
-                  <blockquote>
-                    <p>"Debugging is like being the detective in a crime movie where you are also the murderer."</p>
-                  </blockquote>
+
+              <div class="details-grid">
+                <div class="detail-item">
+                  <div class="icon-box">
+                    <i class="fas fa-birthday-cake"></i>
+                  </div>
+                  <div class="detail-content">
+                    <strong>Birthday</strong>
+                    <p>7 August 1997</p>
+                  </div>
+                </div>
+
+                <div class="detail-item">
+                  <div class="icon-box">
+                    <i class="fas fa-phone"></i>
+                  </div>
+                  <div class="detail-content">
+                    <strong>Phone</strong>
+                    <p>+2547 18 125 831</p>
+                  </div>
+                </div>
+
+                <div class="detail-item">
+                  <div class="icon-box">
+                    <i class="fas fa-city"></i>
+                  </div>
+                  <div class="detail-content">
+                    <strong>City</strong>
+                    <p>Nairobi, Kenya</p>
+                  </div>
+                </div>
+
+                <div class="detail-item">
+                  <div class="icon-box">
+                    <i class="fas fa-heart"></i>
+                  </div>
+                  <div class="detail-content">
+                    <strong>Hobbies</strong>
+                    <p>Movies, Gaming, Coding</p>
+                  </div>
+                </div>
+
+                <div class="detail-item">
+                  <div class="icon-box">
+                    <i class="fas fa-hourglass-half"></i>
+                  </div>
+                  <div class="detail-content">
+                    <strong>Age</strong>
+                    <p class="time" id="age"></p>
+                  </div>
+                </div>
+
+                <div class="detail-item">
+                  <div class="icon-box">
+                    <i class="fas fa-microchip"></i>
+                  </div>
+                  <div class="detail-content">
+                    <strong>Favorite Tech</strong>
+                    <p>AI and Blockchain</p>
+                  </div>
+                </div>
+
+                <div class="detail-item">
+                  <div class="icon-box">
+                    <i class="fas fa-book"></i>
+                  </div>
+                  <div class="detail-content">
+                    <strong>Books</strong>
+                    <p>"Clean Code"</p>
+                  </div>
+                </div>
+
+                <div class="detail-item">
+                  <div class="icon-box">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <div class="detail-content">
+                    <strong>Email</strong>
+                    <p>omosh60@gmail.com</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End About Me -->
-      <!-- ======= Skills  ======= -->
-      <div class="skills container">
-        <div class="section-title">
-          <h1>Skills</h1>
-        </div>
-        <div class="row skills-content">
-          <div class="col-lg-6">
-            <div class="progress">
-              <span class="skill">HTML <i class="val">100%</i>
-              </span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">CSS <i class="val">90%</i>
-              </span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">Canva <i class="val">100%</i>
-              </span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">JavaScript <i class="val">75%</i>
-              </span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="progress">
-              <span class="skill">PHP <i class="val">80%</i>
-              </span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">WordPress/CMS <i class="val">90%</i>
-              </span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">Excel <i class="val">90%</i>
-              </span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">Photoshop <i class="val">55%</i>
-              </span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+
+              <div class="about-cta mt-4">
+                <a href="#contact" class="btn-about">Contact Me</a>
+                <a href="#projects" class="btn-about-outline">View Projects</a>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- End Skills -->
-
-<!-- ======= Spotify Playlist ======= -->
-<div class="spotify-playlist container">
-  <div class="section-title">
-    <h1>
-      Now Listening
-      <span class="equalizer">
-        <span></span>
-        <span></span>
-        <span></span>
-      </span>
-    </h1>
-  </div>
-
-  <iframe style="border-radius:12px"
-    src="https://open.spotify.com/embed/playlist/1xawk2L7ibIILmgM8rh5JC?utm_source=generator&theme=0"
-    width="50%" height="352" frameBorder="0" allowfullscreen=""
-    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-    loading="lazy"></iframe>
-</div>
-
-
-    </section>
-    <!-- End About Section -->
-   <!-- ======= Resume Section ======= -->
-<section class="resume" id="resume">
-  <div class="container">
-    <div class="section-title">
-      <h2>RESUME</h2>
-      <p>Check My Resume</p>
     </div>
+    <!-- End About Me -->
+    <!-- ======= Skills  ======= -->
+    <div class="skills container">
+      <div class="section-title">
+        <h1>Skills</h1>
+      </div>
+      <div class="row skills-content">
+        <!-- Development Column -->
+        <div class="col-lg-6" data-aos="fade-up">
+          <h3 class="skills-title">Development</h3>
 
-    <!-- Row for SUMMARY and EDUCATION (Moved EDUCATION up) -->
-    <div class="row">
-      <div class="col-lg-6">
-        <h3 class="resume-title">SUMMARY</h3>
-        <div class="resume-item pb-0">
-          <p>Results-driven software engineer with five years of experience in developing and implementing software solutions. Proficient in Python, Java, and JavaScript, with a solid understanding of software development principles and a passion for delivering high-quality, scalable code. Seeking to contribute to impactful projects in a dynamic environment.</p>
+          <div class="skill-item">
+            <div class="skill-info">
+              <div class="skill-name"><i class="fab fa-html5" style="color: #e34f26;"></i> HTML5</div>
+              <span class="skill-percent">100%</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0"
+                aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-info">
+              <div class="skill-name"><i class="fab fa-css3-alt" style="color: #1572b6;"></i> CSS3</div>
+              <span class="skill-percent">95%</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0"
+                aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-info">
+              <div class="skill-name"><i class="fab fa-js" style="color: #f7df1e;"></i> JavaScript</div>
+              <span class="skill-percent">85%</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0"
+                aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-info">
+              <div class="skill-name"><i class="fab fa-react" style="color: #61dafb;"></i> React</div>
+              <span class="skill-percent">80%</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0"
+                aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-info">
+              <div class="skill-name"><i class="fab fa-node-js" style="color: #339933;"></i> Node.js</div>
+              <span class="skill-percent">75%</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
+                aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-info">
+              <div class="skill-name"><i class="fab fa-python" style="color: #3776ab;"></i> Python</div>
+              <span class="skill-percent">85%</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0"
+                aria-valuemax="100"></div>
+            </div>
+          </div>
         </div>
 
-        <h3 class="resume-title">EDUCATION</h3> <!-- Moved EDUCATION to this column -->
-        <div class="resume-item">
-          <h4>Certificate in Information Technology</h4>
-          <h5>2019</h5>
-          <a href="https://www.zetech.ac.ke/" target="_blank">
-            <p><em>Zetech University, Town Campus</em></p>
-          </a>
-          <p>Started on 5th May 2019 and finished on 28th October 2019. Gained knowledge in Database, Basic computer Knowledge, and Graphic Design.</p>
-        </div>
+        <!-- Tools & Design Column -->
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="skills-title">Tools & Design</h3>
 
-        <div class="resume-item">
-          <h4>Diploma In Information Technology</h4>
-          <h5>2020 - 2021</h5>
-          <h5>Graduation Year: 2022</h5>
-          <a href="https://www.zetech.ac.ke/" target="_blank">
-            <p><em>Zetech University, Town Campus</em></p>
-          </a>
-          <p>Relevant coursework: System Analysis, Structured Programming, Computer Application, Database Systems, Computer Networks, Web Development, Object-oriented Programming, Operating Systems. <br>Honors: Credit</p>
-        </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <div class="skill-name"><i class="fab fa-git-alt" style="color: #f05032;"></i> Git & GitHub</div>
+              <span class="skill-percent">90%</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0"
+                aria-valuemax="100"></div>
+            </div>
+          </div>
 
-        <div class="resume-item">
-          <h4>Bachelor In Information Technology</h4>
-          <h5>2022 - 2024</h5>
-          <h5>Graduation Year: 2024</h5>
-          <a href="https://www.zetech.ac.ke/" target="_blank">
-            <p><em>Zetech University, Ruiru Campus</em></p>
-          </a>
-          <p>Relevant Coursework: Data Structures and Algorithms, Software Engineering, AI, HCI, Security, and Python Programming.</p>
+          <div class="skill-item">
+            <div class="skill-info">
+              <div class="skill-name"><i class="fab fa-docker" style="color: #2496ed;"></i> Docker</div>
+              <span class="skill-percent">70%</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0"
+                aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-info">
+              <div class="skill-name"><i class="fas fa-database" style="color: #00758f;"></i> SQL / MySQL</div>
+              <span class="skill-percent">85%</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0"
+                aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-info">
+              <div class="skill-name"><i class="fab fa-wordpress" style="color: #21759b;"></i> WordPress</div>
+              <span class="skill-percent">90%</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0"
+                aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-info">
+              <div class="skill-name"><i class="fas fa-palette" style="color: #fd1d1d;"></i> Photoshop / Canva</div>
+              <span class="skill-percent">80%</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0"
+                aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-info">
+              <div class="skill-name"><i class="fab fa-aws" style="color: #FF9900;"></i> AWS</div>
+              <span class="skill-percent">60%</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0"
+                aria-valuemax="100"></div>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
+    <!-- End Skills -->
 
-      <!-- Column for SKILLS (Moved SKILLS down) -->
-      <div class="col-lg-6">
-        <h3 class="resume-title">SKILLS</h3>
-        <div class="resume-item pb-0">
-          <ul>
-            <li>Programming Languages: <strong>Java, C, Python, JavaScript</strong></li>
-            <li>Databases: <strong>SQL, MySQL</strong></li>
-            <li>Version Control: <strong>Git</strong></li>
-            <li>Software Development Methodologies: <strong>Agile, Scrum, Kanban</strong></li>
-            <li>Problem-solving and Analytical Skills</li>
-            <li>Strong Communication and Collaboration Abilities</li>
-          </ul>
-        </div>
+
+
+
+  </section>
+  <!-- End About Section -->
+  <section class="resume" id="resume">
+    <div class="container">
+      <div class="section-title">
+        <h2>RESUME</h2>
+        <p>Check My Resume</p>
       </div>
-    </div> <!-- End First Row -->
 
-    <!-- EXPERIENCE Section (Commented Out) -->
-    <!--
+      <!-- Row for SUMMARY and EDUCATION (Moved EDUCATION up) -->
+      <div class="row">
+        <div class="col-lg-6">
+          <h3 class="resume-title">SUMMARY</h3>
+          <div class="resume-item pb-0">
+            <p>Results-driven software engineer with five years of experience in developing and implementing software
+              solutions. Proficient in Python, Java, and JavaScript, with a solid understanding of software development
+              principles and a passion for delivering high-quality, scalable code. Seeking to contribute to impactful
+              projects in a dynamic environment.</p>
+          </div>
+
+          <h3 class="resume-title">EDUCATION</h3> <!-- Moved EDUCATION to this column -->
+          <div class="resume-item">
+            <h4>Certificate in Information Technology</h4>
+            <h5>2019</h5>
+            <a href="https://www.zetech.ac.ke/" target="_blank">
+              <p><em>Zetech University, Town Campus</em></p>
+            </a>
+            <p>Started on 5th May 2019 and finished on 28th October 2019. Gained knowledge in Database, Basic computer
+              Knowledge, and Graphic Design.</p>
+          </div>
+
+          <div class="resume-item">
+            <h4>Diploma In Information Technology</h4>
+            <h5>2020 - 2021</h5>
+            <h5>Graduation Year: 2022</h5>
+            <a href="https://www.zetech.ac.ke/" target="_blank">
+              <p><em>Zetech University, Town Campus</em></p>
+            </a>
+            <p>Relevant coursework: System Analysis, Structured Programming, Computer Application, Database Systems,
+              Computer Networks, Web Development, Object-oriented Programming, Operating Systems. <br>Honors: Credit</p>
+          </div>
+
+          <div class="resume-item">
+            <h4>Bachelor In Information Technology</h4>
+            <h5>2022 - 2024</h5>
+            <h5>Graduation Year: 2024</h5>
+            <a href="https://www.zetech.ac.ke/" target="_blank">
+              <p><em>Zetech University, Ruiru Campus</em></p>
+            </a>
+            <p>Relevant Coursework: Data Structures and Algorithms, Software Engineering, AI, HCI, Security, and Python
+              Programming.</p>
+          </div>
+        </div>
+
+        <!-- Column for SKILLS (Moved SKILLS down) -->
+        <div class="col-lg-6">
+          <h3 class="resume-title">SKILLS</h3>
+          <div class="resume-item pb-0">
+            <ul>
+              <li>Programming Languages: <strong>Java, C, Python, JavaScript</strong></li>
+              <li>Databases: <strong>SQL, MySQL</strong></li>
+              <li>Version Control: <strong>Git</strong></li>
+              <li>Software Development Methodologies: <strong>Agile, Scrum, Kanban</strong></li>
+              <li>Problem-solving and Analytical Skills</li>
+              <li>Strong Communication and Collaboration Abilities</li>
+            </ul>
+          </div>
+        </div>
+      </div> <!-- End First Row -->
+
+      <!-- EXPERIENCE Section (Commented Out) -->
+      <!--
     <div class="row">
       <div class="col-lg-6">
         <h3 class="resume-title">EXPERIENCE</h3>
@@ -399,513 +474,937 @@ window.addEventListener("DOMContentLoaded", () => {
     </div>
     -->
 
-    <!-- Download Resume Button -->
-      <a href="https://drive.google.com/file/d/11gctOomUvRH1tR7MO8CBppawGKWinYOD/view?usp=sharing" target="_blank" download>
-        <button>Download Full Resume</button>
-      </a>
-    
-    
-
-  </div>
-</section>
-<!-- End Resume Section -->
-
-    <!-- ======= Services Section ======= -->
-    <section class="services" id="services">
-      <div class="container">
-        <div class="section-title">
-          <h2>Services</h2>
-          <p>My Services</p>
-        </div>
-       
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service Card 1 -->
-                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
-                    <div class="p-8">
-                        <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                            <i class="fas fa-code text-indigo-600 text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">Web Development</h3>
-                        <p class="text-gray-600 mb-6">Custom websites built with modern technologies to ensure fast, secure, and scalable solutions for your business.</p>
-                        <ul class="space-y-2 text-gray-600 mb-6">
-                            <li class="flex items-center">
-                                <i class="fas fa-check-circle text-indigo-500 mr-2"></i>
-                                Responsive Design
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check-circle text-indigo-500 mr-2"></i>
-                                CMS Integration
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check-circle text-indigo-500 mr-2"></i>
-                                E-commerce Solutions
-                            </li>
-                        </ul>
-                        <a href="#" class="text-indigo-600 font-semibold hover:text-indigo-800 flex items-center">
-                            Learn more <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Service Card 2 -->
-                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
-                    <div class="p-8">
-                        <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                            <i class="fas fa-mobile-alt text-purple-600 text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">Mobile App Development</h3>
-                        <p class="text-gray-600 mb-6">Native and cross-platform mobile applications designed to engage users and deliver exceptional experiences.</p>
-                        <ul class="space-y-2 text-gray-600 mb-6">
-                            <li class="flex items-center">
-                                <i class="fas fa-check-circle text-purple-500 mr-2"></i>
-                                iOS & Android
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check-circle text-purple-500 mr-2"></i>
-                                React Native
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check-circle text-purple-500 mr-2"></i>
-                                API Integration
-                            </li>
-                        </ul>
-                        <a href="#" class="text-purple-600 font-semibold hover:text-purple-800 flex items-center">
-                            Learn more <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Service Card 3 -->
-                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
-                    <div class="p-8">
-                        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                            <i class="fas fa-paint-brush text-blue-600 text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">UI/UX Design</h3>
-                        <p class="text-gray-600 mb-6">Beautiful, intuitive interfaces that enhance user experience and drive conversions for your digital products.</p>
-                        <ul class="space-y-2 text-gray-600 mb-6">
-                            <li class="flex items-center">
-                                <i class="fas fa-check-circle text-blue-500 mr-2"></i>
-                                User Research
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check-circle text-blue-500 mr-2"></i>
-                                Wireframing
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check-circle text-blue-500 mr-2"></i>
-                                Prototyping
-                            </li>
-                        </ul>
-                        <a href="#" class="text-blue-600 font-semibold hover:text-blue-800 flex items-center">
-                            Learn more <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Service Card 4 -->
-                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
-                    <div class="p-8">
-                        <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                            <i class="fas fa-search-dollar text-green-600 text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">Virtual Assistant</h3>
-                        <p class="text-gray-600 mb-6">Providing technical support, data entry, project management, and more to help streamline your business operations.</p>
-                        <ul class="space-y-2 text-gray-600 mb-6">
-                            <li class="flex items-center">
-                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                                Keyword Research
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                                On-Page Optimization
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                                Technical SEO
-                            </li>
-                        </ul>
-                        <a href="#" class="text-green-600 font-semibold hover:text-green-800 flex items-center">
-                            Learn more <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Service Card 5 -->
-                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
-                    <div class="p-8">
-                        <div class="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                            <i class="fas fa-bullhorn text-yellow-600 text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">Digital Marketing</h3>
-                        <p class="text-gray-600 mb-6">Targeted marketing campaigns across multiple channels to grow your audience and increase conversions.</p>
-                        <ul class="space-y-2 text-gray-600 mb-6">
-                            <li class="flex items-center">
-                                <i class="fas fa-check-circle text-yellow-500 mr-2"></i>
-                                Social Media
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check-circle text-yellow-500 mr-2"></i>
-                                Email Campaigns
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check-circle text-yellow-500 mr-2"></i>
-                                Content Strategy
-                            </li>
-                        </ul>
-                        <a href="#" class="text-yellow-600 font-semibold hover:text-yellow-800 flex items-center">
-                            Learn more <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Service Card 6 -->
-                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
-                    <div class="p-8">
-                        <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                            <i class="fas fa-server text-red-600 text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-3">Hosting & Maintenance</h3>
-                        <p class="text-gray-600 mb-6">Reliable hosting solutions and ongoing maintenance to keep your website secure and performing at its best.</p>
-                        <ul class="space-y-2 text-gray-600 mb-6">
-                            <li class="flex items-center">
-                                <i class="fas fa-check-circle text-red-500 mr-2"></i>
-                                Cloud Hosting
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check-circle text-red-500 mr-2"></i>
-                                Security Updates
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check-circle text-red-500 mr-2"></i>
-                                Performance Optimization
-                            </li>
-                        </ul>
-                        <a href="#" class="text-red-600 font-semibold hover:text-red-800 flex items-center">
-                            Learn more <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+      <!-- Download Resume Button -->
+      <div class="text-center">
+        <a href="https://drive.google.com/file/d/11gctOomUvRH1tR7MO8CBppawGKWinYOD/view?usp=sharing" target="_blank"
+          class="resume-download-btn" download>
+          Download Full Resume
+        </a>
       </div>
-    </section>
-    <!-- ======= Contact Section ======= -->
-    <section class="contact" id="contact">
-      <div class="container">
-        <div class="section-title">
-          <h2>Contact</h2>
-          <p>Get In Touch</p>
-        </div>
-        <div class="row mt-2">
-          <div class="col-md-6 d-flex align-items-stretch">
-            <div class="info-box">
-              <i class="bx bx-map"></i>
-              <h3>My Address</h3>
-              <p>Phenom Park Estate, Langata, Nairobi</p>
-            </div>
+
+
+
+    </div>
+  </section>
+  <!-- End Resume Section -->
+
+  <!-- ======= Services Section ======= -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-title">
+        <h2>Services</h2>
+        <p>My Services</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Service Card 1: Web Development -->
+        <div class="service-box">
+          <div class="service-icon">
+            <i class="fas fa-code"></i>
           </div>
-          <div class="col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
-            <div class="info-box">
-              <i class="bx bx-share-alt"></i>
-              <h3>Social Profiles</h3>
-              <div class="social-links">
-                <a class="facebook" href="https://www.facebook.com/teddy.omonditunya" target="_blank">
-                  <i class="fa-brands fa-facebook"></i>
-                </a>
-               
-                <a class="github" href="https://github.com/TeddyO323" target="_blank">
-                  <i class="fa-brands fa-github"></i>
-                </a>
-				<a href="https://x.com/TeddyOmond87011?t=yVmQXtsHKM2e-rPp9I-jvw&s=09" target="_blank">
-					<i class="fa-brands fa-x-twitter"></i>
-				  </a>
-                <a class="linkedin" href="https://www.linkedin.com/in/teddy-omondi-35551376/" target="_blank">
-                  <i class="icofont-linkedin"></i>
-                </a>
+          <h3>Web Development</h3>
+          <p>Custom websites built with modern technologies to ensure fast, secure, and scalable solutions for your
+            business.</p>
+          <ul class="service-list">
+            <li><i class="fas fa-check"></i> Responsive Design</li>
+            <li><i class="fas fa-check"></i> CMS Integration</li>
+            <li><i class="fas fa-check"></i> E-commerce Solutions</li>
+          </ul>
+        </div>
+
+        <!-- Service Card 2: Cloud Solutions -->
+        <div class="service-box">
+          <div class="service-icon">
+            <i class="fab fa-aws"></i>
+          </div>
+          <h3>Cloud Solutions</h3>
+          <p>Leveraging AWS to build resilient, scalable, and secure cloud infrastructures tailored to your needs.</p>
+          <ul class="service-list">
+            <li><i class="fas fa-check"></i> Cloud Migration</li>
+            <li><i class="fas fa-check"></i> Serverless Architecture</li>
+            <li><i class="fas fa-check"></i> CI/CD Pipelines</li>
+          </ul>
+        </div>
+
+        <!-- Service Card 3: UI/UX Design -->
+        <div class="service-box">
+          <div class="service-icon">
+            <i class="fas fa-palette"></i>
+          </div>
+          <h3>UI/UX Design</h3>
+          <p>Creating intuitive and visually stunning user interfaces that provide seamless user experiences.</p>
+          <ul class="service-list">
+            <li><i class="fas fa-check"></i> Wireframing & Prototyping</li>
+            <li><i class="fas fa-check"></i> User Interface Design</li>
+            <li><i class="fas fa-check"></i> Brand Identity</li>
+          </ul>
+        </div>
+        <!-- Service Card 4: Mobile App Development -->
+        <div class="service-box">
+          <div class="service-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3>Mobile App Development</h3>
+          <p>Building high-performance iOS and Android applications using React Native and Flutter for seamless mobile
+            experiences.</p>
+          <ul class="service-list">
+            <li><i class="fas fa-check"></i> Cross-Platform Apps</li>
+            <li><i class="fas fa-check"></i> Native Performance</li>
+            <li><i class="fas fa-check"></i> App Store Deployment</li>
+          </ul>
+        </div>
+
+        <!-- Service Card 5: API Development -->
+        <div class="service-box">
+          <div class="service-icon">
+            <i class="fas fa-network-wired"></i>
+          </div>
+          <h3>API Development</h3>
+          <p>Designing and implementing robust RESTful and GraphQL APIs to power your applications and integrations.</p>
+          <ul class="service-list">
+            <li><i class="fas fa-check"></i> Secure Authentication</li>
+            <li><i class="fas fa-check"></i> Scalable Microservices</li>
+            <li><i class="fas fa-check"></i> Third-Party Integration</li>
+          </ul>
+        </div>
+
+        <!-- Service Card 6: Database Management -->
+        <div class="service-box">
+          <div class="service-icon">
+            <i class="fas fa-database"></i>
+          </div>
+          <h3>Database Management</h3>
+          <p>Optimizing data storage solutions with SQL and NoSQL databases to ensure data integrity and fast retrieval.
+          </p>
+          <ul class="service-list">
+            <li><i class="fas fa-check"></i> Schema Design</li>
+            <li><i class="fas fa-check"></i> Performance Tuning</li>
+            <li><i class="fas fa-check"></i> Data Migration</li>
+          </ul>
+        </div>
+
+        <!-- Service Card 7: Technical Support -->
+        <div class="service-box">
+          <div class="service-icon">
+            <i class="fas fa-headset"></i>
+          </div>
+          <h3>Technical Support</h3>
+          <p>Providing expert troubleshooting, system maintenance, and technical assistance to keep your operations
+            running smoothly.</p>
+          <ul class="service-list">
+            <li><i class="fas fa-check"></i> System Troubleshooting</li>
+            <li><i class="fas fa-check"></i> Software Updates</li>
+            <li><i class="fas fa-check"></i> User Training</li>
+          </ul>
+        </div>
+
+        <!-- Service Card 8: SEO & Analytics -->
+        <div class="service-box">
+          <div class="service-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>SEO & Analytics</h3>
+          <p>Optimizing your web presence for search engines and analyzing user behavior to drive growth and engagement.
+          </p>
+          <ul class="service-list">
+            <li><i class="fas fa-check"></i> Technical SEO</li>
+            <li><i class="fas fa-check"></i> Performance Tracking</li>
+            <li><i class="fas fa-check"></i> Conversion Optimization</li>
+          </ul>
+        </div>
+
+        <!-- Service Card 9: Hosting & Maintenance -->
+        <div class="service-box">
+          <div class="service-icon">
+            <i class="fas fa-server"></i>
+          </div>
+          <h3>Hosting & DevOps</h3>
+          <p>Managing server infrastructure, automated deployments, and continuous integration to ensure high
+            availability.</p>
+          <ul class="service-list">
+            <li><i class="fas fa-check"></i> Cloud Hosting Setup</li>
+            <li><i class="fas fa-check"></i> CI/CD Pipelines</li>
+            <li><i class="fas fa-check"></i> Security Monitoring</li>
+          </ul>
+        </div>
+
+
+
+      </div>
+    </div>
+  </section>
+  <!-- ======= Contact Section ======= -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>Contact</h2>
+        <p>Get In Touch</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Address Card -->
+        <div class="contact-card" data-aos="fade-up">
+          <div class="contact-icon-box">
+            <i class="bx bx-map"></i>
+          </div>
+          <h3>My Address</h3>
+          <p>Phenom Park Estate, Langata, Nairobi</p>
+        </div>
+
+        <!-- Social Profiles Card -->
+        <div class="contact-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="contact-icon-box">
+            <i class="bx bx-share-alt"></i>
+          </div>
+          <h3>Social Profiles</h3>
+          <div class="contact-social-links">
+            <a href="https://www.facebook.com/teddy.omonditunya" target="_blank" class="facebook"><i
+                class="fa-brands fa-facebook"></i></a>
+            <a href="https://github.com/TeddyO323" target="_blank" class="github"><i
+                class="fa-brands fa-github"></i></a>
+
+            <a href="https://www.linkedin.com/in/teddy-omondi-35551376/" target="_blank" class="linkedin"><i
+                class="fa-brands fa-linkedin"></i></a>
+            <a href="https://x.com/TeddyOmond87011?t=yVmQXtsHKM2e-rPp9I-jvw&s=09" target="_blank" class="twitter">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Email Card -->
+        <div class="contact-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="contact-icon-box">
+            <i class="bx bx-envelope"></i>
+          </div>
+          <h3>Email Me</h3>
+          <p><a href="mailto:omosh60@gmail.com">omosh60@gmail.com</a></p>
+        </div>
+
+        <!-- Phone Card -->
+        <div class="contact-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="contact-icon-box">
+            <i class="bx bx-phone-call"></i>
+          </div>
+          <h3>Call Me</h3>
+          <p><a href="tel:+254718125831">+254718125831</a></p>
+        </div>
+      </div>
+
+
+
+    </div>
+  </section>
+  </div>
+  </div>
+  <!-- <form action="https://teddyomondi.github.io/forms/contact.php" method="post" role="form" class="php-email-form mt-4"><div class="row"><div class="col-md-6 form-group"><input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required></div><div class="col-md-6 form-group mt-3 mt-md-0"><input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required></div></div><div class="form-group mt-3"><input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required></div><div class="form-group mt-3"><textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea></div><div class="my-3"><div class="loading">Loading</div><div class="error-message"></div><div class="sent-message">Your message has been sent. Thank you!</div></div><div class="text-center"><button type="submit">Send Message</button></div></form> -->
+  </section>
+  <!-- End Contact Section -->
+  <!-- <section class="blog" id="blog"><div class="container"><div class="blog"><div class="section-title"><h2>Blog</h2><h1>This page is still under Construction</h1><p class="animate__animated animate__fadeInUp animate__slow">Sooner or later, just chill</p><div class="hero-btns animate__animated animate__fadeInUp animate__slow"><a href="index.html"><button class="btn-trans" type="button">Go Back Home</button></a></div></div></div></div></section> -->
+  <section class="MyOrbit" id="MyOrbit">
+    <div class="container">
+      <div class="section-title">
+        <h2>My Orbit</h2>
+        <p>A glimpse into my current universe.</p>
+      </div>
+
+      <!-- Orbit Grid -->
+      <div class="orbit-grid">
+
+        <!-- 1. What I'm watching -->
+        <div class="orbit-card watching" data-aos="fade-up">
+          <div class="orbit-header">
+            <i class="fas fa-film"></i>
+            <h3>What I'm Watching</h3>
+          </div>
+          <div class="orbit-content">
+            <ul class="orbit-list">
+              <li>
+                <span class="orbit-label">Currently Watching</span>
+                <span class="orbit-value">Arcane Season 2</span>
+                <span class="orbit-note">"Masterpiece in visual storytelling."</span>
+              </li>
+              <li>
+                <span class="orbit-label">Recently Finished</span>
+                <span class="orbit-value">Severance</span>
+                <span class="orbit-note">"Mind-bending corporate thriller."</span>
+              </li>
+              <li>
+                <span class="orbit-label">Top 3 This Quarter</span>
+                <div class="orbit-tags">
+                  <span class="orbit-tag">Dune: Part Two</span>
+                  <span class="orbit-tag">The Bear</span>
+                  <span class="orbit-tag">Succession</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 2. What I'm reading -->
+        <div class="orbit-card reading" data-aos="fade-up" data-aos-delay="100">
+          <div class="orbit-header">
+            <i class="fas fa-book-open"></i>
+            <h3>What I'm Reading</h3>
+          </div>
+          <div class="orbit-content">
+            <ul class="orbit-list">
+              <li>
+                <span class="orbit-label">Now Reading</span>
+                <span class="orbit-value">Atomic Habits</span>
+                <span class="orbit-note">"Small changes, remarkable results."</span>
+              </li>
+              <li>
+                <span class="orbit-label">Want to Read Next</span>
+                <span class="orbit-value">The Pragmatic Programmer</span>
+              </li>
+              <li>
+                <span class="orbit-label">Top Highlight</span>
+                <span class="orbit-note">"You do not rise to the level of your goals. You fall to the level of your
+                  systems."</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 3. What I'm learning -->
+        <div class="orbit-card learning" data-aos="fade-up" data-aos-delay="200">
+          <div class="orbit-header">
+            <i class="fas fa-brain"></i>
+            <h3>What I'm Learning</h3>
+          </div>
+          <div class="orbit-content">
+            <ul class="orbit-list">
+              <li>
+                <span class="orbit-label">Tech Tools</span>
+                <div class="orbit-tags">
+                  <span class="orbit-tag">Docker</span>
+                  <span class="orbit-tag">Kubernetes</span>
+                  <span class="orbit-tag">Next.js</span>
+                </div>
+              </li>
+              <li>
+                <span class="orbit-label">Courses</span>
+                <span class="orbit-value">Advanced React Patterns</span>
+              </li>
+              <li>
+                <span class="orbit-label">Experiments</span>
+                <span class="orbit-value">AI-driven UI Components</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 5. What I'm building -->
+        <div class="orbit-card building" data-aos="fade-up">
+          <div class="orbit-header">
+            <i class="fas fa-hammer"></i>
+            <h3>What I'm Building</h3>
+          </div>
+          <div class="orbit-content">
+            <ul class="orbit-list">
+              <li>
+                <span class="orbit-label">Website Update</span>
+                <span class="orbit-value">My Orbit Section</span>
+                <span class="orbit-note">"Adding a personal dashboard."</span>
+              </li>
+              <li>
+                <span class="orbit-label">Side Project</span>
+                <span class="orbit-value">Task Manager CLI</span>
+              </li>
+              <li>
+                <span class="orbit-label">Skill Practice</span>
+                <span class="orbit-value">Vim Keybindings</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 6. What's inspiring me -->
+        <div class="orbit-card inspiring" data-aos="fade-up" data-aos-delay="100">
+          <div class="orbit-header">
+            <i class="fas fa-lightbulb"></i>
+            <h3>Inspiration</h3>
+          </div>
+          <div class="orbit-content">
+            <div class="orbit-quote">
+              "The only way to do great work is to love what you do."
+              <span class="orbit-quote-author">- Steve Jobs</span>
+            </div>
+            <ul class="orbit-list" style="margin-top: 20px;">
+              <li>
+                <span class="orbit-label">Creator</span>
+                <span class="orbit-value">Josh W Comeau</span>
+              </li>
+              <li>
+                <span class="orbit-label">Visual Concept</span>
+                <span class="orbit-value">Glassmorphism & Neons</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 7. Seasonal Life Notes -->
+        <div class="orbit-card life-notes" data-aos="fade-up" data-aos-delay="200">
+          <div class="orbit-header">
+            <i class="fas fa-leaf"></i>
+            <h3>Seasonal Notes</h3>
+          </div>
+          <div class="orbit-content">
+            <ul class="orbit-list">
+              <li>
+                <span class="orbit-label">This Quarter's Focus</span>
+                <span class="orbit-value">Deep Work & Health</span>
+              </li>
+              <li>
+                <span class="orbit-label">Optimizing</span>
+                <span class="orbit-value">Morning Routine</span>
+              </li>
+              <li>
+                <span class="orbit-label">Cutting</span>
+                <span class="orbit-value">Doom Scrolling</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Existing Spotify/Year in Review Content (Integrated below) -->
+      <div class="mt-5">
+
+
+        <!-- ======= Year in Review ======= -->
+        <div class="year-in-review container">
+          <div class="section-title">
+            <h1>Year 2025 in Review</h1>
+          </div>
+          <div class="row">
+            <!-- Spotify Wrapped Card -->
+            <div class="col-lg-6 mb-4">
+              <div class="review-card spotify-card" data-aos="fade-up">
+                <div class="card-header">
+                  <i class="fab fa-spotify"></i>
+                  <h3>Spotify Wrapped</h3>
+                </div>
+                <div class="card-body">
+                  <div class="spotify-section">
+                    <!-- Top Genres -->
+                    <div class="spotify-stat-section">
+                      <h4 class="section-label">Top Genres</h4>
+                      <ul class="spotify-list">
+                        <li><i class="fas fa-compact-disc"></i> Pop Rap</li>
+                        <li><i class="fas fa-compact-disc"></i> Trap Soul</li>
+                        <li><i class="fas fa-compact-disc"></i> Tropical House</li>
+                        <li><i class="fas fa-compact-disc"></i> Hiphop</li>
+                        <li><i class="fas fa-compact-disc"></i> Reggae</li>
+                      </ul>
+                      <div class="total-genres">
+                        <i class="fas fa-music"></i>
+                        <span>Total Genres: <strong>79</strong></span>
+                      </div>
+                    </div>
+
+                    <!-- Listening Age -->
+                    <div class="spotify-stat-section listening-age">
+                      <div class="age-stat">
+                        <i class="fas fa-birthday-cake"></i>
+                        <div>
+                          <span class="age-label">My Listening Age</span>
+                          <span class="age-value">35 years</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Top Songs -->
+                    <div class="spotify-stat-section">
+                      <h4 class="section-label">Top Songs</h4>
+                      <ul class="spotify-list songs-with-covers">
+                        <li>
+                          <div class="album-cover-placeholder">
+                            <i class="fas fa-music"></i>
+                          </div>
+                          <a href="https://open.spotify.com/track/5Ck3e6z1bcSCes5gdo0Ddt?si=44565f0caf824a2e"
+                            target="_blank">
+                            <i class="fas fa-play-circle"></i> Bed Peace - Jhené Aiko, Childish Gambino
+                          </a>
+                        </li>
+                        <li>
+                          <div class="album-cover-placeholder">
+                            <i class="fas fa-music"></i>
+                          </div>
+                          <a href="https://open.spotify.com/track/1kl0Vn0FO4bbdrTbHw4IaQ?si=d1cd78de8c244f96"
+                            target="_blank">
+                            <i class="fas fa-play-circle"></i> Freaks and Geeks - Childish Gambino
+                          </a>
+                        </li>
+                        <li>
+                          <div class="album-cover-placeholder">
+                            <i class="fas fa-music"></i>
+                          </div>
+                          <a href="https://open.spotify.com/track/2RRMB8z6UtuiudRZQn0HVm?si=52862046698644fd"
+                            target="_blank">
+                            <i class="fas fa-play-circle"></i> Hey Dj - Hstorians
+                          </a>
+                        </li>
+                        <li>
+                          <div class="album-cover-placeholder">
+                            <i class="fas fa-music"></i>
+                          </div>
+                          <a href="https://open.spotify.com/track/3OWcWJz1c0pIc6L3IDDhpP?si=e2c46c60d94a4645"
+                            target="_blank">
+                            <i class="fas fa-play-circle"></i>Knock you down - Keri Hilson, Neyo, Kanye West
+                          </a>
+                        </li>
+                        <li>
+                          <div class="album-cover-placeholder">
+                            <i class="fas fa-music"></i>
+                          </div>
+                          <a href="https://open.spotify.com/track/7BKLCZ1jbUBVqRi2FVlTVw?si=14991b6792f94e51"
+                            target="_blank">
+                            <i class="fas fa-play-circle"></i> Closer - The Chainsmokers, Halsey
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <!-- Top Artists -->
+                    <div class="spotify-stat-section">
+                      <h4 class="section-label">Top Artists</h4>
+                      <ul class="spotify-list">
+                        <li><a href="https://open.spotify.com/artist/5ZS223C6JyBfXasXxrRqOk?si=1yZWYGHzTWu6HOdW4NR3-A"
+                            target="_blank"><i class="fas fa-user-music"></i> Jhené Aiko</a></li>
+                        <li><a href="https://open.spotify.com/artist/1uNFoZAHBGtllmzznpCI3s?si=BOCt_XOmSee3ewgcLHDz_g"
+                            target="_blank"><i class="fas fa-user-music"></i> Justin Bieber </a></li>
+                        <li><a href="https://open.spotify.com/artist/73sIBHcqh3Z3NyqHKZ7FOL?si=-u5M4sqQSY6m-wUFs6w4vg"
+                            target="_blank"><i class="fas fa-user-music"></i> Childish Gambino</a></li>
+                        <li><a href="https://open.spotify.com/artist/5pKCCKE2ajJHZ9KAiaK11H?si=9q1FX9zFTYmVtnSxafuHYQ"
+                            target="_blank"><i class="fas fa-user-music"></i> Rihanna</a></li>
+                        <li><a href="https://open.spotify.com/artist/7bXgB6jMjp9ATFy66eO08Z?si=x2Sf1-fDSs-Bt7z_Zkf9GA"
+                            target="_blank"><i class="fas fa-user-music"></i> Chris Brown</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="visual-placeholder">
+                    <div class="sound-wave">
+                      <span></span><span></span><span></span><span></span><span></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- YouTube Recap Card -->
+            <div class="col-lg-6 mb-4">
+              <div class="review-card youtube-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="card-header">
+                  <i class="fab fa-youtube"></i>
+                  <h3>YouTube Recap</h3>
+                </div>
+                <div class="card-body">
+                  <div class="youtube-section">
+                    <!-- Top Artists -->
+                    <div class="youtube-stat-section">
+                      <h4 class="section-label">Top Artists</h4>
+                      <ul class="youtube-list">
+                        <li><a href="https://youtube.com/@oceanwisdombmr?si=JRajnXKZK9Z-G7AL" target="_blank"><i
+                              class="fas fa-music"></i> Ocean Wisdom</a></li>
+                        <li><a href="https://youtube.com/@michaeljackson?si=E_2F7tEguBq-Gfap" target="_blank"><i
+                              class="fas fa-music"></i>
+                            Michael Jackson</a></li>
+                        <li><a href="https://youtube.com/@rihanna?si=YYNPQzSt-wrSoK32" target="_blank"><i
+                              class="fas fa-music"></i>
+                            Rihanna</a></li>
+
+
+                        <li><a href="https://youtube.com/@brunomars?si=kX9kMr_CbiEko5VX" target="_blank"><i
+                              class="fas fa-music"></i>
+                            Bruno Mars</a></li>
+                        <li><a href="https://youtube.com/@chrisbrowntv?si=vTBNbCD8YgOByS5h" target="_blank"><i
+                              class="fas fa-music"></i>
+                            Chris Brown</a></li>
+                      </ul>
+                    </div>
+
+                    <!-- Top Songs -->
+                    <div class="youtube-stat-section">
+                      <h4 class="section-label">Top Songs</h4>
+                      <ul class="youtube-list songs-with-covers">
+                        <li>
+                          <div class="album-cover-placeholder">
+                            <i class="fas fa-music"></i>
+                          </div>
+                          <a href="https://youtu.be/nOwkdF3D7Tg?si=GLcyU1vYps-8-jiv" target="_blank">
+                            <i class="fas fa-play-circle"></i> Open Road -Ra Costelloe
+                          </a>
+                        </li>
+                        <li>
+                          <div class="album-cover-placeholder">
+                            <i class="fas fa-music"></i>
+                          </div>
+                          <a href="https://youtu.be/OV5_LQArLa0?si=QVEEWGEoDkP8Gy0q" target="_blank">
+                            <i class="fas fa-play-circle"></i>You'll Never Walk Alone - Gerry & The Pacemakers
+                          </a>
+                        </li>
+                        <li>
+                          <div class="album-cover-placeholder">
+                            <i class="fas fa-music"></i>
+                          </div>
+                          <a href="https://youtu.be/9AOhsgi6T-g?si=K5ar-q9c-nEDiwVJ" target="_blank">
+                            <i class="fas fa-play-circle"></i>Usiende Mbali - Juliana Kanyomozi
+                          </a>
+                        </li>
+                        <li>
+                          <div class="album-cover-placeholder">
+                            <i class="fas fa-music"></i>
+                          </div>
+                          <a href="https://youtu.be/yB5a0faPTQA?si=xdGPfgr92a9s01WH" target="_blank">
+                            <i class="fas fa-play-circle"></i>No Squids - Ocean Wisdom x K Koke
+                          </a>
+                        </li>
+                        <li>
+                          <div class="album-cover-placeholder">
+                            <i class="fas fa-music"></i>
+                          </div>
+                          <a href="https://youtu.be/POkQXeTv7-4?si=Faxs5ltcl3nzde8g" target="_blank">
+                            <i class="fas fa-play-circle"></i>Heaven sent - Keyshia Cole
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <!-- Musical Passport -->
+                    <div class="youtube-stat-section musical-passport">
+                      <h4 class="section-label">My Musical Passport</h4>
+                      <div class="passport-grid">
+                        <div class="passport-item">
+                          <i class="fas fa-flag-usa"></i>
+                          <span class="country-name">United States</span>
+                          <span class="artist-count">169 artists</span>
+                        </div>
+                        <div class="passport-item">
+                          <i class="fas fa-flag"></i>
+                          <span class="country-name">United Kingdom</span>
+                          <span class="artist-count">49 artists</span>
+                        </div>
+                        <div class="passport-item">
+                          <i class="fas fa-globe-africa"></i>
+                          <span class="country-name">Jamaica</span>
+                          <span class="artist-count">12 artists</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Listening Time -->
+                    <div class="youtube-stat-section listening-time">
+                      <div class="time-stat">
+                        <i class="fas fa-headphones"></i>
+                        <div>
+                          <span class="time-label">Total Listening Time</span>
+                          <span class="time-value">8,017 minutes</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="visual-placeholder">
+                    <div class="play-button"></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-md-6 mt-4 d-flex align-items-stretch">
-            <div class="info-box">
-              <i class="bx bx-envelope"></i>
-              <h3>Email Me</h3>
-              <p>
-                <a href="mailto:omosh60@gmail.com">omosh60@gmail.com</a>
-              </p>
-            </div>
+        </div>
+        <!-- ======= Spotify Playlist ======= -->
+        <div class="spotify-playlist container mb-5">
+          <div class="section-title">
+            <h1>
+              Now Listening
+              <span class="equalizer">
+
+              </span>
+            </h1>
           </div>
-          <div class="col-md-6 mt-4 d-flex align-items-stretch">
-            <div class="info-box">
-              <i class="bx bx-phone-call"></i>
-              <h3>Call Me</h3>
-              <p>
-                <a href="tel:+254718125831">+254718125831</a>
-              </p>
-            </div>
-          </div>
+
+          <iframe style="border-radius:12px"
+            src="https://open.spotify.com/embed/playlist/1xawk2L7ibIILmgM8rh5JC?utm_source=generator&theme=0"
+            width="50%" height="352" frameBorder="0" allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
       </div>
-      <!-- <form action="https://teddyomondi.github.io/forms/contact.php" method="post" role="form" class="php-email-form mt-4"><div class="row"><div class="col-md-6 form-group"><input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required></div><div class="col-md-6 form-group mt-3 mt-md-0"><input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required></div></div><div class="form-group mt-3"><input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required></div><div class="form-group mt-3"><textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea></div><div class="my-3"><div class="loading">Loading</div><div class="error-message"></div><div class="sent-message">Your message has been sent. Thank you!</div></div><div class="text-center"><button type="submit">Send Message</button></div></form> -->
-    </section>
-    <!-- End Contact Section -->
-    <!-- <section class="blog" id="blog"><div class="container"><div class="blog"><div class="section-title"><h2>Blog</h2><h1>This page is still under Construction</h1><p class="animate__animated animate__fadeInUp animate__slow">Sooner or later, just chill</p><div class="hero-btns animate__animated animate__fadeInUp animate__slow"><a href="index.html"><button class="btn-trans" type="button">Go Back Home</button></a></div></div></div></div></section> -->
-        <section class="projects" id="projects">
 
-        <div class="container mx-auto">
-            <div class="section-title">
-                <h2>Projects</h2>
+    </div>
+  </section>
+  <section class="projects" id="projects">
+
+    <div class="container mx-auto">
+      <div class="section-title">
+        <h2>Projects</h2>
+      </div>
+
+      <!-- Project Filters -->
+      <div class="flex flex-wrap justify-center gap-4 mb-12">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="web">Web Development</button>
+        <button class="filter-btn" data-filter="python">Python</button>
+        <button class="filter-btn" data-filter="javascript">JavaScript</button>
+        <button class="filter-btn" data-filter="design">Design</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project 1 -->
+        <div class="project-card" data-category="web javascript">
+          <div class="overflow-hidden">
+            <img src="assets/img/progresssss.jpg" alt="Year Progress Bar" class="project-image">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Year Progress Bar</h3>
+            <p class="text-gray-400 mb-4">A visual representation of the year's progress with interactive features and
+              user feedback.</p>
+
+            <div class="mb-4">
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">JavaScript</span>
             </div>
-            
-            <!-- Project Filters -->
-            <div class="flex flex-wrap justify-center gap-4 mb-12">
-                <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="web">Web Development</button>
-                <button class="filter-btn" data-filter="python">Python</button>
-                <button class="filter-btn" data-filter="javascript">JavaScript</button>
-                <button class="filter-btn" data-filter="design">Design</button>
+
+            <div class="flex space-x-3">
+              <a href="https://github.com/TeddyO323/Progress-bar_of_the_year" target="_blank" class="btn-primary">
+                <i class="fab fa-github mr-2"></i> View Code
+              </a>
+              <a href="https://teddyo323.github.io/Progress-bar_of_the_year/" target="_blank" class="btn-outline">Live
+                Demo</a>
             </div>
-            
-            <!-- Projects Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="project-card" data-category="web javascript">
-                    <div class="overflow-hidden">
-                        <img src="assets/img/progresssss.jpg" alt="Year Progress Bar" class="project-image">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Year Progress Bar</h3>
-                        <p class="text-gray-400 mb-4">A visual representation of the year's progress with interactive features and user feedback.</p>
-                        
-                        <div class="mb-4">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                        </div>
-                        
-                        <div class="flex space-x-3">
-                            <a href="https://github.com/TeddyO323/Progress-bar_of_the_year" target="_blank" class="btn-primary">
-                                <i class="fab fa-github mr-2"></i> View Code
-                            </a>
-                            <a href="https://teddyo323.github.io/Progress-bar_of_the_year/" target="_blank" class="btn-outline">Live Demo</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 2 -->
-                <div class="project-card" data-category="web javascript">
-                    <div class="overflow-hidden">
-                        <img src="assets/img/world-clock.png" alt="World Clock" class="project-image">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">World Clock</h3>
-                        <p class="text-gray-400 mb-4">An interactive world clock with customizable time zones and visual themes.</p>
-                        
-                        <div class="mb-4">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">API</span>
-                        </div>
-                        
-                        <div class="flex space-x-3">
-                            <a href="https://github.com/TeddyO323/Analog_clock.git" target="_blank" class="btn-primary">
-                                <i class="fab fa-github mr-2"></i> View Code
-                            </a>
-                            <a href="https://teddyo323.github.io/Analog_clock/" target="_blank" btn-outline">Live Demo</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 3 -->
-                <div class="project-card" data-category="python">
-                    <div class="overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Python World Clock" class="project-image">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Python World Clock</h3>
-                        <p class="text-gray-400 mb-4">A Python-based analog clock with real-time updates and date display.</p>
-                        
-                        <div class="mb-4">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Tkinter</span>
-                            <span class="tech-tag">GUI</span>
-                        </div>
-                        
-                        <div class="flex space-x-3">
-                            <a href="#" class="btn-primary">
-                                <i class="fab fa-github mr-2"></i> View Code
-                            </a>
-                            <a href="#" class="btn-outline">Download</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 4 -->
-                <div class="project-card" data-category="web javascript">
-                    <div class="overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1587145820266-a5951ee6f620?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Scientific Calculator" class="project-image">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Scientific Calculator</h3>
-                        <p class="text-gray-400 mb-4">A web-based calculator with advanced mathematical functions and responsive design.</p>
-                        
-                        <div class="mb-4">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                        </div>
-                        
-                        <div class="flex space-x-3">
-                            <a href="https://github.com/TeddyO323/Calculator" target="_blank" class="btn-primary">
-                                <i class="fab fa-github mr-2"></i> View Code
-                            </a>
-                            <a href="#" class="btn-outline">Live Demo</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 5 -->
-                <div class="project-card" data-category="web javascript">
-                    <div class="overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="To-Do List App" class="project-image">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">To-Do List App</h3>
-                        <p class="text-gray-400 mb-4">A task management application with local storage and priority tagging.</p>
-                        
-                        <div class="mb-4">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Local Storage</span>
-                        </div>
-<div class="flex space-x-3">
-    <a href="#" class="btn-primary" style="opacity: 0.6; cursor: not-allowed;">
-        <i class="fas fa-code mr-2"></i> Coming Soon
-    </a>
-    <a href="#" class="btn-outline" style="opacity: 0.6; cursor: not-allowed;">
-        <i class="fas fa-clock mr-2"></i> In Development
-    </a>
-</div>
-                     
-                    </div>
-                </div>
-                
-                <!-- Project 6 -->
-                <div class="project-card" data-category="design">
-                    <div class="overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1541462608143-67571c6738dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Portfolio Design" class="project-image">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Portfolio Design</h3>
-                        <p class="text-gray-400 mb-4">A modern portfolio design with responsive layout and interactive elements.</p>
-                        
-                        <div class="mb-4">
-                            <span class="tech-tag">Figma</span>
-                            <span class="tech-tag">UI/UX</span>
-                            <span class="tech-tag">Prototyping</span>
-                        </div>
-                        
-                     <div class="flex space-x-3">
-    <a href="#" class="btn-primary" style="opacity: 0.6; cursor: not-allowed;">
-        <i class="fas fa-code mr-2"></i> Coming Soon
-    </a>
-    <a href="#" class="btn-outline" style="opacity: 0.6; cursor: not-allowed;">
-        <i class="fas fa-clock mr-2"></i> In Development
-    </a>
-</div>
-                    </div>
-                </div>
-<!--project 7-->
-                <div class="project-card" data-category="design">
-                    <div class="overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Doctor Strange Portal" class="project-image">
-                    <div class="overflow-hidden">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Doctor Strange Portal</h3>
-                        <p class="text-gray-400 mb-4">A creative design inspired by Doctor Strange's portal, showcasing advanced CSS animations and effects.</p>
-                    </div>
-                        <div class="mb-4">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">Animation</span>
-                        </div>
-                        <div class="flex space-x-3">
-                            <a href="#" class="btn-primary" style="opacity: 0.6; cursor: not-allowed;">
-                                <i class="fas fa-code mr-2"></i> Coming Soon
-                            </a>
-                            <a href="#" class="btn-outline" style="opacity: 0.6; cursor: not-allowed;">
-                                <i class="fas fa-clock mr-2"></i> In Development
-                            </a>
-                        </div>
-                    
-                    </div>
-                    </div>      
-                       
-            </div>
-            
-            <!-- View More Button -->
-            <div class="text-center mt-12">
-                <a href="https://github.com/TeddyO323?tab=repositories" target="_blank" class="btn-primary inline-block px-8 py-3 text-lg">
-                    <i class="fab fa-github mr-2"></i> View All Projects on GitHub
-                </a>
-            </div>
+          </div>
         </div>
-    </section>
-      <script>
-        // Project filtering functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const projectCards = document.querySelectorAll('.project-card');
-            
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    // Remove active class from all buttons
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    // Add active class to clicked button
-                    button.classList.add('active');
-                    
-                    const filterValue = button.getAttribute('data-filter');
-                    
-                    projectCards.forEach(card => {
-                        if (filterValue === 'all' || card.getAttribute('data-category').includes(filterValue)) {
-                            card.style.display = 'block';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
-                });
-            });
-            
-            // Add hover effect to project cards
-            projectCards.forEach(card => {
-                card.addEventListener('mouseenter', () => {
-                    const img = card.querySelector('.project-image');
-                    img.style.transform = 'scale(1.05)';
-                });
-                
-                card.addEventListener('mouseleave', () => {
-                    const img = card.querySelector('.project-image');
-                    img.style.transform = 'scale(1)';
-                });
-            });
+
+        <!-- Project 2 -->
+        <div class="project-card" data-category="web javascript">
+          <div class="overflow-hidden">
+            <img src="assets/img/world-clock.png" alt="World Clock" class="project-image">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">World Clock</h3>
+            <p class="text-gray-400 mb-4">An interactive world clock with customizable time zones and visual themes.</p>
+
+            <div class="mb-4">
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">API</span>
+            </div>
+
+            <div class="flex space-x-3">
+              <a href="https://github.com/TeddyO323/Analog_clock.git" target="_blank" class="btn-primary">
+                <i class="fab fa-github mr-2"></i> View Code
+              </a>
+              <a href="https://teddyo323.github.io/Analog_clock/" target="_blank" btn-outline">Live Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card" data-category="python">
+          <div class="overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+              alt="Python World Clock" class="project-image">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Python World Clock</h3>
+            <p class="text-gray-400 mb-4">A Python-based analog clock with real-time updates and date display.</p>
+
+            <div class="mb-4">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Tkinter</span>
+              <span class="tech-tag">GUI</span>
+            </div>
+
+            <div class="flex space-x-3">
+              <a href="#" class="btn-primary">
+                <i class="fab fa-github mr-2"></i> View Code
+              </a>
+              <a href="#" class="btn-outline">Download</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card" data-category="web javascript">
+          <div class="overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1587145820266-a5951ee6f620?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+              alt="Scientific Calculator" class="project-image">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Scientific Calculator</h3>
+            <p class="text-gray-400 mb-4">A web-based calculator with advanced mathematical functions and responsive
+              design.</p>
+
+            <div class="mb-4">
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">JavaScript</span>
+            </div>
+
+            <div class="flex space-x-3">
+              <a href="https://github.com/TeddyO323/Calculator" target="_blank" class="btn-primary">
+                <i class="fab fa-github mr-2"></i> View Code
+              </a>
+              <a href="#" class="btn-outline">Live Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-card" data-category="web javascript">
+          <div class="overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80"
+              alt="To-Do List App" class="project-image">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">To-Do List App</h3>
+            <p class="text-gray-400 mb-4">A task management application with local storage and priority tagging.</p>
+
+            <div class="mb-4">
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">Local Storage</span>
+            </div>
+            <div class="flex space-x-3">
+              <a href="#" class="btn-primary" style="opacity: 0.6; cursor: not-allowed;">
+                <i class="fas fa-code mr-2"></i> Coming Soon
+              </a>
+              <a href="#" class="btn-outline" style="opacity: 0.6; cursor: not-allowed;">
+                <i class="fas fa-clock mr-2"></i> In Development
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="project-card" data-category="design">
+          <div class="overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1541462608143-67571c6738dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+              alt="Portfolio Design" class="project-image">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Portfolio Design</h3>
+            <p class="text-gray-400 mb-4">A modern portfolio design with responsive layout and interactive elements.</p>
+
+            <div class="mb-4">
+              <span class="tech-tag">Figma</span>
+              <span class="tech-tag">UI/UX</span>
+              <span class="tech-tag">Prototyping</span>
+            </div>
+
+            <div class="flex space-x-3">
+              <a href="#" class="btn-primary" style="opacity: 0.6; cursor: not-allowed;">
+                <i class="fas fa-code mr-2"></i> Coming Soon
+              </a>
+              <a href="#" class="btn-outline" style="opacity: 0.6; cursor: not-allowed;">
+                <i class="fas fa-clock mr-2"></i> In Development
+              </a>
+            </div>
+          </div>
+        </div>
+        <!--project 7-->
+        <div class="project-card" data-category="design">
+          <div class="overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+              alt="Doctor Strange Portal" class="project-image">
+            <div class="overflow-hidden">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Doctor Strange Portal</h3>
+              <p class="text-gray-400 mb-4">A creative design inspired by Doctor Strange's portal, showcasing advanced
+                CSS animations and effects.</p>
+            </div>
+            <div class="mb-4">
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">Animation</span>
+            </div>
+            <div class="flex space-x-3">
+              <a href="#" class="btn-primary" style="opacity: 0.6; cursor: not-allowed;">
+                <i class="fas fa-code mr-2"></i> Coming Soon
+              </a>
+              <a href="#" class="btn-outline" style="opacity: 0.6; cursor: not-allowed;">
+                <i class="fas fa-clock mr-2"></i> In Development
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- View More Button -->
+      <div class="text-center mt-12">
+        <a href="https://github.com/TeddyO323?tab=repositories" target="_blank"
+          class="btn-primary inline-block px-8 py-3 text-lg">
+          <i class="fab fa-github mr-2"></i> View All Projects on GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+  <script>
+    // Project filtering functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const projectCards = document.querySelectorAll('.project-card');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          // Remove active class from all buttons
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          // Add active class to clicked button
+          button.classList.add('active');
+
+          const filterValue = button.getAttribute('data-filter');
+
+          projectCards.forEach(card => {
+            if (filterValue === 'all' || card.getAttribute('data-category').includes(filterValue)) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          });
         });
-    </script>
-    <!-- -Portfolio section-->
-    <!-- <section class="portfolio" id="portfolio"><div class="container"><div class="blog"><div class="section-title"><h2>Portfolio</h2><h1>This page is still under Construction</h1><p class="animate__animated animate__fadeInUp animate__slow">Sooner or later, just chill</p><div class="hero-btns animate__animated animate__fadeInUp animate__slow"><a href="index.html"><button class="btn-trans" type="button">Go Back Home</button></a></div></div></div></div></section> -->
-    <!--- end of portfolio section -->
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/jquery/jquery.min.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-    <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-    <script src="assets/vendor/counterup/counterup.min.js"></script>
-    <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/venobox/venobox.min.js"></script>
-    <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
-  </body>
+      });
+
+      // Add hover effect to project cards
+      projectCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+          const img = card.querySelector('.project-image');
+          img.style.transform = 'scale(1.05)';
+        });
+
+        card.addEventListener('mouseleave', () => {
+          const img = card.querySelector('.project-image');
+          img.style.transform = 'scale(1)';
+        });
+      });
+    });
+  </script>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="assets/vendor/counterup/counterup.min.js"></script>
+  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/snow.js"></script>
+</body>
+
 </html>
