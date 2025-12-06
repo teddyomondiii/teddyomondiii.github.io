@@ -3502,56 +3502,157 @@ h4 {
   /* Force clickable */
 }
 
-/* Christmas Lights Border */
-.christmas-lights-container {
+/* Global Background Lights */
+#christmas-lights-background {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 30px;
-  /* Increased height further */
-  z-index: 2147483646;
-  /* Just below controls */
-  display: flex;
-  justify-content: space-around;
+  height: 100%;
+  z-index: -1;
   pointer-events: none;
-  opacity: 0;
-  transition: opacity 1s ease;
-  align-items: flex-start;
-  padding-top: 0;
   overflow: hidden;
-  /* Prevent scrollbars */
-}
-
-body.christmas-mode .christmas-lights-container {
-  opacity: 1;
 }
 
 .light {
-  position: relative;
-  width: 12px;
-  /* Slightly larger lights */
-  height: 12px;
+  position: absolute;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background: #fff;
-  /* Fallback */
-  animation: glow 1s infinite alternate;
-  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.8);
-  margin-top: -5px;
-  /* Pull up partially to look like they hang from the very top edge */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  opacity: 0.8;
 }
 
-@keyframes glow {
+/* Color Classes */
+.light.red {
+  background-color: #ff0000;
+  box-shadow: 0 0 10px #ff0000;
+}
+
+.light.green {
+  background-color: #00ff00;
+  box-shadow: 0 0 10px #00ff00;
+}
+
+.light.blue {
+  background-color: #0000ff;
+  box-shadow: 0 0 10px #0000ff;
+}
+
+.light.yellow {
+  background-color: #ffff00;
+  box-shadow: 0 0 10px #ffff00;
+}
+
+.light.purple {
+  background-color: #800080;
+  box-shadow: 0 0 10px #800080;
+}
+
+.light.orange {
+  background-color: #ffa500;
+  box-shadow: 0 0 10px #ffa500;
+}
+
+.light.cyan {
+  background-color: #00ffff;
+  box-shadow: 0 0 10px #00ffff;
+}
+
+/* Phasing Animations */
+/* Group 1: Green, Blue, Cyan - Active first */
+.light.group-1 {
+  animation: phaseShine 6s infinite ease-in-out;
+}
+
+/* Group 2: Red, Yellow, Purple - Active second (delayed) */
+.light.group-2 {
+  animation: phaseShine 6s infinite ease-in-out;
+  animation-delay: 3s;
+  /* Halfway through */
+}
+
+/* Group 3: Twinkle fast (Stars) */
+.light.group-3 {
+  animation: twinkle 1s infinite alternate;
+}
+
+@keyframes phaseShine {
+
+  0%,
+  40% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+
+  50%,
+  90% {
+    opacity: 0.2;
+    transform: scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes twinkle {
   from {
-    opacity: 0.4;
-    transform: scale(0.9);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    opacity: 0.3;
+    transform: scale(0.5);
   }
 
   to {
     opacity: 1;
-    transform: scale(1.1);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+    transform: scale(1);
+  }
+}
+
+/* Floating Balloons */
+.balloon {
+  position: fixed;
+  bottom: -100px;
+  width: 30px;
+  height: 40px;
+  background: red;
+  border-radius: 50%;
+  z-index: 9999;
+  opacity: 0.8;
+  animation: floatUp 10s linear forwards, sway 3s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.balloon::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+@keyframes floatUp {
+  0% {
+    bottom: -100px;
+    opacity: 0.8;
+  }
+
+  100% {
+    bottom: 120vh;
+    opacity: 0;
+  }
+}
+
+@keyframes sway {
+  0% {
+    transform: translateX(-20px) rotate(-10deg);
+  }
+
+  100% {
+    transform: translateX(20px) rotate(10deg);
   }
 }
 
