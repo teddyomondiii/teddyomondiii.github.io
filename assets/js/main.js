@@ -361,20 +361,29 @@ window.addEventListener("load", function () {
    CHRISTMAS THEME LOGIC
    ========================================= */
 document.addEventListener('DOMContentLoaded', () => {
+    console.log("Christmas Logic Loaded");
     const toggleBtn = document.getElementById('christmas-toggle');
     const body = document.body;
     const snowCanvas = document.getElementById('snow-canvas');
     const greeting = document.querySelector('.holiday-greeting');
     const lightsContainer = document.querySelector('.christmas-lights-container');
 
-    if (!toggleBtn) return; // Guard clause
+    if (!toggleBtn) {
+        console.warn("Christmas toggle button not found");
+        return;
+    }
 
-    // check local storage
-    if (localStorage.getItem('christmasMode') === 'true') {
-        enableChristmasMode();
+    // Safety check for LocalStorage
+    try {
+        if (localStorage.getItem('christmasMode') === 'true') {
+            enableChristmasMode();
+        }
+    } catch (e) {
+        console.error("LocalStorage access failed:", e);
     }
 
     toggleBtn.addEventListener('click', () => {
+        console.log("Toggle clicked. Current class:", body.classList.contains('christmas-mode'));
         if (body.classList.contains('christmas-mode')) {
             disableChristmasMode();
         } else {
@@ -383,18 +392,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function enableChristmasMode() {
-        body.classList.add('christmas-mode');
-        localStorage.setItem('christmasMode', 'true');
-        toggleBtn.innerHTML = "❌ Exit Christmas Mode";
-        initSnow();
-        showGreeting();
-        initLights();
+        try {
+            console.log("Enabling Christmas Mode");
+            body.classList.add('christmas-mode');
+            try { localStorage.setItem('christmasMode', 'true'); } catch (e) { }
+            toggleBtn.innerHTML = "❌ Exit Christmas Mode";
+            // Force text update case
+            toggleBtn.textContent = "❌ Exit Christmas Mode";
+
+            initSnow();
+            showGreeting();
+            initLights();
+        } catch (e) {
+            console.error("Error enabling Christmas mode:", e);
+        }
     }
 
     function disableChristmasMode() {
-        body.classList.remove('christmas-mode');
-        localStorage.setItem('christmasMode', 'false');
-        toggleBtn.innerHTML = "🎄 Christmas Mode";
+        try {
+            console.log("Disabling Christmas Mode");
+            body.classList.remove('christmas-mode');
+            try { localStorage.setItem('christmasMode', 'false'); } catch (e) { }
+            toggleBtn.innerHTML = "🎄 Christmas Mode";
+            toggleBtn.textContent = "🎄 Christmas Mode";
+
+            // Optional: Force cleanup lights if needed, but CSS handles opacity
+        } catch (e) {
+            console.error("Error disabling Christmas mode:", e);
+        }
     }
 
     function showGreeting() {
@@ -407,7 +432,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function initLights() {
-        if (!lightsContainer || lightsContainer.children.length > 0) return; // already init
+        if (!lightsContainer) {
+            console.warn("Lights container not found");
+            return;
+        }
+        // Force display just in case
+        lightsContainer.style.display = 'flex';
+
+        if (lightsContainer.children.length > 0) return; // already init
+
+        console.log("Initializing Lights");
         const totalLights = 50;
         for (let i = 0; i < totalLights; i++) {
             const light = document.createElement('div');
@@ -484,5 +518,56 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         animationId = requestAnimationFrame(animateSnow);
+    }
+});
+
+/* =========================================
+   FULL SCREEN TOGGLE LOGIC
+   ========================================= */
+document.addEventListener('DOMContentLoaded', () => {
+    const fullscreenBtn = document.getElementById('fullscreen-toggle');
+    if (!fullscreenBtn) return;
+
+    fullscreenBtn.addEventListener('click', toggleFullScreen);
+
+    function toggleFullScreen() {
+        if (!document.fullscreenElement &&    // alternative standard method
+            !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {  // current working methods
+            if (document.documentElement.requestFullscreen) {
+                document.documentElement.requestFullscreen();
+            } else if (document.documentElement.msRequestFullscreen) {
+                document.documentElement.msRequestFullscreen();
+            } else if (document.documentElement.mozRequestFullScreen) {
+                document.documentElement.mozRequestFullScreen();
+            } else if (document.documentElement.webkitRequestFullscreen) {
+                document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+            }
+            fullscreenBtn.textContent = "⛶ Exit Full Screen";
+        } else {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            }
+            fullscreenBtn.textContent = "⛶ Full Screen";
+        }
+    }
+
+    // Update button text if user exits via ESC key
+    document.addEventListener('fullscreenchange', updateButtonState);
+    document.addEventListener('webkitfullscreenchange', updateButtonState);
+    document.addEventListener('mozfullscreenchange', updateButtonState);
+    document.addEventListener('MSFullscreenChange', updateButtonState);
+
+    function updateButtonState() {
+        if (!document.fullscreenElement && !document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement) {
+            fullscreenBtn.textContent = "⛶ Full Screen";
+        } else {
+            fullscreenBtn.textContent = "⛶ Exit Full Screen";
+        }
     }
 });
