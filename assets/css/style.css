@@ -3046,6 +3046,25 @@ h4 {
   gap: 20px;
 }
 
+.youtube-section img {
+  width: 60px;
+  height: 60px;
+}
+
+.youtube-section a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  width: 100%;
+}
+
+.youtube-section a:hover {
+  color: #FF0000;
+}
+
 .youtube-stat-section {
   background: rgba(0, 0, 0, 0.15);
   padding: 15px;
