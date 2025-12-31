@@ -3049,6 +3049,18 @@ h4 {
 .youtube-section img {
   width: 60px;
   height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  object-fit: cover;
+  margin-right: 15px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+}
+
+
+.youtube-section img:hover {
+  transform: scale(1.1);
 }
 
 .youtube-section a {
@@ -3336,6 +3348,16 @@ h4 {
   display: flex;
   align-items: center;
   gap: 12px;
+}
+
+.songs-with-covers img {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .songs-with-covers li:hover .album-cover-placeholder {
