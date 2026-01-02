@@ -360,6 +360,7 @@ window.addEventListener("load", function () {
 /* =========================================
    CHRISTMAS THEME LOGIC
    ========================================= */
+/*
 document.addEventListener('DOMContentLoaded', () => {
     console.log("Christmas Logic Loaded");
     const toggleBtn = document.getElementById('christmas-toggle');
@@ -583,10 +584,12 @@ document.addEventListener('DOMContentLoaded', () => {
         animationId = requestAnimationFrame(animateSnow);
     }
 });
+*/
 
 /* =========================================
    FULL SCREEN TOGGLE LOGIC
    ========================================= */
+/*
 document.addEventListener('DOMContentLoaded', () => {
     const fullscreenBtn = document.getElementById('fullscreen-toggle');
     if (!fullscreenBtn) return;
@@ -634,3 +637,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+*/
