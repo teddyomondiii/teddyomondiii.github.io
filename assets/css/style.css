@@ -3470,11 +3470,12 @@ h4 {
   }
 }
 
+/* 
 /* =========================================
    CHRISTMAS THEME 2025
-   ========================================= */
+   ========================================= * /
 
-/* Full Screen Toggle */
+/* Full Screen Toggle * /
 .fullscreen-toggle {
   position: fixed;
   bottom: 20px;
@@ -3500,7 +3501,7 @@ h4 {
   transform: scale(1.05);
 }
 
-/* Toggle Button */
+/* Toggle Button * /
 .christmas-toggle {
   position: fixed;
   bottom: 20px;
@@ -3512,15 +3513,15 @@ h4 {
   border-radius: 50px;
   cursor: pointer;
   z-index: 2147483647;
-  /* Max Z-Index to ensure it's on top */
+  /* Max Z-Index to ensure it's on top * /
   font-size: 0.9rem;
   transition: all 0.3s ease;
   backdrop-filter: blur(5px);
   pointer-events: auto;
-  /* Force clickable */
+  /* Force clickable * /
 }
 
-/* Full Screen Toggle */
+/* Full Screen Toggle * /
 .fullscreen-toggle {
   position: fixed;
   bottom: 20px;
@@ -3532,7 +3533,7 @@ h4 {
   border-radius: 50px;
   cursor: pointer;
   z-index: 2147483647;
-  /* Max Z-Index */
+  /* Max Z-Index * /
   font-size: 0.9rem;
   transition: all 0.3s ease;
   backdrop-filter: blur(5px);
@@ -3540,11 +3541,11 @@ h4 {
   align-items: center;
   gap: 8px;
   pointer-events: auto;
-  /* Force clickable */
+  /* Force clickable * /
 }
 
-/* Global Background Lights */
-/* Global Background Lights */
+/* Global Background Lights * /
+/* Global Background Lights * /
 #christmas-lights-background {
   position: fixed;
   top: 0;
@@ -3555,13 +3556,13 @@ h4 {
   pointer-events: none;
   overflow: hidden;
   opacity: 0;
-  /* Hidden by default */
+  /* Hidden by default * /
   transition: opacity 1s ease;
 }
 
 body.christmas-mode #christmas-lights-background {
   opacity: 1;
-  /* Connected to toggle */
+  /* Connected to toggle * /
 }
 
 .light {
@@ -3573,7 +3574,7 @@ body.christmas-mode #christmas-lights-background {
   opacity: 0.8;
 }
 
-/* Color Classes */
+/* Color Classes * /
 .light.red {
   background-color: #ff0000;
   box-shadow: 0 0 10px #ff0000;
@@ -3609,20 +3610,20 @@ body.christmas-mode #christmas-lights-background {
   box-shadow: 0 0 10px #00ffff;
 }
 
-/* Phasing Animations */
-/* Group 1: Green, Blue, Cyan - Active first */
+/* Phasing Animations * /
+/* Group 1: Green, Blue, Cyan - Active first * /
 .light.group-1 {
   animation: phaseShine 6s infinite ease-in-out;
 }
 
-/* Group 2: Red, Yellow, Purple - Active second (delayed) */
+/* Group 2: Red, Yellow, Purple - Active second (delayed) * /
 .light.group-2 {
   animation: phaseShine 6s infinite ease-in-out;
   animation-delay: 3s;
-  /* Halfway through */
+  /* Halfway through * /
 }
 
-/* Group 3: Twinkle fast (Stars) */
+/* Group 3: Twinkle fast (Stars) * /
 .light.group-3 {
   animation: twinkle 1s infinite alternate;
 }
@@ -3659,7 +3660,7 @@ body.christmas-mode #christmas-lights-background {
   }
 }
 
-/* Floating Balloons */
+/* Floating Balloons * /
 .balloon {
   position: fixed;
   bottom: -100px;
@@ -3710,18 +3711,18 @@ body.christmas-mode {
   --accent-red: #e63946;
   --accent-green: #2a9d8f;
   --accent-gold: #e9c46a;
-  /* Custom Candy Cane Cursor */
+  /* Custom Candy Cane Cursor * /
   cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='%23e63946' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M19 8v6a2 2 0 0 1-2 2h-3a2 2 0 0 1-2-2v-4a6 6 0 0 0-9.28-4.5'/><line x1='6.9' y1='4.7' x2='12.5' y2='10.3'/><line x1='14' y1='10' x2='17' y2='13'/><line x1='13.4' y1='13.5' x2='15.9' y2='16'/></svg>") 16 16, auto;
 }
 
-/* Ensure pointer cursor also gets the theme */
+/* Ensure pointer cursor also gets the theme * /
 body.christmas-mode a,
 body.christmas-mode button,
 body.christmas-mode .clickable {
   cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='%232a9d8f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M19 8v6a2 2 0 0 1-2 2h-3a2 2 0 0 1-2-2v-4a6 6 0 0 0-9.28-4.5'/><line x1='6.9' y1='4.7' x2='12.5' y2='10.3'/><line x1='14' y1='10' x2='17' y2='13'/><line x1='13.4' y1='13.5' x2='15.9' y2='16'/></svg>") 16 16, pointer;
 }
 
-/* Color Overrides in Christmas Mode */
+/* Color Overrides in Christmas Mode * /
 body.christmas-mode .section-title h2 {
   background: linear-gradient(135deg, var(--accent-red), var(--accent-gold)) !important;
   -webkit-background-clip: text !important;
@@ -3752,7 +3753,7 @@ body.christmas-mode .resume .resume-item::before {
   border-color: var(--accent-red);
 }
 
-/* Christmas Badge */
+/* Christmas Badge * /
 .christmas-badge {
   position: fixed;
   top: 20px;
@@ -3778,7 +3779,7 @@ body.christmas-mode .christmas-badge {
   transform: translateY(0);
 }
 
-/* Holiday Greeting Banner */
+/* Holiday Greeting Banner * /
 .holiday-greeting {
   position: fixed;
   top: 100px;
@@ -3799,7 +3800,7 @@ body.christmas-mode .christmas-badge {
   opacity: 1;
 }
 
-/* Snow Canvas */
+/* Snow Canvas * /
 #snow-canvas {
   position: fixed;
   top: 0;
@@ -3816,14 +3817,14 @@ body.christmas-mode #snow-canvas {
   opacity: 1;
 }
 
-/* Christmas Lights Border */
+/* Christmas Lights Border * /
 .christmas-lights-container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 20px;
-  /* Increased height for visibility */
+  /* Increased height for visibility * /
   z-index: 10001;
   display: flex;
   justify-content: space-around;
@@ -3831,9 +3832,9 @@ body.christmas-mode #snow-canvas {
   opacity: 0;
   transition: opacity 1s ease;
   align-items: flex-start;
-  /* Ensure they start at the top */
+  /* Ensure they start at the top * /
   padding-top: 5px;
-  /* Push them down slightly */
+  /* Push them down slightly * /
 }
 
 body.christmas-mode .christmas-lights-container {
@@ -3847,7 +3848,7 @@ body.christmas-mode .christmas-lights-container {
   background: #fff;
   animation: glow 1s infinite alternate;
   box-shadow: 0 2px 10px rgba(255, 255, 255, 0.5);
-  /* Removed negative margin */
+  /* Removed negative margin * /
 }
 
 @keyframes glow {
@@ -3861,3 +3862,5 @@ body.christmas-mode .christmas-lights-container {
     transform: scale(1.2);
   }
 }
+
+ */
