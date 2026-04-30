@@ -1,11 +1,127 @@
 !(function ($) { // Self-invoking anonymous function using jQuery shorthand '$'
     "use strict"; // Enforces strict mode to catch common errors
 
+    function resetHomeState() {
+        var hash = getCleanHash();
+        if (!hash || hash === '#header') {
+            $('#header').removeClass('header-top');
+            $("section").removeClass('section-show');
+            $('.nav-menu .active, .mobile-nav .active').removeClass('active');
+            $('.nav-menu, .mobile-nav').find('a[href="#header"]').parent('li').addClass('active');
+        }
+    }
+
+    function getCleanHash() {
+        var hash = window.location.hash || '';
+        return hash.split('?')[0];
+    }
+
+    function getHashTarget(hash) {
+        if (!hash || hash.charAt(0) !== '#') {
+            return $();
+        }
+
+        var target = document.getElementById(hash.slice(1));
+        return target ? $(target) : $();
+    }
+
+    function showHashSection() {
+        var hash = getCleanHash();
+        var target = getHashTarget(hash);
+
+        if (!hash || hash === '#header' || !target.length || !target.is('section')) {
+            return;
+        }
+
+        $('#header').addClass('header-top');
+        $("section").removeClass('section-show');
+        target.addClass('section-show');
+        $('.nav-menu .active, .mobile-nav .active').removeClass('active');
+        $('.nav-menu, .mobile-nav').find('a[href="' + hash + '"]').parent('li').addClass('active');
+    }
+
+    function fitHomeTagline() {
+        var titleLock = document.querySelector('.home-title-lock');
+        var title = document.querySelector('#lokiTitle');
+        var tagline = document.querySelector('.home-tagline');
+
+        if (!titleLock || !title || !tagline) {
+            return;
+        }
+
+        if (!tagline.querySelector('.home-tagline-char')) {
+            tagline.dataset.rawText = tagline.textContent.trim();
+            tagline.innerHTML = '';
+            tagline.dataset.rawText.split('').forEach(function (character) {
+                var span = document.createElement('span');
+                span.className = 'home-tagline-char';
+                span.textContent = character === ' ' ? '\u00a0' : character;
+                tagline.appendChild(span);
+            });
+        }
+
+        var targetWidth = titleLock.getBoundingClientRect().width;
+        var fontSize = '';
+
+        if (window.matchMedia('(max-width: 575px)').matches) {
+            var naturalWidth = 0;
+            var characters = tagline.querySelectorAll('.home-tagline-char');
+            characters.forEach(function (character) {
+                naturalWidth += character.getBoundingClientRect().width;
+            });
+
+            if (naturalWidth > targetWidth) {
+                fontSize = Math.max((targetWidth / naturalWidth) * 0.72, 0.48).toFixed(3) + 'rem';
+            }
+        }
+
+        if (fontSize) {
+            tagline.style.setProperty('--home-tagline-font-size', fontSize);
+        } else {
+            tagline.style.removeProperty('--home-tagline-font-size');
+        }
+    }
+
+    $(window).on('load pageshow hashchange', function () {
+        resetHomeState();
+        showHashSection();
+    });
+    $(window).on('load pageshow resize', fitHomeTagline);
+    if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(fitHomeTagline);
+    }
+    resetHomeState();
+    fitHomeTagline();
+
+    $(document).on('click keydown', '.copy-detail, .contact-copy', function (event) {
+        if (event.type === 'keydown' && event.key !== 'Enter' && event.key !== ' ') {
+            return;
+        }
+
+        event.preventDefault();
+        var card = this;
+        var value = card.getAttribute('data-copy');
+        if (!value) return;
+
+        function showCopied() {
+            card.classList.add('copied');
+            setTimeout(function () {
+                card.classList.remove('copied');
+            }, 1400);
+        }
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(value).then(showCopied).catch(showCopied);
+        } else {
+            showCopied();
+        }
+    });
+
     // Nav Menu
-    $(document).on('click', '.nav-menu a, .mobile-nav a, .scroll-down a, .about-cta a', function (e) { // Adds a click event listener to menu links and internal buttons
+    $(document).on('click', '.nav-menu a, .mobile-nav a, .scroll-down a, .about-cta a, .home-actions a, .scroll-cue', function (e) { // Adds a click event listener to menu links and internal buttons
         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) { // Checks if the clicked link's path and host match the current page
             var hash = this.hash; // Gets the hash value (anchor link)
-            var target = $(hash); // Selects the target element based on the hash
+            var target = getHashTarget(hash); // Selects the target element based on the hash
             if (target.length) { // If the target element exists
                 e.preventDefault(); // Prevents the default anchor behavior (page jump)
 
@@ -33,11 +149,11 @@
                     $('#header').addClass('header-top'); // Adds 'header-top' to the header
                     setTimeout(function () { // Delays the next action
                         $("section").removeClass('section-show'); // Hides all sections
-                        $(hash).addClass('section-show'); // Shows the target section
+                        target.addClass('section-show'); // Shows the target section
                     }, 350); // Delays by 350 milliseconds
                 } else {
                     $("section").removeClass('section-show'); // Hides all sections
-                    $(hash).addClass('section-show'); // Shows the target section
+                    target.addClass('section-show'); // Shows the target section
                 }
                 // Only scroll to top if there's no hash in the URL
                 if (!window.location.hash) {
@@ -59,14 +175,14 @@
 
     // Activate/show sections on load with hash links
     if (window.location.hash) { // If the URL contains a hash
-        var initial_nav = window.location.hash; // Stores the hash
-        if ($(initial_nav).length) { // If the element with the hash exists
+        var initial_nav = getCleanHash(); // Stores the hash
+        if (getHashTarget(initial_nav).length) { // If the element with the hash exists
             $('#header').addClass('header-top'); // Adds 'header-top' to the header
             $('.nav-menu .active, .mobile-nav .active').removeClass('active'); // Removes 'active' class from the current menu items
             $('.nav-menu, .mobile-nav').find('a[href="' + initial_nav + '"]').parent('li').addClass('active'); // Adds 'active' class to the corresponding menu item
             setTimeout(function () { // Delays the next action
                 $("section").removeClass('section-show'); // Hides all sections
-                $(initial_nav).addClass('section-show'); // Shows the target section
+                getHashTarget(initial_nav).addClass('section-show'); // Shows the target section
             }, 350); // Delay of 350 milliseconds
         }
     }
@@ -281,7 +397,7 @@ function flipCardBack(cardId) {
 
 window.addEventListener("load", function () {
     if (window.location.hash) {
-        const section = document.querySelector(window.location.hash);
+        const section = document.getElementById(window.location.hash.split('?')[0].slice(1));
         if (section) {
             setTimeout(() => {
                 section.scrollIntoView({ behavior: "instant" });
