@@ -45,24 +45,10 @@
 
   <!-- ======= Header ======= -->
   <header id="header" class="header-tops">
-    <div class="container">
-      <h1 id="lokiTitle" class="glitch-name" data-text="Teddy Omondi">Teddy Omondi</h1>
-
-
-      <div class="d-flex align-items-center">
-        <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
-      </div>
-      <script>
-        document.querySelector('.mobile-nav-toggle').addEventListener('click', function () {
-          document.querySelector('#header').classList.toggle('mobile-nav-active');
-        });
-      </script>
-
+    <div class="container home-shell">
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
-      <h2> Visionary | Specialist | Innovator </h2>
-      <!-- <div class="social-links"><a class="facebook" href="https://www.facebook.com/teddy.omonditunya" target="_blank"><i class="fa-brands fa-facebook"></i></a><a class="github" href="https://github.com/TeddyO323" target="_blank"><i class="fa-brands fa-github"></i></a><a href="https://x.com/TeddyOmond87011?t=yVmQXtsHKM2e-rPp9I-jvw&s=09" target="_blank"><i class="fa-brands fa-x-twitter fa-2xs"></i></a><a class="linkedin" href="https://www.linkedin.com/in/teddy-omondi-35551376/" target="_blank"><i class="icofont-linkedin"></i></a></div> -->
-      <nav class="nav-menu ">
+      <nav class="nav-menu">
         <ul>
           <li class="active">
             <a href="#header">Home</a>
@@ -70,9 +56,7 @@
           <li>
             <a href="#about">About</a>
           </li>
-          <li>
-            <a href="#MyOrbit">My Orbit</a>
-          </li>
+         
           <li>
             <a href="#resume">Resume</a>
           </li>
@@ -87,16 +71,84 @@
           <li>
             <a href="#projects">Projects</a>
           </li>
+          <li>
+            <a href="#MyOrbit">My Orbit</a>
+          </li>
         </ul>
       </nav>
       <!-- .nav-menu -->
+
+      <div class="home-hero">
+        <p class="home-eyebrow">Nairobi-based software engineer</p>
+        <div class="home-title-lock">
+          <h1 id="lokiTitle" class="glitch-name" data-text="Teddy Omondi">Teddy Omondi</h1>
+          <h2 class="home-tagline" data-raw-text="Visionary | Specialist | Innovator"
+            style="display: flex; width: min(980px, calc(100vw - 58px)); min-width: min(980px, calc(100vw - 58px)); max-width: min(980px, calc(100vw - 58px)); justify-content: space-between; align-items: center;">
+            <span class="home-tagline-char">V</span>
+            <span class="home-tagline-char">i</span>
+            <span class="home-tagline-char">s</span>
+            <span class="home-tagline-char">i</span>
+            <span class="home-tagline-char">o</span>
+            <span class="home-tagline-char">n</span>
+            <span class="home-tagline-char">a</span>
+            <span class="home-tagline-char">r</span>
+            <span class="home-tagline-char">y</span>
+            <span class="home-tagline-char">&nbsp;</span>
+            <span class="home-tagline-char">|</span>
+            <span class="home-tagline-char">&nbsp;</span>
+            <span class="home-tagline-char">S</span>
+            <span class="home-tagline-char">p</span>
+            <span class="home-tagline-char">e</span>
+            <span class="home-tagline-char">c</span>
+            <span class="home-tagline-char">i</span>
+            <span class="home-tagline-char">a</span>
+            <span class="home-tagline-char">l</span>
+            <span class="home-tagline-char">i</span>
+            <span class="home-tagline-char">s</span>
+            <span class="home-tagline-char">t</span>
+            <span class="home-tagline-char">&nbsp;</span>
+            <span class="home-tagline-char">|</span>
+            <span class="home-tagline-char">&nbsp;</span>
+            <span class="home-tagline-char">I</span>
+            <span class="home-tagline-char">n</span>
+            <span class="home-tagline-char">n</span>
+            <span class="home-tagline-char">o</span>
+            <span class="home-tagline-char">v</span>
+            <span class="home-tagline-char">a</span>
+            <span class="home-tagline-char">t</span>
+            <span class="home-tagline-char">o</span>
+            <span class="home-tagline-char">r</span>
+          </h2>
+        </div>
+
+        <div class="home-actions">
+          <a href="#projects" class="home-btn home-btn-primary">View Projects</a>
+          <a href="#contact" class="home-btn home-btn-secondary">Let's Talk</a>
+        </div>
+
+        <div class="home-social-links" aria-label="Social links">
+          <a class="facebook" href="https://www.facebook.com/teddy.omonditunya" target="_blank" rel="noopener"
+            aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a class="github" href="https://github.com/TeddyO323" target="_blank" rel="noopener" aria-label="GitHub"><i
+              class="fa-brands fa-github"></i></a>
+          <a href="https://x.com/TeddyOmond87011?t=yVmQXtsHKM2e-rPp9I-jvw&s=09" target="_blank" rel="noopener"
+            aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a class="linkedin" href="https://www.linkedin.com/in/teddy-omondi-35551376/" target="_blank" rel="noopener"
+            aria-label="LinkedIn"><i class="icofont-linkedin"></i></a>
+        </div>
+
+        <a href="#about" class="scroll-cue" aria-label="Scroll to about section">
+          <span></span>
+          Scroll
+        </a>
+      </div>
     </div>
   </header>
   <script>
     window.addEventListener("load", () => {
       // Check if there's a hash (e.g. #about)
       if (window.location.hash) {
-        const target = document.querySelector(window.location.hash);
+        const target = document.getElementById(window.location.hash.split('?')[0].slice(1));
         if (target) {
           // Delay slightly to allow layout/animations to load
           setTimeout(() => {
@@ -121,35 +173,26 @@
         <div class="col-lg-12 pt-4 pt-lg-0 content" data-aos="fade-left">
           <div class="row">
             <div class="col-lg-4" data-aos="fade-right">
-              <!-- <div class="santa-hat-wrapper"> -->
-              <img alt="Your Photo" class="img-fluid profile-photo" src="assets/img/arcane-poster (1) (1).jpg">
-              <!-- </div> -->
+              <div class="about-photo-frame">
+                <img alt="Teddy Omondi portrait" class="img-fluid profile-photo" src="assets/img/photo_2024-09-21_17-08-49.jpg">
+              </div>
             </div>
             <div class="col-lg-8">
               <h3>Software Engineer</h3>
 
+              <p class="about-intro">
+                I build practical digital experiences with a focus on clean interfaces, useful automation, and ideas
+                that connect technology with everyday life.
+              </p>
+
+              <div class="focus-chips" aria-label="Currently focused on">
+                <span>AI</span>
+                <span>Blockchain</span>
+                <span>Web Apps</span>
+                <span>Creative Coding</span>
+              </div>
 
               <div class="details-grid">
-                <div class="detail-item">
-                  <div class="icon-box">
-                    <i class="fas fa-birthday-cake"></i>
-                  </div>
-                  <div class="detail-content">
-                    <strong>Birthday</strong>
-                    <p>7 August 1997</p>
-                  </div>
-                </div>
-
-                <div class="detail-item">
-                  <div class="icon-box">
-                    <i class="fas fa-phone"></i>
-                  </div>
-                  <div class="detail-content">
-                    <strong>Phone</strong>
-                    <p>+2547 18 125 831</p>
-                  </div>
-                </div>
-
                 <div class="detail-item">
                   <div class="icon-box">
                     <i class="fas fa-city"></i>
@@ -157,6 +200,36 @@
                   <div class="detail-content">
                     <strong>City</strong>
                     <p>Nairobi, Kenya</p>
+                  </div>
+                </div>
+
+                <div class="detail-item">
+                  <div class="icon-box">
+                    <i class="fas fa-microchip"></i>
+                  </div>
+                  <div class="detail-content">
+                    <strong>Favorite Tech</strong>
+                    <p>AI and Blockchain</p>
+                  </div>
+                </div>
+
+                <div class="detail-item copy-detail" data-copy="omosh60@gmail.com" role="button" tabindex="0">
+                  <div class="icon-box">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <div class="detail-content">
+                    <strong>Email</strong>
+                    <p>omosh60@gmail.com</p>
+                  </div>
+                </div>
+
+                <div class="detail-item copy-detail" data-copy="+2547 18 125 831" role="button" tabindex="0">
+                  <div class="icon-box">
+                    <i class="fas fa-phone"></i>
+                  </div>
+                  <div class="detail-content">
+                    <strong>Phone</strong>
+                    <p>+2547 18 125 831</p>
                   </div>
                 </div>
 
@@ -172,26 +245,6 @@
 
                 <div class="detail-item">
                   <div class="icon-box">
-                    <i class="fas fa-hourglass-half"></i>
-                  </div>
-                  <div class="detail-content">
-                    <strong>Age</strong>
-                    <p class="time" id="age"></p>
-                  </div>
-                </div>
-
-                <div class="detail-item">
-                  <div class="icon-box">
-                    <i class="fas fa-microchip"></i>
-                  </div>
-                  <div class="detail-content">
-                    <strong>Favorite Tech</strong>
-                    <p>AI and Blockchain</p>
-                  </div>
-                </div>
-
-                <div class="detail-item">
-                  <div class="icon-box">
                     <i class="fas fa-book"></i>
                   </div>
                   <div class="detail-content">
@@ -202,11 +255,21 @@
 
                 <div class="detail-item">
                   <div class="icon-box">
-                    <i class="fas fa-envelope"></i>
+                    <i class="fas fa-birthday-cake"></i>
                   </div>
                   <div class="detail-content">
-                    <strong>Email</strong>
-                    <p>omosh60@gmail.com</p>
+                    <strong>Birthday</strong>
+                    <p>7 August 1997</p>
+                  </div>
+                </div>
+
+                <div class="detail-item">
+                  <div class="icon-box">
+                    <i class="fas fa-hourglass-half"></i>
+                  </div>
+                  <div class="detail-content">
+                    <strong>Age</strong>
+                    <p class="time" id="age"></p>
                   </div>
                 </div>
               </div>
@@ -219,13 +282,59 @@
           </div>
         </div>
       </div>
-    </div>
     <!-- End About Me -->
     <!-- ======= Skills  ======= -->
-    <div class="skills container">
+    <div class="skills about-skills">
       <div class="section-title">
         <h1>Skills</h1>
       </div>
+
+      <div class="skills-overview">
+        <div class="skill-focus-card">
+          <span class="skill-focus-icon"><i class="fas fa-layer-group"></i></span>
+          <div>
+            <strong>Frontend Interfaces</strong>
+            <p>Responsive, polished experiences with HTML, CSS, JavaScript, React, and careful UI detail.</p>
+          </div>
+        </div>
+
+        <div class="skill-focus-card">
+          <span class="skill-focus-icon"><i class="fas fa-server"></i></span>
+          <div>
+            <strong>Backend Systems</strong>
+            <p>Django, Node.js, databases, authentication, dashboards, and practical admin workflows.</p>
+          </div>
+        </div>
+
+        <div class="skill-focus-card">
+          <span class="skill-focus-icon"><i class="fas fa-brain"></i></span>
+          <div>
+            <strong>AI & Automation</strong>
+            <p>Prediction workflows, data handling, AI-assisted products, and automation-minded problem solving.</p>
+          </div>
+        </div>
+
+        <div class="skill-focus-card">
+          <span class="skill-focus-icon"><i class="fas fa-rocket"></i></span>
+          <div>
+            <strong>Launch Ready</strong>
+            <p>GitHub, deployment basics, WordPress, cloud hosting, and maintaining projects after handoff.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-toolbelt" aria-label="Skill toolbelt">
+        <span>React</span>
+        <span>Django</span>
+        <span>Python</span>
+        <span>Node.js</span>
+        <span>SQL</span>
+        <span>GitHub</span>
+        <span>Docker</span>
+        <span>AWS</span>
+        <span>Canva</span>
+      </div>
+
       <div class="row skills-content">
         <!-- Development Column -->
         <div class="col-lg-6" data-aos="fade-up">
@@ -370,6 +479,7 @@
         </div>
       </div>
     </div>
+    </div>
     <!-- End Skills -->
 
 
@@ -382,6 +492,14 @@
       <div class="section-title">
         <h2>RESUME</h2>
         <p>Check My Resume</p>
+      </div>
+
+      <div class="profile-snapshot" aria-label="Profile snapshot">
+        <span>Frontend</span>
+        <span>Backend</span>
+        <span>AI</span>
+        <span>Blockchain</span>
+        <span>Available for freelance</span>
       </div>
 
       <!-- Row for SUMMARY and EDUCATION (Moved EDUCATION up) -->
@@ -432,15 +550,41 @@
         <!-- Column for SKILLS (Moved SKILLS down) -->
         <div class="col-lg-6">
           <h3 class="resume-title">SKILLS</h3>
-          <div class="resume-item pb-0">
-            <ul>
-              <li>Programming Languages: <strong>Java, C, Python, JavaScript</strong></li>
-              <li>Databases: <strong>SQL, MySQL</strong></li>
-              <li>Version Control: <strong>Git</strong></li>
-              <li>Software Development Methodologies: <strong>Agile, Scrum, Kanban</strong></li>
-              <li>Problem-solving and Analytical Skills</li>
-              <li>Strong Communication and Collaboration Abilities</li>
-            </ul>
+          <div class="resume-item resume-skills-panel pb-0">
+            <div class="skill-chip-group">
+              <span class="skill-group-label">Languages</span>
+              <div class="skill-chip-row">
+                <span>Java</span>
+                <span>C</span>
+                <span>Python</span>
+                <span>JavaScript</span>
+              </div>
+            </div>
+            <div class="skill-chip-group">
+              <span class="skill-group-label">Data</span>
+              <div class="skill-chip-row">
+                <span>SQL</span>
+                <span>MySQL</span>
+              </div>
+            </div>
+            <div class="skill-chip-group">
+              <span class="skill-group-label">Workflow</span>
+              <div class="skill-chip-row">
+                <span>Git</span>
+                <span>Agile</span>
+                <span>Scrum</span>
+                <span>Kanban</span>
+              </div>
+            </div>
+            <div class="skill-chip-group">
+              <span class="skill-group-label">Strengths</span>
+              <div class="skill-chip-row">
+                <span>Problem Solving</span>
+                <span>Analytical Thinking</span>
+                <span>Communication</span>
+                <span>Collaboration</span>
+              </div>
+            </div>
           </div>
         </div>
       </div> <!-- End First Row -->
@@ -478,11 +622,15 @@
     </div>
     -->
 
-      <!-- Download Resume Button -->
-      <div class="text-center">
+      <!-- Resume Actions -->
+      <div class="resume-actions text-center">
         <a href="https://drive.google.com/file/d/11gctOomUvRH1tR7MO8CBppawGKWinYOD/view?usp=sharing" target="_blank"
-          class="resume-download-btn" download>
-          Download Full Resume
+          rel="noopener" class="resume-download-btn resume-view-btn">
+          View PDF
+        </a>
+        <a href="https://drive.google.com/uc?export=download&id=11gctOomUvRH1tR7MO8CBppawGKWinYOD" target="_blank"
+          rel="noopener" class="resume-download-btn">
+          Download Resume
         </a>
       </div>
 
@@ -500,139 +648,105 @@
         <p>My Services</p>
       </div>
 
+      <div class="services-intro">
+        <p>I help founders, small teams, and growing businesses turn ideas into polished digital products, useful
+          automations, and reliable web systems.</p>
+      </div>
+
       <div class="services-grid">
-        <!-- Service Card 1: Web Development -->
         <div class="service-box">
           <div class="service-icon">
             <i class="fas fa-code"></i>
           </div>
-          <h3>Web Development</h3>
-          <p>Custom websites built with modern technologies to ensure fast, secure, and scalable solutions for your
-            business.</p>
+          <h3>Web Apps & Websites</h3>
+          <p>Responsive websites and web applications built for clear user journeys, fast loading, and clean
+            maintainable code.</p>
           <ul class="service-list">
             <li><i class="fas fa-check"></i> Responsive Design</li>
-            <li><i class="fas fa-check"></i> CMS Integration</li>
-            <li><i class="fas fa-check"></i> E-commerce Solutions</li>
+            <li><i class="fas fa-check"></i> Portfolio & Business Sites</li>
+            <li><i class="fas fa-check"></i> Interactive Web Tools</li>
           </ul>
+          <a class="service-cta" href="mailto:omosh60@gmail.com">Request This
+            Service</a>
         </div>
 
-        <!-- Service Card 2: Cloud Solutions -->
-        <div class="service-box">
-          <div class="service-icon">
-            <i class="fab fa-aws"></i>
-          </div>
-          <h3>Cloud Solutions</h3>
-          <p>Leveraging AWS to build resilient, scalable, and secure cloud infrastructures tailored to your needs.</p>
-          <ul class="service-list">
-            <li><i class="fas fa-check"></i> Cloud Migration</li>
-            <li><i class="fas fa-check"></i> Serverless Architecture</li>
-            <li><i class="fas fa-check"></i> CI/CD Pipelines</li>
-          </ul>
-        </div>
-
-        <!-- Service Card 3: UI/UX Design -->
         <div class="service-box">
           <div class="service-icon">
             <i class="fas fa-palette"></i>
           </div>
-          <h3>UI/UX Design</h3>
-          <p>Creating intuitive and visually stunning user interfaces that provide seamless user experiences.</p>
+          <h3>UI/UX & Product Design</h3>
+          <p>Interface design and experience improvements for products that need to feel easier, sharper, and more
+            trustworthy.</p>
           <ul class="service-list">
-            <li><i class="fas fa-check"></i> Wireframing & Prototyping</li>
-            <li><i class="fas fa-check"></i> User Interface Design</li>
-            <li><i class="fas fa-check"></i> Brand Identity</li>
+            <li><i class="fas fa-check"></i> Wireframes & Prototypes</li>
+            <li><i class="fas fa-check"></i> Interface Refreshes</li>
+            <li><i class="fas fa-check"></i> Design Systems</li>
           </ul>
-        </div>
-        <!-- Service Card 4: Mobile App Development -->
-        <div class="service-box">
-          <div class="service-icon">
-            <i class="fas fa-mobile-alt"></i>
-          </div>
-          <h3>Mobile App Development</h3>
-          <p>Building high-performance iOS and Android applications using React Native and Flutter for seamless mobile
-            experiences.</p>
-          <ul class="service-list">
-            <li><i class="fas fa-check"></i> Cross-Platform Apps</li>
-            <li><i class="fas fa-check"></i> Native Performance</li>
-            <li><i class="fas fa-check"></i> App Store Deployment</li>
-          </ul>
+          <a class="service-cta" href="mailto:omosh60@gmail.com">Discuss a
+            Project</a>
         </div>
 
-        <!-- Service Card 5: API Development -->
         <div class="service-box">
           <div class="service-icon">
             <i class="fas fa-network-wired"></i>
           </div>
-          <h3>API Development</h3>
-          <p>Designing and implementing robust RESTful and GraphQL APIs to power your applications and integrations.</p>
+          <h3>API & Data Systems</h3>
+          <p>Backend services, integrations, and database structures that keep applications organized, secure, and
+            ready to scale.</p>
           <ul class="service-list">
-            <li><i class="fas fa-check"></i> Secure Authentication</li>
-            <li><i class="fas fa-check"></i> Scalable Microservices</li>
-            <li><i class="fas fa-check"></i> Third-Party Integration</li>
+            <li><i class="fas fa-check"></i> REST APIs</li>
+            <li><i class="fas fa-check"></i> Database Design</li>
+            <li><i class="fas fa-check"></i> Third-Party Integrations</li>
           </ul>
+          <a class="service-cta" href="mailto:omosh60@gmail.com">Request This
+            Service</a>
         </div>
 
-        <!-- Service Card 6: Database Management -->
         <div class="service-box">
           <div class="service-icon">
-            <i class="fas fa-database"></i>
+            <i class="fas fa-brain"></i>
           </div>
-          <h3>Database Management</h3>
-          <p>Optimizing data storage solutions with SQL and NoSQL databases to ensure data integrity and fast retrieval.
-          </p>
+          <h3>AI & Automation</h3>
+          <p>Practical automations and AI-assisted workflows that reduce repetitive work and help teams move faster.</p>
           <ul class="service-list">
-            <li><i class="fas fa-check"></i> Schema Design</li>
-            <li><i class="fas fa-check"></i> Performance Tuning</li>
-            <li><i class="fas fa-check"></i> Data Migration</li>
+            <li><i class="fas fa-check"></i> Workflow Automation</li>
+            <li><i class="fas fa-check"></i> AI Features</li>
+            <li><i class="fas fa-check"></i> Internal Tools</li>
           </ul>
+          <a class="service-cta" href="mailto:omosh60@gmail.com">Discuss a
+            Project</a>
         </div>
 
-        <!-- Service Card 7: Technical Support -->
         <div class="service-box">
           <div class="service-icon">
-            <i class="fas fa-headset"></i>
+            <i class="fas fa-cloud"></i>
           </div>
-          <h3>Technical Support</h3>
-          <p>Providing expert troubleshooting, system maintenance, and technical assistance to keep your operations
-            running smoothly.</p>
-          <ul class="service-list">
-            <li><i class="fas fa-check"></i> System Troubleshooting</li>
-            <li><i class="fas fa-check"></i> Software Updates</li>
-            <li><i class="fas fa-check"></i> User Training</li>
-          </ul>
-        </div>
-
-        <!-- Service Card 8: SEO & Analytics -->
-        <div class="service-box">
-          <div class="service-icon">
-            <i class="fas fa-chart-line"></i>
-          </div>
-          <h3>SEO & Analytics</h3>
-          <p>Optimizing your web presence for search engines and analyzing user behavior to drive growth and engagement.
-          </p>
-          <ul class="service-list">
-            <li><i class="fas fa-check"></i> Technical SEO</li>
-            <li><i class="fas fa-check"></i> Performance Tracking</li>
-            <li><i class="fas fa-check"></i> Conversion Optimization</li>
-          </ul>
-        </div>
-
-        <!-- Service Card 9: Hosting & Maintenance -->
-        <div class="service-box">
-          <div class="service-icon">
-            <i class="fas fa-server"></i>
-          </div>
-          <h3>Hosting & DevOps</h3>
-          <p>Managing server infrastructure, automated deployments, and continuous integration to ensure high
-            availability.</p>
+          <h3>Cloud Hosting & DevOps</h3>
+          <p>Deployment, hosting, and maintenance workflows that keep web products stable, observable, and easier to
+            update.</p>
           <ul class="service-list">
             <li><i class="fas fa-check"></i> Cloud Hosting Setup</li>
             <li><i class="fas fa-check"></i> CI/CD Pipelines</li>
             <li><i class="fas fa-check"></i> Security Monitoring</li>
           </ul>
+          <a class="service-cta" href="mailto:omosh60@gmail.com">Request This
+            Service</a>
         </div>
 
-
+        <div class="service-box">
+          <div class="service-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>Maintenance & Growth</h3>
+          <p>Ongoing improvements for existing sites: fixes, performance, analytics, SEO basics, and technical support.</p>
+          <ul class="service-list">
+            <li><i class="fas fa-check"></i> Performance Tuning</li>
+            <li><i class="fas fa-check"></i> Technical SEO</li>
+            <li><i class="fas fa-check"></i> Troubleshooting</li>
+          </ul>
+          <a class="service-cta" href="mailto:omosh60@gmail.com">Discuss a
+            Project</a>
+        </div>
 
       </div>
     </div>
@@ -645,6 +759,11 @@
         <p>Get In Touch</p>
       </div>
 
+      <div class="contact-intro">
+        <p>Open to freelance, collaborations, and software projects.</p>
+        <span>Usually replies within 24 hours.</span>
+      </div>
+
       <div class="contact-grid">
         <!-- Address Card -->
         <div class="contact-card" data-aos="fade-up">
@@ -652,7 +771,7 @@
             <i class="bx bx-map"></i>
           </div>
           <h3>My Address</h3>
-          <p>Phenom Park Estate, Langata, Nairobi</p>
+          <p>Based in Langata, Nairobi</p>
         </div>
 
         <!-- Social Profiles Card -->
@@ -676,7 +795,8 @@
         </div>
 
         <!-- Email Card -->
-        <div class="contact-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="contact-card contact-copy" data-copy="omosh60@gmail.com" data-aos="fade-up" data-aos-delay="200"
+          role="button" tabindex="0">
           <div class="contact-icon-box">
             <i class="bx bx-envelope"></i>
           </div>
@@ -685,13 +805,22 @@
         </div>
 
         <!-- Phone Card -->
-        <div class="contact-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="contact-card contact-copy" data-copy="+254718125831" data-aos="fade-up" data-aos-delay="300"
+          role="button" tabindex="0">
           <div class="contact-icon-box">
             <i class="bx bx-phone-call"></i>
           </div>
           <h3>Call Me</h3>
           <p><a href="tel:+254718125831">+254718125831</a></p>
         </div>
+      </div>
+
+      <div class="contact-primary-cta">
+        <div>
+          <span>Have something in mind?</span>
+          <p>Tell me what you are building and I will help shape the next step.</p>
+        </div>
+        <a href="mailto:omosh60@gmail.com?subject=Project%20Inquiry">Start a Project</a>
       </div>
 
 
@@ -709,10 +838,30 @@
       <div class="section-title">
         <h2>My Orbit</h2>
         <p>A glimpse into my current universe.</p>
+        <span class="orbit-updated">Last updated: April 30, 2026</span>
       </div>
 
       <!-- Orbit Grid -->
       <div class="orbit-grid">
+
+        <div class="orbit-card featured-building" data-aos="fade-up">
+          <div class="orbit-header">
+            <i class="fas fa-satellite-dish"></i>
+            <h3>Currently Building</h3>
+          </div>
+          <div class="orbit-content">
+            <span class="orbit-label">Featured Focus</span>
+            <span class="orbit-value">Portfolio Experience Refresh</span>
+            <span class="orbit-note">Tuning each page into a sharper, more personal interface with cleaner motion and stronger storytelling.</span>
+            <div class="build-status-row">
+              <span class="status-badge">In progress</span>
+              <span class="status-percent">68%</span>
+            </div>
+            <div class="build-progress" aria-label="Portfolio refresh progress">
+              <span style="width: 68%;"></span>
+            </div>
+          </div>
+        </div>
 
         <!-- 1. What I'm watching -->
         <div class="orbit-card watching" data-aos="fade-up">
@@ -840,8 +989,8 @@
                 <span class="orbit-value">Josh W Comeau</span>
               </li>
               <li>
-                <span class="orbit-label">Visual Concept</span>
-                <span class="orbit-value">Glassmorphism & Neons</span>
+                <span class="orbit-label">Visual Direction</span>
+                <span class="orbit-value">Calm dark interfaces, blue energy, and details that feel intentionally built.</span>
               </li>
             </ul>
           </div>
@@ -874,11 +1023,11 @@
       </div>
 
       <!-- Existing Spotify/Year in Review Content (Integrated below) -->
-      <div class="mt-5">
+      <div class="orbit-review-stack">
 
 
         <!-- ======= Year in Review ======= -->
-        <div class="year-in-review container">
+        <div class="year-in-review">
           <div class="section-title">
             <h1>Year 2025 in Review</h1>
           </div>
@@ -1127,7 +1276,7 @@
           </div>
         </div>
         <!-- ======= Spotify Playlist ======= -->
-        <div class="spotify-playlist container mb-5">
+        <div class="spotify-playlist mb-5">
           <div class="section-title">
             <h1>
               Now Listening
@@ -1137,230 +1286,206 @@
             </h1>
           </div>
 
-          <iframe style="border-radius:12px"
-            src="https://open.spotify.com/embed/playlist/1xawk2L7ibIILmgM8rh5JC?utm_source=generator&theme=0"
-            width="50%" height="352" frameBorder="0" allowfullscreen=""
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          <div class="now-listening-panel">
+            <div class="now-listening-main">
+              <div class="playlist-mark">
+                <i class="fab fa-spotify"></i>
+              </div>
+              <div>
+                <span class="orbit-label">Current Playlist</span>
+                <h3>Late-night build mode</h3>
+                <p>Tracks for coding, polishing interfaces, and getting into a calm focus rhythm.</p>
+                <a href="https://open.spotify.com/playlist/1xawk2L7ibIILmgM8rh5JC" target="_blank" rel="noopener"
+                  class="listen-link">Open on Spotify</a>
+              </div>
+            </div>
+            <div class="listening-tracks">
+              <span>Bed Peace - Jhene Aiko, Childish Gambino</span>
+              <span>Freaks and Geeks - Childish Gambino</span>
+              <span>Closer - The Chainsmokers, Halsey</span>
+            </div>
+          </div>
+
+          <div class="spotify-embed-shell">
+            <iframe title="Spotify playlist player"
+              src="https://open.spotify.com/embed/playlist/1xawk2L7ibIILmgM8rh5JC?utm_source=generator&theme=0"
+              width="100%" height="352" frameborder="0" allowfullscreen
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </div>
         </div>
       </div>
 
     </div>
   </section>
   <section class="projects" id="projects">
-
-    <div class="container mx-auto">
+    <div class="container">
       <div class="section-title">
         <h2>Projects</h2>
+        <p>Selected Work</p>
       </div>
 
-      <!-- Project Filters -->
-      <div class="flex flex-wrap justify-center gap-4 mb-12">
-        <button class="filter-btn active" data-filter="all">All Projects</button>
-        <button class="filter-btn" data-filter="web">Web Development</button>
-        <button class="filter-btn" data-filter="python">Python</button>
-        <button class="filter-btn" data-filter="javascript">JavaScript</button>
-        <button class="filter-btn" data-filter="design">Design</button>
+      <div class="projects-intro">
+        <span>Advanced builds from Teddy's GitHub</span>
+        <p>Product dashboards, Django systems, ML workflows, mobile and desktop apps, and creative interfaces built with a practical engineering mindset.</p>
       </div>
 
-      <!-- Projects Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Project 1 -->
-        <div class="project-card" data-category="web javascript">
-          <div class="overflow-hidden">
-            <img src="assets/img/progresssss.jpg" alt="Year Progress Bar" class="project-image">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">Year Progress Bar</h3>
-            <p class="text-gray-400 mb-4">A visual representation of the year's progress with interactive features and
-              user feedback.</p>
-
-            <div class="mb-4">
-              <span class="tech-tag">HTML</span>
-              <span class="tech-tag">CSS</span>
-              <span class="tech-tag">JavaScript</span>
-            </div>
-
-            <div class="flex space-x-3">
-              <a href="https://github.com/TeddyO323/Progress-bar_of_the_year" target="_blank" class="btn-primary">
-                <i class="fab fa-github mr-2"></i> View Code
-              </a>
-              <a href="https://teddyo323.github.io/Progress-bar_of_the_year/" target="_blank" class="btn-outline">Live
-                Demo</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="project-card" data-category="web javascript">
-          <div class="overflow-hidden">
-            <img src="assets/img/world-clock.png" alt="World Clock" class="project-image">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">World Clock</h3>
-            <p class="text-gray-400 mb-4">An interactive world clock with customizable time zones and visual themes.</p>
-
-            <div class="mb-4">
-              <span class="tech-tag">HTML</span>
-              <span class="tech-tag">CSS</span>
-              <span class="tech-tag">JavaScript</span>
-              <span class="tech-tag">API</span>
-            </div>
-
-            <div class="flex space-x-3">
-              <a href="https://github.com/TeddyO323/Analog_clock.git" target="_blank" class="btn-primary">
-                <i class="fab fa-github mr-2"></i> View Code
-              </a>
-              <a href="https://teddyo323.github.io/Analog_clock/" target="_blank" class="btn-outline">Live Demo</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="project-card" data-category="python">
-          <div class="overflow-hidden">
-            <img
-              src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-              alt="Python World Clock" class="project-image">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">Python World Clock</h3>
-            <p class="text-gray-400 mb-4">A Python-based analog clock with real-time updates and date display.</p>
-
-            <div class="mb-4">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">Tkinter</span>
-              <span class="tech-tag">GUI</span>
-            </div>
-
-            <div class="flex space-x-3">
-              <a href="#" class="btn-primary">
-                <i class="fab fa-github mr-2"></i> View Code
-              </a>
-              <a href="#" class="btn-outline">Download</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 4 -->
-        <div class="project-card" data-category="web javascript">
-          <div class="overflow-hidden">
-            <img
-              src="https://images.unsplash.com/photo-1587145820266-a5951ee6f620?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-              alt="Scientific Calculator" class="project-image">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">Scientific Calculator</h3>
-            <p class="text-gray-400 mb-4">A web-based calculator with advanced mathematical functions and responsive
-              design.</p>
-
-            <div class="mb-4">
-              <span class="tech-tag">HTML</span>
-              <span class="tech-tag">CSS</span>
-              <span class="tech-tag">JavaScript</span>
-            </div>
-
-            <div class="flex space-x-3">
-              <a href="https://github.com/TeddyO323/Calculator" target="_blank" class="btn-primary">
-                <i class="fab fa-github mr-2"></i> View Code
-              </a>
-              <a href="#" class="btn-outline">Live Demo</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 5 -->
-        <div class="project-card" data-category="web javascript">
-          <div class="overflow-hidden">
-            <img
-              src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80"
-              alt="To-Do List App" class="project-image">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">To-Do List App</h3>
-            <p class="text-gray-400 mb-4">A task management application with local storage and priority tagging.</p>
-
-            <div class="mb-4">
-              <span class="tech-tag">HTML</span>
-              <span class="tech-tag">CSS</span>
-              <span class="tech-tag">JavaScript</span>
-              <span class="tech-tag">Local Storage</span>
-            </div>
-            <div class="flex space-x-3">
-              <a href="#" class="btn-primary" style="opacity: 0.6; cursor: not-allowed;">
-                <i class="fas fa-code mr-2"></i> Coming Soon
-              </a>
-              <a href="#" class="btn-outline" style="opacity: 0.6; cursor: not-allowed;">
-                <i class="fas fa-clock mr-2"></i> In Development
-              </a>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Project 6 -->
-        <div class="project-card" data-category="design">
-          <div class="overflow-hidden">
-            <img
-              src="https://images.unsplash.com/photo-1541462608143-67571c6738dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-              alt="Portfolio Design" class="project-image">
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">Portfolio Design</h3>
-            <p class="text-gray-400 mb-4">A modern portfolio design with responsive layout and interactive elements.</p>
-
-            <div class="mb-4">
-              <span class="tech-tag">Figma</span>
-              <span class="tech-tag">UI/UX</span>
-              <span class="tech-tag">Prototyping</span>
-            </div>
-
-            <div class="flex space-x-3">
-              <a href="#" class="btn-primary" style="opacity: 0.6; cursor: not-allowed;">
-                <i class="fas fa-code mr-2"></i> Coming Soon
-              </a>
-              <a href="#" class="btn-outline" style="opacity: 0.6; cursor: not-allowed;">
-                <i class="fas fa-clock mr-2"></i> In Development
-              </a>
-            </div>
-          </div>
-        </div>
-        <!--project 7-->
-        <div class="project-card" data-category="design">
-          <div class="overflow-hidden">
-            <img
-              src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-              alt="Doctor Strange Portal" class="project-image">
-            <div class="overflow-hidden">
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">Doctor Strange Portal</h3>
-              <p class="text-gray-400 mb-4">A creative design inspired by Doctor Strange's portal, showcasing advanced
-                CSS animations and effects.</p>
-            </div>
-            <div class="mb-4">
-              <span class="tech-tag">HTML</span>
-              <span class="tech-tag">CSS</span>
-              <span class="tech-tag">Animation</span>
-            </div>
-            <div class="flex space-x-3">
-              <a href="#" class="btn-primary" style="opacity: 0.6; cursor: not-allowed;">
-                <i class="fas fa-code mr-2"></i> Coming Soon
-              </a>
-              <a href="#" class="btn-outline" style="opacity: 0.6; cursor: not-allowed;">
-                <i class="fas fa-clock mr-2"></i> In Development
-              </a>
-            </div>
-
-          </div>
-        </div>
-
+      <div class="project-filters" aria-label="Project filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+        <button class="filter-btn" data-filter="django">Django</button>
+        <button class="filter-btn" data-filter="ai">AI/ML</button>
+        <button class="filter-btn" data-filter="mobile">Mobile/Desktop</button>
+        <button class="filter-btn" data-filter="creative">Creative</button>
       </div>
 
-      <!-- View More Button -->
-      <div class="text-center mt-12">
-        <a href="https://github.com/TeddyO323?tab=repositories" target="_blank"
-          class="btn-primary inline-block px-8 py-3 text-lg">
-          <i class="fab fa-github mr-2"></i> View All Projects on GitHub
+      <div class="projects-grid">
+        <article class="project-card featured-project" data-category="mobile desktop kotlin">
+          <div class="project-media">
+            <img src="assets/img/projects/verseflow.png" alt="VerseFlow now playing screen" class="project-image">
+          </div>
+          <div class="project-content">
+            <span class="project-kicker">Featured mobile + desktop app</span>
+            <h3>VerseFlow</h3>
+            <p>A local-first Kotlin music player with Android, Android Auto, macOS, and Windows surfaces. It focuses on smooth playback, lyrics, notifications, metadata enrichment, and cached listening.</p>
+            <div class="project-meta">
+              <span>Local library</span>
+              <span>Cross-device UI</span>
+              <span>Media3 playback</span>
+            </div>
+            <div class="tech-stack">
+              <span>Kotlin</span>
+              <span>Jetpack Compose</span>
+              <span>Material 3</span>
+              <span>Media3</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/TeddyO323/verseflow" target="_blank" rel="noopener" class="btn-primary">
+                <i class="fab fa-github"></i> View Code
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="django python ai fullstack">
+          <div class="project-media">
+            <img src="assets/img/projects/academic-risk-admin.png" alt="Academic Risk Management admin dashboard" class="project-image">
+          </div>
+          <div class="project-content">
+            <span class="project-kicker">AI education platform</span>
+            <h3>Academic Risk System</h3>
+            <p>A Django platform for predicting student failure and dropout risk with dataset uploads, role-based portals, notifications, and recovery planning.</p>
+            <div class="tech-stack">
+              <span>Django</span>
+              <span>Python</span>
+              <span>Scikit-learn</span>
+              <span>Pandas</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/TeddyO323/failure_and_dropout_early_warning-system" target="_blank" rel="noopener" class="btn-primary">
+                <i class="fab fa-github"></i> View Code
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="django python dashboard fullstack">
+          <div class="project-media">
+            <img src="assets/img/projects/smartrent-dashboard.png" alt="SmartRent landlord dashboard" class="project-image">
+          </div>
+          <div class="project-content">
+            <span class="project-kicker">Property dashboard</span>
+            <h3>SmartRent Dashboard</h3>
+            <p>A landlord-focused rent management system with authentication, property records, dashboard charts, tenant views, and PostgreSQL-ready configuration.</p>
+            <div class="tech-stack">
+              <span>Django</span>
+              <span>PostgreSQL</span>
+              <span>Chart.js</span>
+              <span>JavaScript</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/TeddyO323/Rent_management" target="_blank" rel="noopener" class="btn-primary">
+                <i class="fab fa-github"></i> View Code
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="react typescript fullstack dashboard">
+          <div class="project-media project-visual project-visual-hr">
+            <div class="visual-window">
+              <span></span>
+              <span></span>
+              <span></span>
+              <strong>HR</strong>
+            </div>
+          </div>
+          <div class="project-content">
+            <span class="project-kicker">Full-stack operations tool</span>
+            <h3>HR Management System</h3>
+            <p>A modern HR workspace using React, TypeScript, Express, Prisma, charts, routing, motion, and drag-and-drop interfaces for operational workflows.</p>
+            <div class="tech-stack">
+              <span>React</span>
+              <span>TypeScript</span>
+              <span>Express</span>
+              <span>Prisma</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/TeddyO323/HR-Management" target="_blank" rel="noopener" class="btn-primary">
+                <i class="fab fa-github"></i> View Code
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="django python education fullstack">
+          <div class="project-media">
+            <img src="assets/img/projects/online-exam-admin.png" alt="Online Exam System admin dashboard" class="project-image">
+          </div>
+          <div class="project-content">
+            <span class="project-kicker">Education workflow</span>
+            <h3>Online Exam System</h3>
+            <p>A Django exam platform with admin, examiner, and student workflows for creating assessments, managing access, and running structured online tests.</p>
+            <div class="tech-stack">
+              <span>Django</span>
+              <span>Python</span>
+              <span>Auth</span>
+              <span>Exams</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/TeddyO323/online_exam_system" target="_blank" rel="noopener" class="btn-primary">
+                <i class="fab fa-github"></i> View Code
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="creative threejs frontend">
+          <div class="project-media project-visual project-visual-portal">
+            <div class="portal-ring"></div>
+            <div class="portal-core"></div>
+          </div>
+          <div class="project-content">
+            <span class="project-kicker">Interactive 3D experiment</span>
+            <h3>Doctor Strange Portal</h3>
+            <p>A Three.js/Vite creative build exploring animated portal visuals, GUI tuning, TypeScript structure, and browser-based 3D interaction.</p>
+            <div class="tech-stack">
+              <span>Three.js</span>
+              <span>Vite</span>
+              <span>TypeScript</span>
+              <span>lil-gui</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/TeddyO323/Dr_strange_portal" target="_blank" rel="noopener" class="btn-primary">
+                <i class="fab fa-github"></i> View Code
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="projects-footer">
+        <a href="https://github.com/TeddyO323?tab=repositories" target="_blank" rel="noopener" class="btn-outline">
+          <i class="fab fa-github"></i> View All GitHub Repositories
         </a>
       </div>
     </div>
@@ -1382,7 +1507,7 @@
 
           projectCards.forEach(card => {
             if (filterValue === 'all' || card.getAttribute('data-category').includes(filterValue)) {
-              card.style.display = 'block';
+              card.style.display = '';
             } else {
               card.style.display = 'none';
             }
@@ -1394,11 +1519,13 @@
       projectCards.forEach(card => {
         card.addEventListener('mouseenter', () => {
           const img = card.querySelector('.project-image');
+          if (!img) return;
           img.style.transform = 'scale(1.05)';
         });
 
         card.addEventListener('mouseleave', () => {
           const img = card.querySelector('.project-image');
+          if (!img) return;
           img.style.transform = 'scale(1)';
         });
       });
@@ -1416,7 +1543,8 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/venobox/venobox.min.js"></script>
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js?v=projects-20260430b"></script>
+  <script src="assets/js/contact.js"></script>
   <!-- <script src="assets/js/snow.js"></script> -->
 </body>
 
