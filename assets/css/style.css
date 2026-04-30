@@ -7015,6 +7015,26 @@ body.christmas-mode .christmas-lights-container {
   box-shadow: 0 12px 26px rgba(23, 67, 255, 0.24);
 }
 
+.verseflow-downloads {
+  align-items: stretch;
+}
+
+.verseflow-downloads .btn-primary,
+.verseflow-downloads .btn-outline {
+  flex: 1 1 150px;
+  min-width: 0;
+}
+
+.projects .release-pending,
+.projects .release-pending:hover {
+  cursor: default;
+  color: rgba(255, 255, 255, 0.56);
+  border-color: rgba(132, 151, 255, 0.18);
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: none;
+  transform: none;
+}
+
 .projects-footer {
   display: flex;
   justify-content: center;
