@@ -22,7 +22,7 @@
 
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/style.css?v=orbit-brand-recap-strong-20260501" rel="stylesheet">
 </head>
 
 <body>
@@ -68,10 +68,12 @@
             <a href="#services">Services</a>
           </li>
           <!-- <li><a href="#MyOrbit">MyOrbit</a></li> -->
-          <!-- <li><a href="#blog">Blog</a></li> -->
           <li>
             <a href="#projects">Projects</a>
           </li>
+          <!-- <li>
+            <a href="#blog">Blog</a>
+          </li> -->
           <li>
             <a href="#MyOrbit">My Orbit</a>
           </li>
@@ -833,12 +835,100 @@
   <!-- <form action="https://teddyomondi.github.io/forms/contact.php" method="post" role="form" class="php-email-form mt-4"><div class="row"><div class="col-md-6 form-group"><input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required></div><div class="col-md-6 form-group mt-3 mt-md-0"><input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required></div></div><div class="form-group mt-3"><input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required></div><div class="form-group mt-3"><textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea></div><div class="my-3"><div class="loading">Loading</div><div class="error-message"></div><div class="sent-message">Your message has been sent. Thank you!</div></div><div class="text-center"><button type="submit">Send Message</button></div></form> -->
   </section>
   <!-- End Contact Section -->
-  <!-- <section class="blog" id="blog"><div class="container"><div class="blog"><div class="section-title"><h2>Blog</h2><h1>This page is still under Construction</h1><p class="animate__animated animate__fadeInUp animate__slow">Sooner or later, just chill</p><div class="hero-btns animate__animated animate__fadeInUp animate__slow"><a href="index.html"><button class="btn-trans" type="button">Go Back Home</button></a></div></div></div></div></section> -->
+  <section class="blog" id="blog">
+    <div class="container">
+      <div class="section-title">
+        <h2>Blog</h2>
+        <p>Technical Journal</p>
+      </div>
+
+      <article class="featured-post">
+        <div class="featured-post-media">
+          <img src="assets/img/verseflow.png" alt="VerseFlow desktop app interface">
+          <span class="post-chip">Featured Post</span>
+        </div>
+        <div class="featured-post-content">
+          <span class="post-kicker">Build Log / VerseFlow</span>
+          <h3>Building VerseFlow Across Android, Desktop, and the Car</h3>
+          <p>
+            A behind-the-scenes look at designing a local-first music player with Kotlin, Jetpack Compose,
+            Media3 playback, lyrics, metadata, cached listening, and release targets for Android, Android Auto,
+            macOS, and Windows<span class="read-more-dots">...</span>
+          </p>
+          <div class="post-meta">
+            <span>May 1, 2026</span>
+            <span>5 min read</span>
+            <span>Music App Engineering</span>
+          </div>
+          <div class="post-tags">
+            <span>Kotlin</span>
+            <span>Jetpack Compose</span>
+            <span>Media3</span>
+            <span>Cross-platform</span>
+          </div>
+          <button type="button" class="post-read-toggle" aria-expanded="false" aria-controls="verseflow-inline-post">
+            Read More
+          </button>
+          <div class="inline-full-post" id="verseflow-inline-post" hidden>
+            <div class="full-post-grid">
+              <section>
+                <h4>Why I Built It</h4>
+                <p>
+                  Most music apps are built around streaming first. VerseFlow is built around ownership and control:
+                  local files, cached listening, clean playback controls, and a UI that gets out of the way once the
+                  music starts.
+                </p>
+              </section>
+
+              <section>
+                <h4>Core Experience</h4>
+                <p>
+                  The app focuses on smooth playback, lyrics, notifications, artwork, metadata enrichment, and a
+                  library flow that feels quick to browse. The goal is to make common actions feel immediate, whether
+                  someone is playing one album or moving through a large local collection.
+                </p>
+              </section>
+
+              <section>
+                <h4>Engineering Stack</h4>
+                <p>
+                  Kotlin and Jetpack Compose shape the interface, while Media3 handles the playback foundation.
+                  The same product thinking carries into macOS and Windows releases so the app can feel consistent
+                  without forcing every platform to look identical.
+                </p>
+              </section>
+
+              <section>
+                <h4>Hardest Parts</h4>
+                <p>
+                  The tricky parts are the ones users should never notice: stable playback state, clean media sessions,
+                  metadata edge cases, Android Auto behavior, packaging releases, and keeping the interface responsive
+                  while the library grows.
+                </p>
+              </section>
+
+              <section>
+                <h4>What Comes Next</h4>
+                <p>
+                  I want to keep improving library management, polish the desktop builds, tighten Android Auto support,
+                  and push the app closer to a release that feels reliable enough for daily listening.
+                </p>
+              </section>
+            </div>
+          </div>
+          <div class="post-actions">
+            <a href="#projects" class="post-cta">View VerseFlow Project</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
   <section class="MyOrbit" id="MyOrbit">
     <div class="container">
       <div class="section-title">
         <h2>My Orbit</h2>
-        <p>A glimpse into my current universe.</p>
+        <p>Personal Dashboard</p>
         <span class="orbit-updated">Last updated: April 30, 2026</span>
       </div>
 
@@ -1031,6 +1121,21 @@
         <div class="year-in-review">
           <div class="section-title">
             <h1>Year 2025 in Review</h1>
+            <p class="review-intro">A compact snapshot of the music, artists, and listening habits that shaped my year.</p>
+          </div>
+          <div class="review-highlights" aria-label="2025 review highlights">
+            <div>
+              <span>Spotify Genres</span>
+              <strong>79</strong>
+            </div>
+            <div>
+              <span>Listening Age</span>
+              <strong>35 years</strong>
+            </div>
+            <div>
+              <span>YouTube Time</span>
+              <strong>8,017 min</strong>
+            </div>
           </div>
           <div class="row">
             <!-- Spotify Wrapped Card -->
@@ -1561,7 +1666,7 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/venobox/venobox.min.js"></script>
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js?v=scroll-progress-20260501"></script>
+  <script src="assets/js/main.js?v=blog-read-more-20260501"></script>
   <script src="assets/js/contact.js"></script>
   <!-- <script src="assets/js/snow.js"></script> -->
 </body>
