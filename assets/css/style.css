@@ -1418,6 +1418,7 @@ section .container {
 
 .about .about-skills .skill-name {
   font-size: 0.94rem;
+  color: #fff;
 }
 
 .about .about-skills .skill-percent {
@@ -1840,39 +1841,31 @@ section .container {
 }
 
 .MyOrbit .spotify-card {
-  border-color: rgba(30, 215, 96, 0.5);
+  border-color: rgba(111, 163, 255, 0.22);
   background:
-    radial-gradient(circle at 90% 6%, rgba(30, 215, 96, 0.28), transparent 36%),
-    linear-gradient(180deg, rgba(20, 104, 55, 0.82), rgba(5, 24, 14, 0.96)),
-    #041008;
-  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.48), inset 0 0 42px rgba(30, 215, 96, 0.16);
+    radial-gradient(circle at 92% 8%, rgba(111, 163, 255, 0.1), transparent 34%),
+    linear-gradient(180deg, rgba(10, 16, 42, 0.72), rgba(0, 0, 0, 0.9)),
+    #03050c;
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.48), inset 0 0 34px rgba(0, 34, 255, 0.08);
 }
 
 .MyOrbit .youtube-card {
-  border-color: rgba(255, 48, 48, 0.5);
+  border-color: rgba(111, 163, 255, 0.22);
   background:
-    radial-gradient(circle at 90% 6%, rgba(255, 48, 48, 0.3), transparent 36%),
-    linear-gradient(180deg, rgba(118, 24, 34, 0.84), rgba(29, 6, 10, 0.96)),
-    #120407;
-  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.48), inset 0 0 42px rgba(255, 48, 48, 0.16);
+    radial-gradient(circle at 92% 8%, rgba(111, 163, 255, 0.1), transparent 34%),
+    linear-gradient(180deg, rgba(10, 16, 42, 0.72), rgba(0, 0, 0, 0.9)),
+    #03050c;
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.48), inset 0 0 34px rgba(0, 34, 255, 0.08);
 }
 
-.MyOrbit .spotify-card:hover {
-  border-color: rgba(30, 215, 96, 0.68);
-  background:
-    radial-gradient(circle at 90% 6%, rgba(30, 215, 96, 0.34), transparent 38%),
-    linear-gradient(180deg, rgba(24, 122, 64, 0.9), rgba(5, 24, 14, 0.98)),
-    #041008;
-  box-shadow: 0 0 28px rgba(30, 215, 96, 0.18), 0 20px 48px rgba(0, 0, 0, 0.34);
-}
-
+.MyOrbit .spotify-card:hover,
 .MyOrbit .youtube-card:hover {
-  border-color: rgba(255, 48, 48, 0.68);
+  border-color: rgba(111, 163, 255, 0.44);
   background:
-    radial-gradient(circle at 90% 6%, rgba(255, 48, 48, 0.34), transparent 38%),
-    linear-gradient(180deg, rgba(138, 28, 40, 0.92), rgba(29, 6, 10, 0.98)),
-    #120407;
-  box-shadow: 0 0 28px rgba(255, 48, 48, 0.18), 0 20px 48px rgba(0, 0, 0, 0.34);
+    radial-gradient(circle at 92% 8%, rgba(111, 163, 255, 0.14), transparent 36%),
+    linear-gradient(180deg, rgba(12, 20, 50, 0.82), rgba(0, 0, 0, 0.94)),
+    #03050c;
+  box-shadow: 0 0 26px rgba(0, 0, 255, 0.18), 0 20px 48px rgba(0, 0, 0, 0.34);
 }
 
 .MyOrbit .spotify-card::before {
@@ -1884,11 +1877,21 @@ section .container {
 }
 
 .MyOrbit .spotify-card .card-header {
-  border-bottom-color: rgba(30, 215, 96, 0.18);
+  border: 1px solid rgba(30, 215, 96, 0.32);
+  border-bottom-color: rgba(30, 215, 96, 0.42);
+  background:
+    linear-gradient(135deg, rgba(30, 215, 96, 0.28), rgba(30, 215, 96, 0.08)),
+    rgba(0, 0, 0, 0.28);
+  padding: 12px;
 }
 
 .MyOrbit .youtube-card .card-header {
-  border-bottom-color: rgba(255, 48, 48, 0.18);
+  border: 1px solid rgba(255, 48, 48, 0.32);
+  border-bottom-color: rgba(255, 48, 48, 0.42);
+  background:
+    linear-gradient(135deg, rgba(255, 48, 48, 0.28), rgba(255, 48, 48, 0.08)),
+    rgba(0, 0, 0, 0.28);
+  padding: 12px;
 }
 
 .MyOrbit .spotify-card .card-header i {
@@ -1928,17 +1931,21 @@ section .container {
 .MyOrbit .spotify-card .spotify-stat-section,
 .MyOrbit .spotify-card .total-genres,
 .MyOrbit .spotify-card .spotify-list li {
-  border-color: rgba(30, 215, 96, 0.26);
+  border-color: rgba(30, 215, 96, 0.28);
   border-left-color: rgba(30, 215, 96, 0.62);
-  background: rgba(30, 215, 96, 0.085);
+  background:
+    linear-gradient(135deg, rgba(30, 215, 96, 0.14), rgba(30, 215, 96, 0.035)),
+    rgba(0, 0, 0, 0.2);
 }
 
 .MyOrbit .youtube-card .youtube-stat-section,
 .MyOrbit .youtube-card .youtube-list li,
 .MyOrbit .youtube-card .passport-item {
-  border-color: rgba(255, 48, 48, 0.26);
+  border-color: rgba(255, 48, 48, 0.28);
   border-left-color: rgba(255, 48, 48, 0.62);
-  background: rgba(255, 48, 48, 0.082);
+  background:
+    linear-gradient(135deg, rgba(255, 48, 48, 0.14), rgba(255, 48, 48, 0.035)),
+    rgba(0, 0, 0, 0.2);
 }
 
 .MyOrbit .spotify-stat-section:nth-child(3),
@@ -2378,7 +2385,7 @@ section .container {
   width: 100%;
   margin: 0 0 14px;
   padding: 0;
-  color: #6fa3ff;
+  color: #00f;
   font-size: clamp(1.15rem, 2vw, 1.7rem);
   font-weight: 700;
   letter-spacing: 0.18em;
@@ -2625,7 +2632,7 @@ section .container {
   gap: 16px;
   margin: 0 0 clamp(22px, 3vw, 34px);
   border: 1px solid rgba(111, 163, 255, 0.16);
-  background: rgba(0, 0, 0, 0.18);
+  background: rgba(6, 10, 28, 0.72);
   box-shadow: 0 16px 44px rgba(0, 0, 0, 0.2);
   padding: clamp(16px, 2vw, 22px);
 }
@@ -2652,6 +2659,7 @@ section .container {
 }
 
 .contact-grid {
+  display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
   margin-top: 0;
@@ -2661,11 +2669,13 @@ section .container {
   min-height: 260px;
   border-radius: 0;
   border: 1px solid rgba(111, 163, 255, 0.16);
-  background: rgba(0, 0, 0, 0.18);
+  background:
+    linear-gradient(180deg, rgba(28, 48, 120, 0.5), rgba(8, 14, 42, 0.82)),
+    #050916;
   box-shadow: 0 16px 44px rgba(0, 0, 0, 0.26);
   backdrop-filter: none;
   padding: clamp(20px, 2.5vw, 30px);
-  opacity: 0;
+  opacity: 1 !important;
   animation: contactRise 0.55s ease both;
   transition: transform 0.28s ease, border-color 0.28s ease, background 0.28s ease, box-shadow 0.28s ease;
 }
@@ -2723,7 +2733,7 @@ section .container {
 
 .contact-card p,
 .contact-card p a {
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.84);
   line-height: 1.65;
   overflow-wrap: anywhere;
 }
@@ -2788,7 +2798,7 @@ section .container {
   border: 1px solid rgba(111, 163, 255, 0.18);
   background:
     linear-gradient(135deg, rgba(0, 0, 255, 0.16), rgba(255, 255, 255, 0.035)),
-    rgba(0, 0, 0, 0.2);
+    rgba(6, 10, 28, 0.78);
   box-shadow: 0 16px 44px rgba(0, 0, 0, 0.26);
   padding: clamp(18px, 2.5vw, 28px);
 }
@@ -2909,7 +2919,7 @@ section .container {
 .services-intro {
   margin: 0 0 clamp(22px, 3vw, 34px);
   border: 1px solid rgba(111, 163, 255, 0.16);
-  background: rgba(0, 0, 0, 0.18);
+  background: rgba(6, 10, 28, 0.72);
   box-shadow: 0 16px 44px rgba(0, 0, 0, 0.2);
   padding: clamp(16px, 2vw, 24px);
 }
@@ -2923,6 +2933,7 @@ section .container {
 }
 
 .services-grid {
+  display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
   padding: 0;
@@ -2934,11 +2945,13 @@ section .container {
   min-height: 100%;
   border-radius: 0;
   border: 1px solid rgba(111, 163, 255, 0.16);
-  background: rgba(0, 0, 0, 0.18);
+  background:
+    linear-gradient(180deg, rgba(28, 48, 120, 0.5), rgba(8, 14, 42, 0.82)),
+    #050916;
   box-shadow: 0 16px 44px rgba(0, 0, 0, 0.26);
   backdrop-filter: none;
   padding: clamp(20px, 2.5vw, 30px);
-  opacity: 0;
+  opacity: 1 !important;
   animation: serviceRise 0.55s ease both;
   transition: transform 0.28s ease, border-color 0.28s ease, background 0.28s ease, box-shadow 0.28s ease;
 }
@@ -2996,7 +3009,7 @@ section .container {
 }
 
 .service-box p {
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.84);
   line-height: 1.65;
   margin-bottom: 20px;
 }
@@ -3499,7 +3512,7 @@ section .container {
   display: inline-flex;
   align-items: center;
   width: fit-content;
-  color: #8fa4ff;
+  color: #00f;
   font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.08em;
