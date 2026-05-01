@@ -30,6 +30,7 @@
         var target = getHashTarget(hash);
 
         if (!hash || hash === '#header' || !target.length || !target.is('section')) {
+            updateScrollProgress();
             return;
         }
 
@@ -38,6 +39,21 @@
         target.addClass('section-show');
         $('.nav-menu .active, .mobile-nav .active').removeClass('active');
         $('.nav-menu, .mobile-nav').find('a[href="' + hash + '"]').parent('li').addClass('active');
+        updateScrollProgress();
+    }
+
+    function updateScrollProgress() {
+        var progress = document.querySelector('.scroll-progress span');
+        if (!progress) {
+            return;
+        }
+
+        var root = document.scrollingElement || document.documentElement;
+        var scrollTop = root.scrollTop || window.pageYOffset || 0;
+        var scrollable = Math.max(root.scrollHeight - root.clientHeight, 0);
+        var amount = scrollable ? Math.min(scrollTop / scrollable, 1) : 0;
+
+        progress.style.transform = 'scaleX(' + amount + ')';
     }
 
     function fitHomeTagline() {
@@ -86,6 +102,7 @@
         resetHomeState();
         showHashSection();
     });
+    $(window).on('load pageshow scroll resize hashchange', updateScrollProgress);
     $(window).on('load pageshow resize', fitHomeTagline);
     if (document.fonts && document.fonts.ready) {
         document.fonts.ready.then(fitHomeTagline);
