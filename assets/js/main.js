@@ -300,6 +300,17 @@
     var age = Math.abs(ageDate.getUTCFullYear() - 1970); // Extracts the age from the year difference
     document.getElementById("age").innerHTML = +age; // Displays the calculated age in the element with ID "age"
 
+    $(document).on('click', '.post-read-toggle', function () {
+        var button = this;
+        var target = document.getElementById(button.getAttribute('aria-controls'));
+        if (!target) return;
+
+        var expanded = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', String(!expanded));
+        button.textContent = expanded ? 'Read More' : 'Show Less';
+        target.hidden = expanded;
+    });
+
 })(jQuery); // Passes jQuery into the function
 
 // JavaScript to open and close modals
